@@ -1,0 +1,174 @@
+%\documentclass[letterpaper,10pt,titlepage]{IEEEtran}
+\documentclass[10pt, oneside,onecolumn,draftclsnofoot]{IEEEtran}
+
+\usepackage{graphicx}
+\usepackage{amssymb}
+\usepackage{amsmath}
+\usepackage{amsthm}
+
+\usepackage{alltt}
+\usepackage{float}
+\usepackage{color}
+\usepackage{url}
+
+\usepackage{balance}
+\usepackage[TABBOTCAP, tight]{subfigure}
+\usepackage{enumitem}
+\usepackage{pstricks, pst-node}
+
+\usepackage{geometry}
+\geometry{textheight=8.5in, textwidth=6in}
+
+%random comment
+
+\newcommand{\cred}[1]{{\color{red}#1}}
+\newcommand{\cblue}[1]{{\color{blue}#1}}
+
+\usepackage{hyperref}
+\usepackage{geometry}
+\usepackage{array}
+
+\def\name{Jake Jeffreys, McKenna Jones, Spike Madden, Sean Marty}
+\usepackage{titling}
+\title{CS461: Client Requirements Document}
+\author{Jake Jeffreys, McKenna Jones, Spike Madden, Sean Marty}
+\date{October 25, 2016}
+
+%pull in the necessary preamble matter for pygments output
+
+%% The following metadata will show up in the PDF properties
+\hypersetup{
+  colorlinks = true,
+  urlcolor = black,
+  pdfauthor = {\name},
+  pdfkeywords = {cs461 ``senior capstone''},
+  pdftitle = {CS 461 Client Requirements Document},
+  pdfsubject = {CS 461 Requirements Doc},
+  pdfpagemode = UseNone
+}
+
+\begin{document}
+\begin{titlepage}
+\maketitle
+\vspace{3cm}
+
+\end{titlepage}
+
+%\tableofcontents
+\section{Introduction}
+
+\subsection{Purpose}
+The main goal of the project is to make customers feel more inclined to purchase
+Columbia gear through the use of an immersive, outdoor Virtual Reality
+experience. This document exists both for development of the project and to provide a detailed description of the technical requirements for the clients.
+
+\subsection{Definitions}
+\begin{center}
+	\begin{tabular}{| m{3cm} | m{9cm} |}
+		\hline
+		Virtual Reality & Sometimes shortened as VR \\
+		\hline
+		HTC Vive & A virtual reality headset produced by HTC \\
+		\hline
+		Unity Game Engine & The Unity Game Engine, developed by Unity Technologies
+    is used in this project to develop the virtual reality simulation. \\
+    \hline
+    Avatar & An icon or figure representing a particular person. \\
+    \hline
+    Wands & Controllers that are used with the HTC headset. \\
+    \hline
+		\end{tabular}
+\end{center}
+
+\subsection{References}
+Work in Progress
+
+\section{Overall Description}
+\subsection{Product Perspective}
+This VR product may be unique to the company but will still have ties to
+existing products. Within the experience, users will have the ability to view
+and interact with Columbia gear. Users will also be given the opportunity to
+wear Columbia gear while participating to learn how the clothes feel while
+executing certain movements.
+
+\subsection{Constraints}
+A virtual reality headset like the HTC Vive has some inherent restrictions.
+The first one is space. The HTC Vive tracks how much space you have set the
+system up in and creates virtual barriers. This limitation can be alleviated by
+using the controllers to move the users within VR environment. Besides physical space, space in the virtual display is also a concern. Information needs to be supplied to the user without obstructing the VR experience. A second
+limitation are the graphics within the VR environemnt are not entirely realistic. Because we are trying to promote Columbia Sportswear Gear it needs to be as authentic aspossible.
+
+\subsection{Product Functions}
+The VR setup will allow the user to simulate outdoor experiences.
+Specifically, the user will be able to virtually try on Columbia Sportswear
+gear in the environments they are intended to be used in.
+This will be done using the HTC Vive headset and wands. The final product
+will allow the user to travel to a number of environments in a given session to
+test a variety of clothes and equipment. This product will also give customers the ability to save the gear they liked in the VR, and access that information after the experience is over.
+
+\subsection{User Characteristics}
+The general type of user of this project will be a customer at a Columbia
+Sportswear retail store. Under this umbrella lies a few different types of
+customers. First there are customers who are inexperienced in the outdoor
+activity they are buying gear for. This target audience will benefit most
+from the VR expreience as it will allow them to experience the activity without a lot of commitment. Secondly, there are customers who are
+experienced in the activity they are buying gear for. This audience will
+benefit from the VR experience because it will allow them to view themselves
+actually using the gear.
+
+\section{Specific Requirements}
+\subsection{External Interface Requirements}
+\begin{itemize}
+  \item 360 degree view of outdoor scenario within VR experience.
+  \item User view projected onto external display.
+\end{itemize}
+
+\subsection{Functional Requirements}
+\begin{itemize}
+  \item Ability for users to interact with fly fishing equipment.
+  \item Ability for users to view their own avatar movements (In a pop-up
+  window?)
+\end{itemize}
+
+\subsection{Performance Requirements}
+\begin{itemize}
+  \item Must be responsive enough to prevent user distraction.
+  \begin{itemize}
+    \item Aim for no delays longer than 100ms.
+  \end{itemize}
+  \item Application must be portable.
+\end{itemize}
+
+\subsection{Software System Attributes}
+Our unity environment should be portable and work on all htc vive systems.
+Correctness can be evaluated by how authentic the real-world experience we're
+trying to replicate is. We should be able to adjust the scenes easily and
+accommodate for any changes that the client wants.
+
+% \subsubsection{Reliability}
+% todo
+% \subsubsection{Availability}
+% todo
+% \subsubsection{Security}
+% todo
+% \subsubsection{Maintainability}
+% todo
+% \subsubsection{Portability}
+% todo
+
+\vspace{3cm}
+
+\noindent\begin{tabular}{ll}
+\makebox[2.5in]{\hrulefill} & \makebox[2.5in]{\hrulefill}\\
+Intel Sponsor & Date\\[8ex]% adds space between the two sets of signatures
+\makebox[2.5in]{\hrulefill} & \makebox[2.5in]{\hrulefill}\\
+Columbia Sponsor & Date\\[8ex]% adds space between the two sets of signatures
+\makebox[2.5in]{\hrulefill} & \makebox[2.5in]{\hrulefill}\\[2ex]
+\makebox[2.5in]{\hrulefill} & \makebox[2.5in]{\hrulefill}\\[2ex]
+\makebox[2.5in]{\hrulefill} & \makebox[2.5in]{\hrulefill}\\[2ex]
+\makebox[2.5in]{\hrulefill} & \makebox[2.5in]{\hrulefill}\\
+Student Team Members & Date\\
+\end{tabular}
+
+
+\end{document}
