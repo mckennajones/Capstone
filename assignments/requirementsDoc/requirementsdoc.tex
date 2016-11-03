@@ -94,8 +94,8 @@ while in the experience and gain specific product information.
 
 \subsection{References}
 \begingroup
-\renewcommand{\section}[2]{}%
-%\renewcommand{\chapter}[2]{}% for other classes
+\renewcommand{\addcontentsline}[3]{}% Remove functionality of \addcontentsline
+\renewcommand{\section}[2]{}% Remove functionality of \section
 \bibliographystyle{IEEEtran}
 \bibliography{requirementsdoc}
 \endgroup
@@ -200,7 +200,8 @@ need to be more specific for each item
 
 \subsection{Performance Requirements}
 \begin{itemize}
-  \item Must be responsive enough to prevent user distraction.\cite{michalak_lind_round1}
+  \item Must be responsive enough to prevent user distraction.\cite{michalak_lind_round1}\cite{michalak_lind_round2}
+
 \end{itemize}
 
 \subsection{Software System Attributes}
