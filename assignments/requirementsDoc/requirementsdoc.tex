@@ -65,7 +65,12 @@ Columbia gear through the use of an immersive, outdoor Virtual Reality
 experience. This document exists both for development of the project and to provide a detailed description of the technical requirements for the clients.
 
 \subsection{Scope}
-todo
+We want to create an outdoor virtual reality experience for customers at a
+Columbia retail store. The application will consist of both visual and audio
+experiences to create an outdoor world in which the user can navigate. The main
+activity available will involve fly fishing in one of the rivers within the
+environment. Users will also have the ability to interact with Columbia products
+while in the experience and gain specific product information.
 
 \subsection{Definitions}
 \begin{center}
@@ -88,7 +93,12 @@ todo
 \end{center}
 
 \subsection{References}
-Work in Progress
+\begingroup
+\renewcommand{\section}[2]{}%
+%\renewcommand{\chapter}[2]{}% for other classes
+\bibliographystyle{IEEEtran}
+\bibliography{requirementsdoc}
+\endgroup
 
 \subsection{Overview}
 The next chapter of the document will give an overview of the basic functionality
@@ -171,10 +181,7 @@ need to be more specific for each item
 
 \subsection{Performance Requirements}
 \begin{itemize}
-  \item Must be responsive enough to prevent user distraction.
-  \begin{itemize}
-    \item Aim for no delays longer than 100ms (maximum human detectable lag).
-  \end{itemize}
+  \item Must be responsive enough to prevent user distraction.\cite{michalak_lind_round1}
 \end{itemize}
 
 \subsection{Software System Attributes}
@@ -208,6 +215,5 @@ Columbia Sponsor & Date\\[8ex]% adds space between the two sets of signatures
 \makebox[2.5in]{\hrulefill} & \makebox[2.5in]{\hrulefill}\\
 Student Team Members & Date\\
 \end{tabular}
-
 
 \end{document}
