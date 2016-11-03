@@ -156,7 +156,6 @@ An important assumption made in this requirements document is that the virtual
 reality experience will be run on a computer system that can run the HTC Vive
 software.  The following are the minimum specifications to run Vive, as found
 on the HTC Vive website \cite{htc_vive_ready}:
-
 \begin{itemize}
   \item Processor: Intel Core i5-4590 or AMD FX 8350, or better
   \item Graphics: NVIDIA GeForce GTX 1060 or AMD Radeon RX480, or better
@@ -175,10 +174,10 @@ realistic environment will have to change.
 
 
 \subsection{Apportioning of Requirements}
-One part of the project that will likely be delayed until later versions is the social aspect.
-Ideally the user would be able to share their VR experience on social media sites like Facebook or Youtube.
-This could be in the form or 360 degree images or videos.
-At the moment this requirement is not a high priority.
+One part of the project that will likely be delayed until later versions is the
+social aspect. Ideally the user would be able to share their VR experience on
+social media sites like Facebook or Youtube. This could be in the form or 360
+degree images or videos. At the moment this requirement is not a high priority.
 
 \section{Specific Requirements}
 \subsection{External Interfaces}
@@ -205,22 +204,22 @@ need to be more specific for each item
 \end{itemize}
 
 \subsection{Software System Attributes}
-Our unity environment should be portable and work on all htc vive systems.
-Correctness can be evaluated by how authentic the real-world experience we're
-trying to replicate is. We should be able to adjust the scenes easily and
-accommodate for any changes that the client wants.
+Many of the attributes of our system (such as availability and reliability)
+will be handled through the Unity game engine.
 
-\subsubsection{Reliability}
-todo
-\subsubsection{Availability}
-todo
 \subsubsection{Security}
-todo
+The environment will be designed to not require a system with internet access,
+and will not need any user information. The expected implementation will be on
+a closed system in a Columbia store, where physical and remote access will be
+controlled by Columbia employees.
+
 \subsubsection{Maintainability}
-As time goes on it should be easy to adapt the product to easily include more
-Columbia Sportswear products and virtual reality environments to accompany them.
+As time goes on it should be easy to adapt the environment to include more or
+newer Columbia Sportswear products.
 
 \subsubsection{Portability}
+The environment should work on all HTC Vive systems with the minimum
+requirements to be Vive Ready \cite{htc_vive_ready}.
 
 \vspace{3cm}
 
