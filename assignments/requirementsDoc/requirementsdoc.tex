@@ -139,10 +139,30 @@ space, space in the virtual display is also a concern. Information needs to be
 supplied to the user without obstructing the VR experience. A second
 limitation are the graphics within the VR environemnt are not entirely
 realistic. Because we are trying to promote Columbia Sportswear Gear it needs
-to be as authentic aspossible.
+to be as authentic as possible.
 
 \subsection{Assumptions and Dependencies}
-todo
+An important assumption made in this requirements document is that the virtual
+reality experience will be run on a computer system that can run the HTC Vive
+software.  The following are the minimum specifications to run Vive, as found
+on the HTC Vive website:
+
+\begin{itemize}
+  \item Processor: Intel Core i5-4590 or AMD FX 8350, or better
+  \item Graphics: NVIDIA GeForce GTX 1060 or AMD Radeon RX480, or better
+  \item Memory: 4GB RAM or better
+  \item Operating system: Windows 7 SP1 or better
+\end{itemize}
+Design decisions and optimizations will be made so that a computer with the
+above specifications can run the experience with little noticable lag, but if
+the machine drops below the minimum capabilites the requirements regarding
+responsiveness will have to change.
+
+Also, the requirements often depend on the availability of a set of Columbia
+and Unity 3D assets.  If either of those sources of assets is not available,
+the requirements about being able to see Columbia Sportswear gear in a 
+realistic environment will have to change.
+
 
 \subsection{Apportioning of Requirements}
 One part of the project that will likely be delayed until later versions is the social aspect.
@@ -158,7 +178,7 @@ need to be more specific for each item
   \item User view projected onto external display.
   \item Product information available inside VR Experience.
   \item Optional user guidance (audio/visual).
-  \item Physical \"wand\" controller available to be held by user.
+  \item Physical wand controller available to be held by user.
   \item HTC Vive virtual reality equipment with visual, audio, and tactile capabilities.
   \item Built to be experiences in confined room (no bigger than 12 feet by 12 feet).
 \end{itemize}
