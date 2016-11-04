@@ -97,8 +97,8 @@ while in the experience and gain specific product information.
 
 \subsection{References}
 \begingroup
-\renewcommand{\section}[2]{}%
-%\renewcommand{\chapter}[2]{}% for other classes
+\renewcommand{\addcontentsline}[3]{}% Remove functionality of \addcontentsline
+\renewcommand{\section}[2]{}% Remove functionality of \section
 \bibliographystyle{IEEEtran}
 \bibliography{requirementsdoc}
 \endgroup
@@ -152,16 +152,35 @@ space, space in the virtual display is also a concern. Information needs to be
 supplied to the user without obstructing the VR experience. A second
 limitation are the graphics within the VR environemnt are not entirely
 realistic. Because we are trying to promote Columbia Sportswear Gear it needs
-to be as authentic aspossible.
+to be as authentic as possible.
 
 \subsection{Assumptions and Dependencies}
-todo
+An important assumption made in this requirements document is that the virtual
+reality experience will be run on a computer system that can run the HTC Vive
+software.  The following are the minimum specifications to run Vive, as found
+on the HTC Vive website \cite{htc_vive_ready}:
+\begin{itemize}
+  \item Processor: Intel Core i5-4590 or AMD FX 8350, or better
+  \item Graphics: NVIDIA GeForce GTX 1060 or AMD Radeon RX480, or better
+  \item Memory: 4GB RAM or better
+  \item Operating system: Windows 7 SP1 or better
+\end{itemize}
+Design decisions and optimizations will be made so that a computer with the
+above specifications can run the experience with little noticable lag, but if
+the machine drops below the minimum capabilites the requirements regarding
+responsiveness will have to change.
+
+Also, the requirements often depend on the availability of a set of Columbia
+and Unity 3D assets.  If either of those sources of assets is not available,
+the requirements about being able to see Columbia Sportswear gear in a
+realistic environment will have to change.
+
 
 \subsection{Apportioning of Requirements}
-One part of the project that will likely be delayed until later versions is the social aspect.
-Ideally the user would be able to share their VR experience on social media sites like Facebook or Youtube.
-This could be in the form or 360 degree images or videos.
-At the moment this requirement is not a high priority.
+One part of the project that will likely be delayed until later versions is the
+social aspect. Ideally the user would be able to share their VR experience on
+social media sites like Facebook or Youtube. This could be in the form or 360
+degree images or videos. At the moment this requirement is not a high priority.
 
 \section{Specific Requirements}
 \subsection{External Interfaces}
@@ -171,7 +190,7 @@ need to be more specific for each item
   \item User view projected onto external display.
   \item Product information available inside VR Experience.
   \item Optional user guidance (audio/visual).
-  \item Physical \"wand\" controller available to be held by user.
+  \item Physical wand controller available to be held by user.
   \item HTC Vive virtual reality equipment with visual, audio, and tactile capabilities.
   \item Built to be experiences in confined room (no bigger than 12 feet by 12 feet).
 \end{itemize}
@@ -184,7 +203,8 @@ need to be more specific for each item
 
 \subsection{Performance Requirements}
 \begin{itemize}
-  \item Must be responsive enough to prevent user distraction.\cite{michalak_lind_round1}
+  \item Must be responsive enough to prevent user distraction.\cite{michalak_lind_round1}\cite{michalak_lind_round2}
+
 \end{itemize}
 
 \subsection{Software System Attributes}
@@ -192,18 +212,27 @@ Our unity environment should be portable and work on all htc vive systems.
 Correctness can be evaluated by how authentic the real-world experience we're
 trying to replicate is. We should be able to adjust the scenes easily and
 accommodate for any changes that the client wants.
-
 \subsubsection{Reliability}
-todo
+The system will be considered reliable if it can provide the virtual reality experience consistently without failure. Failure can be defined as any technical issue that breaks immersion. This could include noticeable lag between the user and avatar's actions, distortion of the environment or a software defect that causes the system to crash.
 \subsubsection{Availability}
-todo
+The system should be available to customers whenever the virtual reality station in the store is set up. There should be no downtime when the customer puts on the headset and the customer should almost immediately be placed in the immersive environment.
+
+Many of the attributes of our system (such as availability and reliability)
+will be handled through the Unity game engine.
+
 \subsubsection{Security}
-todo
+The environment will be designed to not require a system with internet access,
+and will not need any user information. The expected implementation will be on
+a closed system in a Columbia store, where physical and remote access will be
+controlled by Columbia employees.
+
 \subsubsection{Maintainability}
 As time goes on it should be easy to adapt the product to easily include more
-Columbia Sportswear products and virtual reality environments to accompany them.
+Columbia Sportswear products and virtual reality environments to accompany them. Changes to the environment through the addition of assets should not be difficult and an updated scene should be accomplished with a small patch.
 
 \subsubsection{Portability}
+The environment should work on all HTC Vive systems with the minimum
+requirements to be Vive Ready \cite{htc_vive_ready}.
 
 \section{Gant Chart}
 Measured in weeks.
@@ -223,6 +252,9 @@ Measured in weeks.
 \PstGanttTask[TaskOutsideLabel={Make changes and fix bugs}]{11}{3}
 \end{PstGanttChart}
 \end{flushright}
+
+\clearpage
+
 \vspace{3cm}
 
 \noindent\begin{tabular}{ll}
