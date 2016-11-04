@@ -1,6 +1,6 @@
 %\documentclass[letterpaper,10pt,titlepage]{IEEEtran}
 %\documentclass[10pt, oneside,onecolumn,draftclsnofoot]{IEEEtran}
-\documentclass[10pt,journal,compsoc,onecolumn]{IEEEtran}
+\documentclass[10pt,journal,compsoc,onecolumn, draftclsnofoot]{IEEEtran}
 
 \usepackage{graphicx}
 \usepackage{amssymb}
@@ -18,6 +18,8 @@
 \usepackage{pstricks, pst-node}
 
 \usepackage{geometry}
+\usepackage{pst-gantt}
+
 \geometry{textheight=8.5in, textwidth=6in}
 
 %random comment
@@ -40,6 +42,7 @@
 %% The following metadata will show up in the PDF properties
 \hypersetup{
   colorlinks = true,
+  linkcolor = black,
   urlcolor = black,
   pdfauthor = {\name},
   pdfkeywords = {cs461 ``senior capstone''},
@@ -202,6 +205,24 @@ Columbia Sportswear products and virtual reality environments to accompany them.
 
 \subsubsection{Portability}
 
+\section{Gant Chart}
+Measured in weeks.
+\begin{flushright}
+\begin{PstGanttChart}[ChartShowIntervals,ChartUnitIntervalName=]{3}{12}
+\PstGanttTask[TaskOutsideLabel={Build environment prototype}]{0}{4}
+\PstGanttTask[TaskOutsideLabel={Build prototype of wand usage}]{4}{4}
+\PstGanttTask[TaskOutsideLabel={Integrate wand usage with environment}]{8}{4}
+\end{PstGanttChart}
+\end{flushright}
+\vspace{0.5cm}
+\begin{flushright}
+\begin{PstGanttChart}[ChartShowIntervals,ChartUnitIntervalName=,ChartStartInterval=13]{4}{14}
+\PstGanttTask[TaskOutsideLabel={Add Columbia products with info}]{0}{4}
+\PstGanttTask[TaskOutsideLabel={Add new user tutorial}]{4}{4}
+\PstGanttTask[TaskOutsideLabel={Prepare for user Testing}]{8}{3}
+\PstGanttTask[TaskOutsideLabel={Make changes and fix bugs}]{11}{3}
+\end{PstGanttChart}
+\end{flushright}
 \vspace{3cm}
 
 \noindent\begin{tabular}{ll}
