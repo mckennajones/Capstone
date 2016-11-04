@@ -188,17 +188,48 @@ social aspect. Ideally the user would be able to share their VR experience on
 social media sites like Facebook or Youtube. This could be in the form or 360
 degree images or videos. At the moment this requirement is not a high priority.
 
+\vspace{1cm}
+
+Gant Chart (measured in weeks)
+\begin{flushright}
+\begin{PstGanttChart}[ChartShowIntervals,ChartUnitIntervalName=]{3}{12}
+\PstGanttTask[TaskOutsideLabel={Build environment prototype}]{0}{4}
+\PstGanttTask[TaskOutsideLabel={Build prototype of wand usage}]{4}{4}
+\PstGanttTask[TaskOutsideLabel={Integrate wand usage with environment}]{8}{4}
+\end{PstGanttChart}
+\end{flushright}
+\vspace{0.5cm}
+\begin{flushright}
+\begin{PstGanttChart}[ChartShowIntervals,ChartUnitIntervalName=,ChartStartInterval=13]{4}{14}
+\PstGanttTask[TaskOutsideLabel={Add Columbia products with info}]{0}{4}
+\PstGanttTask[TaskOutsideLabel={Add new user tutorial}]{4}{4}
+\PstGanttTask[TaskOutsideLabel={Prepare for user Testing}]{8}{3}
+\PstGanttTask[TaskOutsideLabel={Make changes and fix bugs}]{11}{3}
+\end{PstGanttChart}
+\end{flushright}
+
 \section{Specific Requirements}
 \subsection{External Interfaces}
-need to be more specific for each item
 \begin{itemize}
-  \item 360 degree view of outdoor scenario within VR experience.
-  \item User view projected onto external display.
-  \item Product information available inside VR Experience.
-  \item Optional user guidance (audio/visual).
-  \item Physical wand controller available to be held by user.
-  \item HTC Vive virtual reality equipment with visual, audio, and tactile capabilities.
-  \item Built to be experiences in confined room (no bigger than 12 feet by 12 feet).
+  \item 360 degree view of outdoor scenario within VR experience using HTC Vive
+  headset. This will contain optional user guidance (visual) and offer Columbia
+  product information (visual).
+    \begin{itemize}
+      \item Input: Movement of headset
+      \item Output: Visual data
+    \end{itemize}
+  \item Immersive noises from outdoor VR experience. This includes audio from the optional user guidance.
+    \begin{itemize}
+      \item Output: Audio through speakers and/or headphones.
+    \end{itemize}
+  \item Ability for other users not using headset to see user's current view.
+    \begin{itemize}
+      \item Output: Visual data on external monitor.
+    \end{itemize}
+  \item Controller available to be held by user.
+    \begin{itemize}
+      \item Input: HTC Wand movement
+    \end{itemize}
 \end{itemize}
 
 \subsection{Functions}
@@ -218,8 +249,10 @@ Our unity environment should be portable and work on all htc vive systems.
 Correctness can be evaluated by how authentic the real-world experience we're
 trying to replicate is. We should be able to adjust the scenes easily and
 accommodate for any changes that the client wants.
+
 \subsubsection{Reliability}
 The system will be considered reliable if it can provide the virtual reality experience consistently without failure. Failure can be defined as any technical issue that breaks immersion. This could include noticeable lag between the user and avatar's actions, distortion of the environment or a software defect that causes the system to crash.
+
 \subsubsection{Availability}
 The system should be available to customers whenever the virtual reality station in the store is set up. There should be no downtime when the customer puts on the headset and the customer should almost immediately be placed in the immersive environment.
 
@@ -239,25 +272,6 @@ Columbia Sportswear products and virtual reality environments to accompany them.
 \subsubsection{Portability}
 The environment should work on all HTC Vive systems with the minimum
 requirements to be Vive Ready \cite{htc_vive_ready}.
-
-\section{Gant Chart}
-Measured in weeks.
-\begin{flushright}
-\begin{PstGanttChart}[ChartShowIntervals,ChartUnitIntervalName=]{3}{12}
-\PstGanttTask[TaskOutsideLabel={Build environment prototype}]{0}{4}
-\PstGanttTask[TaskOutsideLabel={Build prototype of wand usage}]{4}{4}
-\PstGanttTask[TaskOutsideLabel={Integrate wand usage with environment}]{8}{4}
-\end{PstGanttChart}
-\end{flushright}
-\vspace{0.5cm}
-\begin{flushright}
-\begin{PstGanttChart}[ChartShowIntervals,ChartUnitIntervalName=,ChartStartInterval=13]{4}{14}
-\PstGanttTask[TaskOutsideLabel={Add Columbia products with info}]{0}{4}
-\PstGanttTask[TaskOutsideLabel={Add new user tutorial}]{4}{4}
-\PstGanttTask[TaskOutsideLabel={Prepare for user Testing}]{8}{3}
-\PstGanttTask[TaskOutsideLabel={Make changes and fix bugs}]{11}{3}
-\end{PstGanttChart}
-\end{flushright}
 
 \clearpage
 
