@@ -75,7 +75,7 @@ experience. This document exists both for development of the project and to prov
 
 \subsection{Scope}
 We want to create an outdoor virtual reality experience for customers at a
-Columbia retail store. The application will consist of both visual and audio
+Columbia retail store. The application will consist mainly of visual, audio, and tactile
 experiences to create an outdoor world in which the user can navigate. The main
 activity available will involve fly fishing in one of the rivers within the
 environment. Users will also have the ability to interact with Columbia products
@@ -85,7 +85,7 @@ while in the experience and gain specific product information.
 \begin{center}
 	\begin{tabular}{| m{3cm} | m{9cm} |}
 		\hline
-		Virtual Reality & Sometimes shortened as VR \\
+		Virtual Reality (VR) & Artificial environment that is created with software \\
 		\hline
 		HTC Vive & A virtual reality headset produced by HTC \\
 		\hline
@@ -96,7 +96,8 @@ while in the experience and gain specific product information.
     	\hline
     	Wands & Controllers that are used with the HTC headset. \\
     	\hline
-		Base Stations & These allow the Vive to track the movement and location of the wands and headset. \\
+		Base Stations & These allow the Vive to track the movement and location of
+    the wands and headset. \\
 		\hline
 	\end{tabular}
 \end{center}
@@ -111,10 +112,10 @@ while in the experience and gain specific product information.
 
 \subsection{Overview}
 The next chapter of the document will give an overview of the basic functionality
-of the Virtual Reality product. It contains informal requirements to provide
-background for the third section, Specific Requirements. The third section
-will provide more detailed requirements. This section is intended for a more
-technical audience like developers.
+of the Virtual Reality application. It contains informal requirements to provide
+background for section three, Specific Requirements. Section three
+will provide more detailed requirements and is intended for a more
+technical audience such as developers.
 
 \section{Overall Description}
 \subsection{Product Perspective}
@@ -124,30 +125,35 @@ and interact with Columbia gear. Users will also be given the opportunity to
 wear Columbia gear while participating to learn how the clothes feel while
 executing certain movements.
 
-The product will rely heavily on Virtual Reality Hardware.
-Specifically, the HTC Vive System. This system consists of the the headset, two
-wands, and two base stations. Additionaly a Virtual Reality compatible computer is needed to actually run the software. In terms of software the
+The product will rely heavily on Virtual Reality Hardware. Specifically, the HTC
+Vive System. This system consists of the the headset, two
+wands, and two base stations. Additionaly a Virtual Reality compatible computer
+is needed to actually run the software. In terms of software the
 product will rely on the Unity Game Engine. Unity will do the heavy lifting
-when it comes to rendering the virtual environment and making it look as realistic as possible.
+when it comes to rendering the virtual environment and making it look as realistic
+as possible.
 
 \subsection{Product Functions}
 The VR setup will allow the user to simulate outdoor experiences.
 Specifically, the user will be able to virtually see Columbia Sportswear
 gear in the environments they are intended to be used in.
-This will be done using the HTC Vive headset and wands. The final product
-will allow the user to travel to a number of environments in a given session to
+This will be done using 3D renderings of Columbia items which will then be placed
+within the environment. We will then be using Unity to design VR interaction
+capabilities on top of the renderings. The final product will allow the user to
 test a variety of clothes and equipment. This product will also give customers
-the ability to save the gear they liked in the VR, and access that information after the experience is over.
+the ability to save the gear they liked in the VR, and access that information
+after the experience is over.
 
 \subsection{User Characteristics}
 The general type of user of this project will be a customer at a Columbia
 Sportswear retail store. Under this umbrella lies a few different types of
 customers. First there are customers who are inexperienced in the outdoor
 activity they are buying gear for. This target audience will benefit most
-from the VR expreience as it will allow them to experience the activity without a lot of commitment.
-Secondly, there are customers who are experienced in the activity they are
-buying gear for. This audience will benefit from the VR experience because
-it will allow them to view themselves actually using the gear.
+from the VR expreience as it will allow them to experience the activity without
+a lot of economic or time commitment. Secondly, there are customers who are
+experienced in the activity they are buying gear for. This audience will benefit
+from the VR experience becauseit will allow them to view themselves actually
+using and testing out new gear.
 
 \subsection{Constraints}
 A virtual reality headset like the HTC Vive has some inherent restrictions.
@@ -157,8 +163,11 @@ using the controllers to move the users within VR environment. Besides physical
 space, space in the virtual display is also a concern. Information needs to be
 supplied to the user without obstructing the VR experience. A second
 limitation are the graphics within the VR environemnt are not entirely
-realistic. Because we are trying to promote Columbia Sportswear Gear it needs
-to be as authentic as possible.
+realistic. According to studies done by Intel and Thug Design \cite{michalak_lind_round1}\cite{michalak_lind_round2}, the categories most
+important to the feeling of immersion are realistic interactions, responsiveness,
+graphic clarity, and smooth transitions in that order. Because we are trying to
+promote Columbia Sportswear Gear in a realistic environment it needs to be as
+authentic as possible.
 
 \subsection{Assumptions and Dependencies}
 An important assumption made in this requirements document is that the virtual
@@ -173,7 +182,7 @@ on the HTC Vive website \cite{htc_vive_ready}:
 \end{itemize}
 Design decisions and optimizations will be made so that a computer with the
 above specifications can run the experience with little noticable lag, but if
-the machine drops below the minimum capabilites the requirements regarding
+the machine drops below the minimum capabilites, the requirements regarding
 responsiveness will have to change.
 
 Also, the requirements often depend on the availability of a set of Columbia
@@ -218,7 +227,8 @@ Gant Chart (measured in weeks)
       \item Input: Movement of headset
       \item Output: Visual data
     \end{itemize}
-  \item Immersive noises from outdoor VR experience. This includes audio from the optional user guidance.
+  \item Immersive noises from outdoor VR experience. This includes audio from
+  the optional user guidance.
     \begin{itemize}
       \item Output: Audio through speakers and/or headphones.
     \end{itemize}
@@ -226,7 +236,7 @@ Gant Chart (measured in weeks)
     \begin{itemize}
       \item Output: Visual data on external monitor.
     \end{itemize}
-  \item Controller available to be held by user.
+  \item Controller available to be held by user to interact within VR experience.
     \begin{itemize}
       \item Input: HTC Wand movement
     \end{itemize}
@@ -240,21 +250,27 @@ Gant Chart (measured in weeks)
 
 \subsection{Performance Requirements}
 \begin{itemize}
-  \item Must maintain 60fps throughout experience.\cite{hall_2016}
-
+  \item Must maintain at least 60fps throughout experience.\cite{hall_2016}
 \end{itemize}
 
 \subsection{Software System Attributes}
-Our unity environment should be portable and work on all htc vive systems.
+Our unity environment should be portable and work on all HTC Vive systems.
 Correctness can be evaluated by how authentic the real-world experience we're
 trying to replicate is. We should be able to adjust the scenes easily and
 accommodate for any changes that the client wants.
 
 \subsubsection{Reliability}
-The system will be considered reliable if it can provide the virtual reality experience consistently without failure. Failure can be defined as any technical issue that breaks immersion. This could include noticeable lag between the user and avatar's actions, distortion of the environment or a software defect that causes the system to crash.
+The system will be considered reliable if it can provide the virtual reality
+experience consistently without failure. Failure can be defined as any technical
+issue that breaks immersion. This could include noticeable lag between the user
+and avatar's actions, distortion of the environment, or a software defect that
+causes the system to crash.
 
 \subsubsection{Availability}
-The system should be available to customers whenever the virtual reality station in the store is set up. There should be no downtime when the customer puts on the headset and the customer should almost immediately be placed in the immersive environment.
+The system should be available to customers whenever the virtual reality station
+in the store is set up. There should be no downtime when the customer puts on
+the headset and the customer should almost immediately be placed in the immersive
+environment.
 
 Many of the attributes of our system (such as availability and reliability)
 will be handled through the Unity game engine.
@@ -267,13 +283,18 @@ controlled by Columbia employees.
 
 \subsubsection{Maintainability}
 As time goes on it should be easy to adapt the product to easily include more
-Columbia Sportswear products and virtual reality environments to accompany them. Changes to the environment through the addition of assets should not be difficult and an updated scene should be accomplished with a small patch.
+Columbia Sportswear products and virtual reality environments to accompany them.
+Changes to the environment through the addition of assets (new Columbia gear)
+should not be difficult and an updated scene should be accomplished with a small patch.
 
 \subsubsection{Portability}
 The environment should work on all HTC Vive systems with the minimum
 requirements to be Vive Ready \cite{htc_vive_ready}.
 
 \clearpage
+
+\section{Signatures}
+Document: Software Requirements Specification (EmbarkVR)
 
 \vspace{3cm}
 
