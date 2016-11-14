@@ -77,9 +77,22 @@ Software Requirements Specification \\
 \subsubsection{Add Audio}
 
 \subsubsection{Improve Realism and Immersion}
-The goal of our project is create a realistic, virtual, outdoor experience that makes users feel like they’ve been transported to a different location. After we’ve created the environment, animated objects, and added audio, the next step is to improve the visual realism. The first thing that came to our mind was to increase the detail of the objects in the environment but this may actually make the experience less realistic from the perspective of the user. It turns out this is only one aspect of creating a visually successful game. The other two are frames per second and resolution. These three concepts make up what is called the graphical fidelity triangle. According to a study done by Intel and Thug[ONE], immersion needs graphical fidelity, not realism. They found that what was important was that graphics were crisp and clean at all times. They found that a smooth experience, one without glitches and lost frames, was the most important aspect of immersion. They even went a step further to argue that photo-realism is often times worse because it makes inaccuracies more obvious.
+The goal of our project is create a realistic, virtual, outdoor experience that makes users feel like they’ve been transported to a different location.
+After we’ve created the environment, animated objects, and added audio, the next step is to improve the visual realism.
+The first thing that came to our mind was to increase the detail of the objects in the environment but this may actually make the experience less realistic from the perspective of the user.
+It turns out this is only one aspect of creating a visually successful game.
+The other two are frames per second and resolution.
+These three concepts make up what is called the graphical fidelity triangle.
+According to a study done by Intel and Thug[ONE], immersion needs graphical fidelity, not realism.
+They found that what was important was that graphics were crisp and clean at all times.
+They found that a smooth experience, one without glitches and lost frames, was the most important aspect of immersion.
+They even went a step further to argue that photo-realism is often times worse because it makes inaccuracies more obvious.
 
-In order to find out which of these tools will be the most effective we will be looking at simple particle systems, texture libraries, and clean texture mapping. It’s important that which game engine we use that the asset store contains a wide variety of simple textures and materials so that we are able to create realistic environment objects. There are also going to be a lot of moving parts such as animals and river water. These need to be realistic enough to create immersion but not too detailed as to create graphical lag. The three tools I will be looking at are Unity, Unreal Engine, and Lumberyard.
+In order to find out which of these tools will be the most effective we will be looking at simple particle systems, texture libraries, and clean texture mapping.
+It’s important that which game engine we use that the asset store contains a wide variety of simple textures and materials so that we are able to create realistic environment objects.
+There are also going to be a lot of moving parts such as animals and river water.
+These need to be realistic enough to create immersion but not too detailed as to create graphical lag.
+The three tools I will be looking at are Unity, Unreal Engine, and Lumberyard.
 
 \vspace{2mm}
 \begin{table}[h!]
@@ -96,9 +109,22 @@ In order to find out which of these tools will be the most effective we will be 
 \end{table}
 \vspace{2mm}
 
-Unity is an incredibly common tool for building in virtual reality, especially for the HTC Vive. It has managed to find a good balance of realism throughout the asset library. This asset store offers a wide range of particle effects, textures, and materials. Within the Unity development environment, they have made it easy to map texture on to objects to create a truly crisp experience. They also offer a variety of lighting options to add even more outdoor realism. Unreal Engine also offers a wide range of particle animations and texture packages. Unreal engine looks like it would be a much more effective tool for creating high end virtual reality games but for our usage it may be overkill. Overall it has a lot of the same capabilities if not more but they also come at a price. Most of the asset store costs money which is not what we are looking for. Lumberyard has a good variety of particle effects but struggles when it comes to textures and texture mapping. Developer freedom within the environment is easy to learn but limited.
+Unity is an incredibly common tool for building in virtual reality, especially for the HTC Vive.
+It has managed to find a good balance of realism throughout the asset library.
+This asset store offers a wide range of particle effects, textures, and materials.
+Within the Unity development environment, they have made it easy to map texture on to objects to create a truly crisp experience.
+They also offer a variety of lighting options to add even more outdoor realism.
+Unreal Engine also offers a wide range of particle animations and texture packages.
+Unreal engine looks like it would be a much more effective tool for creating high end virtual reality games but for our usage it may be overkill.
+Overall it has a lot of the same capabilities if not more but they also come at a price.
+Most of the asset store costs money which is not what we are looking for.
+Lumberyard has a good variety of particle effects but struggles when it comes to textures and texture mapping.
+Developer freedom within the environment is easy to learn but limited.
 
-The best tool to create an immerse, realistic environment would be Unity. It offers a wide variety of free assets that can be used throughout projects to add that extra bit of realism. The Unity community also strives to create simple, crisp designs that don’t have unnecessary details. They have recognized that these details can actual hinder the immersive experience instead of help it.
+The best tool to create an immerse, realistic environment would be Unity.
+It offers a wide variety of free assets that can be used throughout projects to add that extra bit of realism.
+The Unity community also strives to create simple, crisp designs that don’t have unnecessary details.
+They have recognized that these details can actual hinder the immersive experience instead of help it.
 \vspace{2mm
 }
 
@@ -234,9 +260,19 @@ Unity has native support for importing many different file types, which is benef
 Finally, the process of importing and managing assets is organized and stable, which cannot be said about Lumberyard.
 
 \subsubsection{Fishing Rod Interaction and Mechanics}
-Within the outdoor virtual reality experience there will be the opportunity for users to go fly fishing in the virtual river. In order to achieve this capability, we will need to allow the user to first interact with a fishing rod. The mechanics of this process can get quite complicated and therefore it is important for us to decide on the correct tool to build this functionality. Not only will the user need to be able to pick up the fishing rod but they will also need the ability to cast and real the line back in. These are the basic functionality of the fishing rod and will need to be as realistic as possible to create the illusion they are actually participating in the activity. In this document I will be comparing the virtual object mechanics within different, free gaming engines: Unity3D, Unreal Engine, and Lumberyard.
+Within the outdoor virtual reality experience there will be the opportunity for users to go fly fishing in the virtual river.
+In order to achieve this capability, we will need to allow the user to first interact with a fishing rod.
+The mechanics of this process can get quite complicated and therefore it is important for us to decide on the correct tool to build this functionality.
+Not only will the user need to be able to pick up the fishing rod but they will also need the ability to cast and real the line back in.
+These are the basic functionality of the fishing rod and will need to be as realistic as possible to create the illusion they are actually participating in the activity.
+In this document I will be comparing the virtual object mechanics within different, free gaming engines: Unity3D, Unreal Engine, and Lumberyard.
 
-In order to find out which of these tools will be the most effective we will be looking at the ease of scripting mechanics and programming haptic feedback. Fly fishing is all about the smooth motion of the rod. In order to create a similar experience in virtual reality there needs to be some kind of haptic feedback (controller vibration). Fortunately, my team has been given an HTC Vive setup which comes with two wireless controllers. These controllers offer HD haptic feedback with 24 sensors to ensure accurate movement tracking [ONE]. This then brings up the question of software.
+In order to find out which of these tools will be the most effective we will be looking at the ease of scripting mechanics and programming haptic feedback.
+Fly fishing is all about the smooth motion of the rod.
+In order to create a similar experience in virtual reality there needs to be some kind of haptic feedback (controller vibration).
+Fortunately, my team has been given an HTC Vive setup which comes with two wireless controllers.
+These controllers offer HD haptic feedback with 24 sensors to ensure accurate movement tracking [ONE].
+This then brings up the question of software.
 
 \vspace{2mm}
 \begin{table}[h!]
@@ -253,16 +289,40 @@ In order to find out which of these tools will be the most effective we will be 
 \end{table}
 \vspace{2mm}
 
-The first engine to discuss in Unity which is one of the most common tools for beginners developing virtual reality applications. Unity tools related to the physics engine and haptic feedback are incredibly easy to use for developers familiar with C\#. There are extensive built-in libraries and a very intuitive structure. Documentation and support is also strong for Unity programming which explains why Unity is a great choice for people new to physics engines and virtual object mechanics. The next tool to discuss in Unreal Engine which uses Blueprint Visual. This is an incredibly powerful engine and therefore offers an extensive physics engine. The Blueprint Visual interface for developers makes development easy and visually clear. This could make the process of implementing physics simple and straightforward. Haptic feedback is implemented in a similar fashion with check boxes and drop down menus instead of having to write a single line of code. This would be great for those unfamiliar with programming fundamentals. The last engine is Lumberyard which uses the Lua scripting language. The physics engine and haptic feedback programming are still in their infancy but do offer some capabilities. For a virtual reality project with a lot of moving pieces, the simplicity of lumberyard may be a hindrance and not offer enough freedom to developers.
+The first engine to discuss in Unity which is one of the most common tools for beginners developing virtual reality applications.
+Unity tools related to the physics engine and haptic feedback are incredibly easy to use for developers familiar with C\#.
+There are extensive built-in libraries and a very intuitive structure.
+Documentation and support is also strong for Unity programming which explains why Unity is a great choice for people new to physics engines and virtual object mechanics.
+The next tool to discuss in Unreal Engine which uses Blueprint Visual.
+This is an incredibly powerful engine and therefore offers an extensive physics engine.
+The Blueprint Visual interface for developers makes development easy and visually clear.
+This could make the process of implementing physics simple and straightforward.
+Haptic feedback is implemented in a similar fashion with check boxes and drop down menus instead of having to write a single line of code.
+This would be great for those unfamiliar with programming fundamentals.
+The last engine is Lumberyard which uses the Lua scripting language.
+The physics engine and haptic feedback programming are still in their infancy but do offer some capabilities.
+For a virtual reality project with a lot of moving pieces, the simplicity of lumberyard may be a hindrance and not offer enough freedom to developers.
 
-For our project, the best tool to use is going to be easy to learn yet still have extensive physics functionality to give us enough freedom while developing. Based purely on the ease of use and capabilities of the physics engine and haptic feedback control, the best tool would be Unity. The main reason for this is that Unity is easier to get started on and given the timeframe of our project, it is important we are able to create a fundamental application as quickly as possible. The physics engine is clean and should give us enough freedom to create a realistic fly fishing experience.
+For our project, the best tool to use is going to be easy to learn yet still have extensive physics functionality to give us enough freedom while developing.
+Based purely on the ease of use and capabilities of the physics engine and haptic feedback control, the best tool would be Unity.
+The main reason for this is that Unity is easier to get started on and given the timeframe of our project, it is important we are able to create a fundamental application as quickly as possible.
+The physics engine is clean and should give us enough freedom to create a realistic fly fishing experience.
 \vspace{2mm}
 
-
 \subsubsection{Integrate Usage with Environment}
-Creating a realistic fishing rod that users are able to pick up and move around is one thing but to integrate these movements with the environment is incredibly important to creating a realistic experience. According to user studies done by Intel and Thug[ONE], realistic interaction is the most important heuristic when it comes to overall enjoyment and feeling of immersion with correlation coefficients of .49 and .57 respectively (1.0 is a perfect correlation). If these are the two standards we are looking at, in order to have a successful application we will need to allow users to easily interact with all aspects of the fishing environment. While fly fishing, people stand either in the water or on the bank. These locations have specific characteristics such as certain insects, fish, plants, water movement, and sounds. The user will then need to be able to interact with these objects as well as the other way around. In this document I will be comparing the virtual object mechanics within different, free gaming engines: Unity3D, Unreal Engine, and Lumberyard.
+Creating a realistic fishing rod that users are able to pick up and move around is one thing but to integrate these movements with the environment is incredibly important to creating a realistic experience.
+According to user studies done by Intel and Thug[ONE], realistic interaction is the most important heuristic when it comes to overall enjoyment and feeling of immersion with correlation coefficients of .49 and .57 respectively (1.0 is a perfect correlation).
+If these are the two standards we are looking at, in order to have a successful application we will need to allow users to easily interact with all aspects of the fishing environment.
+While fly fishing, people stand either in the water or on the bank.
+These locations have specific characteristics such as certain insects, fish, plants, water movement, and sounds.
+The user will then need to be able to interact with these objects as well as the other way around.
+In this document I will be comparing the virtual object mechanics within different, free gaming engines: Unity3D, Unreal Engine, and Lumberyard.
 
-In order to find out which of these tools will be the most effective we will be looking at the ease of importing animals, of triggering sounds, and of animating these objects. The animation is the most important as it needs to not only give the illusion of realism but also react to user movements. For example, if the user steps into the water then not only will sounds need to occur but also certain fish animations may need to get triggered such as swimming away from the user. Sounds have an incredible power of creating immersion and therefore need to be comprehensive yet subtle. Subtlety is a big part of immersion as users should never feel overwhelmed by noises or animations.
+In order to find out which of these tools will be the most effective we will be looking at the ease of importing animals, of triggering sounds, and of animating these objects.
+The animation is the most important as it needs to not only give the illusion of realism but also react to user movements.
+For example, if the user steps into the water then not only will sounds need to occur but also certain fish animations may need to get triggered such as swimming away from the user.
+Sounds have an incredible power of creating immersion and therefore need to be comprehensive yet subtle.
+Subtlety is a big part of immersion as users should never feel overwhelmed by noises or animations.
 
 \vspace{2mm}
 \begin{table}[h!]
@@ -279,9 +339,19 @@ In order to find out which of these tools will be the most effective we will be 
 \end{table}
 \vspace{2mm}
 
-One of the biggest areas to look at here is the availability of free assets. This scope of this project is quite small so it is important to join a game engine community that supports this. Upon looking at Unity we found that there is a wide range of support for creating interactive games. Objects are easily importable and interaction is easily programmable. Objects interactive well and are able to demonstrate accurate collision mechanics. There is also a lot of flexibility when it comes to detected user location and movements. Unreal engine is equally as powerful but it doesn’t provide nearly as many free assets. Realistic interactions require a lot of subtle objects which won’t be possible in our time frame if we have to create everything from scratch. Lumberyard is an incredibly simple piece of software and offers very little when it comes generating realistic user interactions.
+One of the biggest areas to look at here is the availability of free assets.
+This scope of this project is quite small so it is important to join a game engine community that supports this.
+Upon looking at Unity we found that there is a wide range of support for creating interactive games.
+Objects are easily importable and interaction is easily programmable.
+Objects interactive well and are able to demonstrate accurate collision mechanics.
+There is also a lot of flexibility when it comes to detected user location and movements.
+Unreal engine is equally as powerful but it doesn’t provide nearly as many free assets.
+Realistic interactions require a lot of subtle objects which won’t be possible in our time frame if we have to create everything from scratch.
+Lumberyard is an incredibly simple piece of software and offers very little when it comes generating realistic user interactions.
 
-The amount of support behind Unity makes this tool much more effective for our needs. The community is made up of more enthusiasts and hobbyists which generates more free, quality assets. The flexibility and simplicity when programming user interaction will also give us a lot of freedom and the ability to create rapid activity prototypes.
+The amount of support behind Unity makes this tool much more effective for our needs.
+The community is made up of more enthusiasts and hobbyists which generates more free, quality assets.
+The flexibility and simplicity when programming user interaction will also give us a lot of freedom and the ability to create rapid activity prototypes.
 \vspace{2mm}
 
 
