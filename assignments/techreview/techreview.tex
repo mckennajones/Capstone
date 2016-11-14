@@ -117,15 +117,15 @@ Second, since this is a core function of our system we will consider if the gami
 \vspace{2mm}
 \begin{table}[h!]
 \centering
-  \begin{tabu} to 1.0\textwidth { | X[l] || X[c] | X[c] |  }
+  \begin{tabular}{ | l || c | c |  }
   \hline
-  Engine Name & Language & Native VR Support?\\
+  Engine Name & Language & Native VR Support\\
   \hline
-  Unity  & C\# & Yes\\
-  Unreal Engine & Blueprint Visual & Yes\\
-  Lumberyard & Lua & No\\
+  Unity  & C\# & Yes\\ \hline
+  Unreal Engine & Blueprint Visual & Yes\\ \hline
+  Lumberyard & Lua & No\\ \hline
   \hline
-  \end{tabu}
+  \end{tabular}
 \end{table}
 \vspace{2mm}
 
@@ -168,6 +168,70 @@ This is important for the project specifically because as it will be in a retail
 Finally, Unity is the best option in terms of documentation which is important for development.
 
 \subsubsection{Import Fishing Assets}
+As none of the members of this team are artists, the project will rely heavily on downloadable assets.
+These assets will be used to create nearly all aspects of the virtual reality environment.
+Therefore the assets used play an essential role in creating the most realistic environment possible.
+A wide variety of assets will be used to create the environment.
+There is not a defined list of different medias that will be used but a few likely ones are still images (textures), animations, and audio.
+
+As in other sections, the ability to handle assets in three different gaming engines, Unity, Unreal, and Amazon's Lumberyard engine will be compared.
+Three main categories will be considered in detail.
+Firstly, the access to a native asset store.
+This is preferable to searching for assets elsewhere.
+Secondly, the types of files that are supported for import.
+Since we are not certain of which assets we would like to use, the engine which has the widest support for file types is preferred here.
+Finally, we will examine each engine's method of organizing and importing assets.
+This project will make use of many assets so an organized system is crucial.
+
+\vspace{2mm}
+\begin{table}[h!]
+\centering
+  \begin{tabular}{ | l || c | c | c | }
+  \hline
+  Engine Name & Asset Store & File Support & Asset Organization and Import\\
+  \hline
+  Unity & Yes & Images, 3D models, Animations, Audio & Robust\\ \hline
+  Unreal Engine & Yes(new) & Images, 3D models, Animations, Audio & Supported\\ \hline
+  Lumberyard & No & FBX files & Minimal\\ \hline
+  \end{tabular}
+\end{table}
+\vspace{2mm}
+
+First we will consider Unity.
+One of Unity's selling points is its Asset Store.
+The Unity Asset store launched in 2010, making the oldest and most mature of the three gaming engines in discussion \cite{unity_store_age}.
+The asset store currently has over 15000 free and paid 3D assets to choose from.
+While browsing the store it becomes apparent that there has been an asset created for just about everything that the mind can imagine.
+Importing an asset into Unity from outside of the asset store is as simple as drag and dropping the asset into the Unity project window.
+Assets are organized in Unity in the Assets folder of the Project windows.
+Within the Assets folder assets are organized into subgroups of materials, textures, etc.
+This makes finding assets a painless process.
+Unity supports all major types of Images, 3D models, Animations, and Audio files.
+
+Second we will consider the Unreal Engine.
+Like Unity, the Unreal engine also has an asset store, called the Unreal Engine 4 Marketplace.
+The Marketplace, however, is much younger than the Asset Store of Unity.
+The Marketplace opened to developers during 2014 \cite{unreal_marketplace_date}.
+This means that number of available assets is significatly smaller than the Unity Asset Store.
+As far as importing assets, the process in Unreal is straightforward, and guided by a GUI.
+Organizing assets in Unreal is a bit more manual than Unity.
+One must manual manage the folders where assets are stored, and there is not an assets folder by default.
+Unreal supports all major types of Images, 3D models, animations, and Audio files.
+The prefered file format for importing assets FBX files, which is slightly limiting, as not all assets can be found in this format.
+
+Finally we have Amazon's Lumberyard Engine.
+Unlike Unity and Unreal, Lumbeyard does not have a place to download assets from within the engine.
+This means that you must look to other sources for assets, such as Unity's Asset Store, Unreal's Marketplace, or other websites.
+Like other parts of Lumberyard, the Asset Importer is still in preview release \cite{lumberyard_asset_import}.
+Currently it only suports FBX by default.
+If you would like to import other files you need to need to manually implement a new importer that will generate a SceneGraph for that particular file type \cite{lumberyard_asset_import}.
+Importing files requires navigating the instalation location of Lumberyard and manually copying and pasting the files to the correct location.
+
+After considering the three engines, Unity seems like the clear choice for importing and managing the assets needed to create our Virtual Reality environment.
+While both Unity and Unreal have places to download assets, Unity's Asset Store has the most assets by a long shot.
+Unity also has the benefit of having simple workflow for importing assets compared to Lumberyard.
+Unity has native support for importing many different file types, which is beneficial as it is not clear which assets we will be using yet.
+Finally, the process of importing and managing assets is organized and stable, which cannot be said about Lumberyard.
 
 \subsubsection{Fishing Rod Interaction and Mechanics}
 Within the outdoor virtual reality experience there will be the opportunity for users to go fly fishing in the virtual river. In order to achieve this capability, we will need to allow the user to first interact with a fishing rod. The mechanics of this process can get quite complicated and therefore it is important for us to decide on the correct tool to build this functionality. Not only will the user need to be able to pick up the fishing rod but they will also need the ability to cast and real the line back in. These are the basic functionality of the fishing rod and will need to be as realistic as possible to create the illusion they are actually participating in the activity. In this document I will be comparing the virtual object mechanics within different, free gaming engines: Unity3D, Unreal Engine, and Lumberyard.
