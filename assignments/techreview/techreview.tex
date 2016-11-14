@@ -72,9 +72,91 @@ Software Requirements Specification \\
 \subsection{Environment}
 \subsubsection{Create Static Environment}
 
+To begin any virtual reality development, one must first create a basic static environment to work in. This generally involves a couple major steps, and every legitimate game development platform can do these basic things.
+That means that in order to research which platform is best, we need to look not just at whether basic environment creation is possible, but how easy and smooth it is.
+There are many game engines out there, and many facets involved in creating a static environment, but we had to narrow down our research to just three engines and a handful of the most important features.
+In the simplest sense, there are three steps to creating a static environment in most game engines.
+First, one needs to be able to explore an empty landscape through a virtual reality headset.
+In our case, we already have been given an HTC Vive so that will be our headset of choice.
+Second, one needs to place static objects in the empty landscape.
+Third, it is important to look at how easy and intuitive it is to work with the camera because that is very important to any virtual reality experience.
+
+Each game engine will be better at some things and worse at others, so we will rate the three based on relative ease of doing the above three tasks.
+
+\vspace{2mm}
+\begin{table}[h!]
+\centering
+  \begin{tabu} to 1.0\textwidth { | X[l] || X[c] | X[c] | X[c] |  }
+  \hline
+  Engine Name & Headset Testing & Object Placement & Camera Interaction\\
+  \hline
+  Unity & FILL & FILL & FILL\\
+  Unreal Engine & FILL & FILL & FILL\\
+  Lumberyard & FILL & FILL & FILL\\
+  \hline
+  \end{tabu}
+\end{table}
+\vspace{2mm}
+
 \subsubsection{Animate Environment}
 
+Animating objects and characters in an environment is a key aspect of virtual reality development, just as with any game development.
+How real a virtual reality experience feels can be negatively effected by unresponsive objects or unrealistic animations.
+Again looking at different game engines, we wanted to figure out which engines are the most intuitive and powerful.
+We chose two areas to focus on in regards to animation, so that we could narrow our comparisons.
+The first is linear animation which is preset and runs like a movie. User interaction does not effect linear animation.
+We will use some linear animation for the parts of our scene that the user cannot effect, such as swaying trees or distant water movement.
+Second, we want to look at interactive animation which is a set of animations that are performed based on user input.
+This is a huge section for virtual reality development, because the basis for a real experience is whether the world feels interactive.
+
+For each engine listed in the table below, we will compare how the engine handles both kinds of animation.
+
+\vspace{2mm}
+\begin{table}[h!]
+\centering
+  \begin{tabu} to 1.0\textwidth { | X[l] || X[c] | X[c] |  }
+  \hline
+  Engine Name & Linear Animation & Interactive Animation\\
+  \hline
+  Unity  & Animation Curves & Animation Events\\
+  Unreal Engine & Animation Blueprint & EventGraphs\\
+  Lumberyard & Track View and LimbIK Technical & AnimationEvent and XML file\\
+  \hline
+  \end{tabu}
+\end{table}
+\vspace{2mm}
+
 \subsubsection{Add Audio}
+Look at:
+Location Specific Sound
+Sound Cues
+Managing Sound Data
+
+Another key aspect of creating an immersive virtual reality experience is adding audio effects.
+A static soundtrack works well for 2D video, but for a virtual reality experience the audio has to be much more complex and dynamic.
+As Mona Lalwani mentions in her article \"For VR to be truly immersive, it needs convincing sound to match\", the biggest keys to realistic 3D sound with the technology we currently have are sound cues and three dimentional sound.  
+Sound cues are audio events that react to specific triggers.  For example, if I move my foot through water that should elicit some sort of sound response.
+3D audio can be created in a couple different ways, including sound attention and occlusion.
+Basically, this just means changing the audio in an experience based on user location and the other objects in the area.
+Finally, another key to developing audio in a game engine is how sound data is managed.  Most engines have various ways to manage their sound data, each with benefits and drawbacks.
+
+We will compare the usual three game engines: Unity, Unreal Engine, and Lumberyard.  
+
+\vspace{2mm}
+\begin{table}[h!]
+\centering
+  \begin{tabu} to 1.0\textwidth { | X[l] || X[c] | X[c] |  }
+  \hline
+  Engine Name & Sound Cues & 3D Sound & Managing Sound Data\\
+  \hline
+  Unity  & AudioSource Effects & AudioSource Matrices & Audio Spacializer SDK\\
+  Unreal Engine & Visual Sound Cue Nodes & Attenuation Shapes & Audio Node Graph\\
+  Lumberyard & Audio Play/Stop Triggers & Raycasting & Audiokinetic Wwise LTX\\
+  \hline
+  \end{tabu}
+\end{table}
+\vspace{2mm}
+
 
 \subsubsection{Improve Realism and Immersion}
 The goal of our project is create a realistic, virtual, outdoor experience that makes users feel like they’ve been transported to a different location.
