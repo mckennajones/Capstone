@@ -62,11 +62,18 @@ Software Requirements Specification \\
 \vspace{3cm}
 \maketitle
 \vspace{3cm}
+\begin{abstract}
+Virtual reality is just starting to enter all kinds of markets. Everyone is trying to figure out the best way to implement their VR applications. Each VR project is going to be looking for different things when it comes to hardware and development environments. For our project we have been given an HTC Vive which handles the hardware but we still need to choose appropriate software to use in development. There are a variety of options and we'll be looking for one that is inexpensive, easy to learn, powerful enough to develop a realistic VR application, and easily configurable with SteamVR. In this document we break down the different aspects of our project and compare possible technology against specific requirements related to each piece.
+\end{abstract}
 
 \end{titlepage}
 
-\section{Introduction}
+\tableofcontents
+\clearpage
 
+
+\section{Introduction}
+The development experience in Virtual Reality is still in its infancy. However, gaming engines have been around for a while and fortunately some of them development SteamVR integration. There are currently multiple powerful and free VR gaming engines on the market to choose from. For our project we need to develop a realistic application that users are able to navigate and interact with a variety of objects and natural elements. When amking a decision, the first thing we will be looking at is whether or not the engine is powerful enough to create a VR application. Next will be its integration with SteamVR and how easy it is to learn. We only have six months for our prject so we need to make sure we can pick up the tools quickly. The three main aspects of our project are construct the environment, integrating Columbia products, and create a fishing experience.
 
 \section{Project Sections}
 \subsection{Environment}
@@ -134,18 +141,18 @@ Managing Sound Data
 
 Another key aspect of creating an immersive virtual reality experience is adding audio effects.
 A static soundtrack works well for 2D video, but for a virtual reality experience the audio has to be much more complex and dynamic.
-As Mona Lalwani mentions in her article \"For VR to be truly immersive, it needs convincing sound to match\", the biggest keys to realistic 3D sound with the technology we currently have are sound cues and three dimentional sound.  
+As Mona Lalwani mentions in her article \"For VR to be truly immersive, it needs convincing sound to match\", the biggest keys to realistic 3D sound with the technology we currently have are sound cues and three dimentional sound.
 Sound cues are audio events that react to specific triggers.  For example, if I move my foot through water that should elicit some sort of sound response.
 3D audio can be created in a couple different ways, including sound attention and occlusion.
 Basically, this just means changing the audio in an experience based on user location and the other objects in the area.
 Finally, another key to developing audio in a game engine is how sound data is managed.  Most engines have various ways to manage their sound data, each with benefits and drawbacks.
 
-We will compare the usual three game engines: Unity, Unreal Engine, and Lumberyard.  
+We will compare the usual three game engines: Unity, Unreal Engine, and Lumberyard.
 
 \vspace{2mm}
 \begin{table}[h!]
 \centering
-  \begin{tabu} to 1.0\textwidth { | X[l] || X[c] | X[c] |  }
+  \begin{tabu} to 1.0\textwidth { | X[l] || X[c] | X[c] | X[c] }
   \hline
   Engine Name & Sound Cues & 3D Sound & Managing Sound Data\\
   \hline
@@ -165,7 +172,7 @@ The first thing that came to our mind was to increase the detail of the objects 
 It turns out this is only one aspect of creating a visually successful game.
 The other two are frames per second and resolution.
 These three concepts make up what is called the graphical fidelity triangle.
-According to a study done by Intel and Thug[ONE], immersion needs graphical fidelity, not realism.
+According to a study done by Intel and Thug\cite{michalak_lind_round1}, immersion needs graphical fidelity, not realism.
 They found that what was important was that graphics were crisp and clean at all times.
 They found that a smooth experience, one without glitches and lost frames, was the most important aspect of immersion.
 They even went a step further to argue that photo-realism is often times worse because it makes inaccuracies more obvious.
@@ -447,7 +454,10 @@ The flexibility and simplicity when programming user interaction will also give 
 \subsubsection{Allow User Interaction with Products}
 
 
-\section{Works Cited}
+
+\section{Conclusion}
+
+
 \bibliographystyle{IEEEtran}
 \bibliography{techreview}
 \end{document}
