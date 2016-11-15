@@ -90,7 +90,7 @@ Third, it is important to look at how easy and intuitive it is to work with the 
 The three game engines we will look at are the Unity game engine, the Unreal Engine, and Amazon Web Services' Lumberyard game engine.
 
 To create a static environment in Lumberyard, one starts with creating a new level.  These levels are the basis for game development in Lumberyard. \cite{lumberyard_levels_environment}
-On creation, a developer is asked to fill out information about heighmaps, terrain texture, and color multipliers.
+On creation, a developer is asked to fill out information about heightmaps, terrain texture, and color multipliers.
 Once a level has been created, the next step is to populate the environment with static objects.
 Lumberyard breaks objects into a couple categories.  These can include, among other things, brushes and entities.
 Brushes are objects that the user cannot interact with, while entities have the ability to be interacted with dynamically. \cite{lumberyard_object_system}
@@ -98,7 +98,7 @@ Lumberyard handles camera creation, views, and movement like the developer is sh
 A camera is an object itself, and can be selected and moved about in the Track View editor.  To move a camera, simply unlock it and use the mouse and keyboard to move it as it records. \cite{lumberyard_object_system}
 
 If one instead wants to go about creating an environment in the Unity game engine, simply create a new project and a basic empty scene will be generated.
-Adding objects to the scene can be done through the Object menu, where there is a list of 3D obejcts to choose from. \cite{unity_getting_started}
+Adding objects to the scene can be done through the Object menu, where there is a list of 3D objects to choose from. \cite{unity_getting_started}
 In order to interact with a basic camera object in Unity, one simply makes a parent object from the basic object class and moves that object, bringing the camera with it.
 This way, all the same movement and animation processes that apply to normal objects apply to cameras as well. \cite{unity_getting_started}
 
@@ -116,12 +116,12 @@ With those constraints in mind, the Unity game engine would be best for simple s
 \subsubsection{Animate Environment}
 
 Animating objects and characters in an environment is a key aspect of virtual reality development, just as with any game development.
-How real a virtual reality experience feels can be negatively effected by unresponsive objects or unrealistic animations.
+Unresponsive objects or unrealistic animations can negatively effect how real a virtual reality experience feels.
 Again looking at different game engines, we wanted to figure out which engines are the most intuitive and powerful.
 We chose two areas to focus on in regards to animation, so that we could narrow our comparisons.
-The first is linear animation which is preset and runs like a movie. User interaction does not effect linear animation.
-We will use some linear animation for the parts of our scene that the user cannot effect, such as swaying trees or distant water movement.
-Second, we want to look at interactive animation which is a set of animations that are performed based on user input.
+The first is linear animation, which is preset, and runs like a movie. User interaction does not effect linear animation.
+We will use some linear animation for the parts of our scene that the user cannot affect, such as swaying trees or distant water movement.
+Second, we want to look at interactive animation, which is a set of animations that are performed based on user input.
 This is a huge section for virtual reality development, because the basis for a real experience is whether the world feels interactive.
 
 For each engine listed in the table below, we will compare how the engine handles both kinds of animation.
@@ -134,22 +134,37 @@ For each engine listed in the table below, we will compare how the engine handle
   Engine Name & Linear Animation & Interactive Animation\\
   \hline
   Unity  & Animation Curves & Animation Events\\
-  Unreal Engine & Animation Blueprint & EventGraphs\\
+  Unreal Engine & AnimMontages & EventGraphs\\
   Lumberyard & Track View and LimbIK Technical & AnimationEvent and XML file\\
   \hline
   \end{tabu}
 \end{table}
 \vspace{2mm}
 
+When looking to animate objects in Lumberyard, there is the clearest split between linear and interactive animation.
+For linear animation, developers use the Track View to work through animations frame by frame.
+When animating people, Lumberyard developers can utilize Limb IK to set an endpoint for a hand or foot and have the engine calculate limb movement that achieves that end goal. \cite{lumberyard_animation}
+For interactive animation, Lumberyard has two categories to handle dynamic animated responses.
+Avatar controls deal with the character that a user is going to control.  This means that movement commands come mostly from outside the game code.
+AI controls deal with non-user controlled characters.  Every movement and decision made by these controls is housed in game code.
+Both of these are part of the bigger picture for interactive animation in Lumberyard that attempts to implement automatic motion synthesis. \cite{lumberyard_animation}
+
+Animation in Unity is based on a collection of clips that can be combined in complex ways, controlled using animation curves, and triggered by animation events.
+For linear animation, Unity provides a flowchart-style window to manage animation clips and their interaction with each other. \cite{unity_animation}
+Once a set of animations has been combined, Unity developers can use animation curves to connect other game content and parameters with an object in motion. \cite{unity_animation_tutorial}
+When an object needs to respond to user interaction, animation events come into play.  These are simple functions with triggers that set up a specific animated response for an input action. \cite{unity_animation}
+
+The Unreal Engine handles animation with a combination of skeletal and vertex morphs, which are controlled through a visual graph of animation events.
+Linear and interactive animation events are handled in somewhat the same way, by adding interactions between events to the EventGraph.
+Developers can manage events themselves, their effects on the overall animation blueprint, and interaction between events all in one place. \cite{unreal_animation}
+
+For our project, the animation needs in the general environment are broken into these two categories equally. We will have linear animation used to make the environment around the user come to life. Also, we will utilize interactive animation both to make close objects react to the user's presence, as well as handle item selection and manipulation by the user. After learning about all three game engines and how they handle animation, it seems that the Unity game engine fits our needs the best. The other two engines are focused heavily on complex human animation and interaction, and we do not need all that for our game. The Unity engine breaks every animation down into manageable and reusable clips that we can populate our entire environment with.
+
 \subsubsection{Add Audio}
-Look at:
-Location Specific Sound
-Sound Cues
-Managing Sound Data
 
 Another key aspect of creating an immersive virtual reality experience is adding audio effects.
 A static soundtrack works well for 2D video, but for a virtual reality experience the audio has to be much more complex and dynamic.
-As Mona Lalwani mentions in her article \"For VR to be truly immersive, it needs convincing sound to match\", the biggest keys to realistic 3D sound with the technology we currently have are sound cues and three dimentional sound. \cite{engadget_immersive_sound}
+As Mona Lalwani mentions in her article \"For VR to be truly immersive, it needs convincing sound to match\", the biggest keys to realistic 3D sound with the technology we currently have are sound cues and three-dimensional sound. \cite{engadget_immersive_sound}
 Sound cues are audio events that react to specific triggers.  For example, if I move my foot through water that should elicit some sort of sound response.
 3D audio can be created in a couple different ways, including sound attention and occlusion.
 Basically, this just means changing the audio in an experience based on user location and the other objects in the area.
@@ -172,6 +187,23 @@ We will compare the usual three game engines: Unity, Unreal Engine, and Lumberya
 \end{table}
 \vspace{2mm}
 
+In Lumberyard, 3D audio is handled by using raycasting through the Audiokinetic Wwise LTX audio system.
+Attenuation and occlusion are calculated by tracking a sound vector.
+This means that the path from a sound source to the user is calculated, and objects and distances in between affect the final sound.
+In order to implement responsive sounds, Lumberyard has Audio PlayTrigger and StopTrigger methods.  This allows sounds with all of their properties to be triggered dynamically. \cite{lumberyard_audio_system}
+
+Audio in the Unreal Engine is handled like many other things in the engine, with a node-based visual map.
+This map allows audio clips to play in any order, and interact with each other in complex ways.
+Each individual sound is a node on the chart that represents an audio clip bound to a Sound Cue Node.
+These sounds can then be made realistic by adding attenuation through either a simple distance algorithm or attenuation shapes.
+Attenuation shapes help create consistent, realistic soundscapes in an environment by calculating attenuation based on a geometric shape that might fit a certain location better than a simple distance calculation. \cite{unreal_audio}
+
+Unity audio is a system of audio clips that are sent from an Audio Source to and Audio Listener.  Both are attached to objects, the latter usually to the main camera object.
+Audio Sources generate sounds when audio clips are triggered through AudioSource Effects, allowing for dynamic sound cues.
+To make those sounds more realistic, Unity uses the Audio Spacializer SDK to handle attenuation and other audio effects like echoing and the Doppler Effect.
+A system of matrices handles how the listener and source handle complex audio, although the spacializer performs good portions of the calculations. \cite{unity_audio}
+
+In the end, our choice in game engine for audio comes down to choosing a simple system and choosing a system that will most help bring realism to the soundscape of our environment.  This is a hard balance, but it seems like the Unreal Engine finds the best middle ground.  In the Unreal Engine there is no added outside software to handle complex sound manipulation.  Also, the attenuation shapes feature of the Unreal Engine might be extremely useful to relatively quickly create a real sounding landscape.
 
 \subsubsection{Improve Realism and Immersion}
 The goal of our project is create a realistic, virtual, outdoor experience that makes users feel like they have been transported to a different location.
