@@ -87,23 +87,31 @@ First, one needs to be able to explore an empty landscape through a virtual real
 In our case, we already have been given an HTC Vive so that will be our headset of choice.
 Second, one needs to place static objects in the empty landscape.
 Third, it is important to look at how easy and intuitive it is to work with the camera because that is very important to any virtual reality experience.
+The three game engines we will look at are the Unity game engine, the Unreal Engine, and Amazon Web Services' Lumberyard game engine.
 
-Each game engine will be better at some things and worse at others, so we will rate the three based on relative ease of doing the above three tasks.
+To create a static environment in Lumberyard, one starts with creating a new level.  These levels are the basis for game development in Lumberyard. \cite{lumberyard_levels_environment}
+On creation, a developer is asked to fill out information about heighmaps, terrain texture, and color multipliers.
+Once a level has been created, the next step is to populate the environment with static objects.
+Lumberyard breaks objects into a couple categories.  These can include, among other things, brushes and entities.
+Brushes are objects that the user cannot interact with, while entities have the ability to be interacted with dynamically. \cite{lumberyard_object_system}
+Lumberyard handles camera creation, views, and movement like the developer is shooting a cinematic scene (which sometimes they are).
+A camera is an object itself, and can be selected and moved about in the Track View editor.  To move a camera, simply unlock it and use the mouse and keyboard to move it as it records. \cite{lumberyard_object_system}
 
-\vspace{2mm}
-\begin{table}[h!]
-\centering
-  \begin{tabu} to 1.0\textwidth { | X[l] || X[c] | X[c] | X[c] |  }
-  \hline
-  Engine Name & Headset Testing & Object Placement & Camera Interaction\\
-  \hline
-  Unity & FILL & FILL & FILL\\
-  Unreal Engine & FILL & FILL & FILL\\
-  Lumberyard & FILL & FILL & FILL\\
-  \hline
-  \end{tabu}
-\end{table}
-\vspace{2mm}
+If one instead wants to go about creating an environment in the Unity game engine, simply create a new project and a basic empty scene will be generated.
+Adding objects to the scene can be done through the Object menu, where there is a list of 3D obejcts to choose from. \cite{unity_getting_started}
+In order to interact with a basic camera object in Unity, one simply makes a parent object from the basic object class and moves that object, bringing the camera with it.
+This way, all the same movement and animation processes that apply to normal objects apply to cameras as well. \cite{unity_getting_started}
+
+Finally, if one wants to create a static environment in the Unreal Engine, they create a project and, like Lumberyard, add a new level.
+There is a specific empty level for virtual reality development, which adds certain basic settings and capabilities automatically. \cite{unreal_editor_manual}
+To add static objects to the recently created level, one should add actors.  Actors are any objects that can be placed into a level.
+Specifically, geometry brush actors are the simplest way to add geometry to a level. \cite{unreal_editor_manual}
+Cameras are just a type of actor that can be added to a scene in Unreal Engine.  Once added, cameras have their own set of attributes and methods that allow interaction.
+
+All three game engines have certain appealing qualities for our project.
+However, the scene that we are creating is relatively simple in the sense that there will not be significant character movement and most objects won't need to be interacted with.
+Also, we will most likely only need one scene, so the ability to easily work with multiple levels does not have much appeal.
+With those constraints in mind, the Unity game engine would be best for simple static object creation because of its simplicity and the universal handling of 3D objects.
 
 \subsubsection{Animate Environment}
 
@@ -141,7 +149,7 @@ Managing Sound Data
 
 Another key aspect of creating an immersive virtual reality experience is adding audio effects.
 A static soundtrack works well for 2D video, but for a virtual reality experience the audio has to be much more complex and dynamic.
-As Mona Lalwani mentions in her article \"For VR to be truly immersive, it needs convincing sound to match\", the biggest keys to realistic 3D sound with the technology we currently have are sound cues and three dimentional sound.
+As Mona Lalwani mentions in her article \"For VR to be truly immersive, it needs convincing sound to match\", the biggest keys to realistic 3D sound with the technology we currently have are sound cues and three dimentional sound. \cite{engadget_immersive_sound}
 Sound cues are audio events that react to specific triggers.  For example, if I move my foot through water that should elicit some sort of sound response.
 3D audio can be created in a couple different ways, including sound attention and occlusion.
 Basically, this just means changing the audio in an experience based on user location and the other objects in the area.
