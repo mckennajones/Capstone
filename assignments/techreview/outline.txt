@@ -1,0 +1,16 @@
+Environment
+	Import and use assets to create static environment
+	Visually animate environment
+	Add audio to experience
+	Make environment realistic
+Columbia Products
+	Create avatars to display gear
+	Import Columbia gear into project 
+	Place 3d renderings onto moving avatars (animate clothes)
+	Allow users to interact with products to view related information
+Fishing Experience
+    	Process user wand movement
+    	Import rod and allow user interaction
+    	Add fishing rod physics
+    	Integrate usage with environment
+
