@@ -41,7 +41,7 @@ Software Requirements Specification \\
 \vspace{3cm}
 }
 \author{Jake Jeffreys, McKenna Jones, Spike Madden, Sean Marty}
-\date{November 8, 2016}
+\date{November 14th, 2016}
 
 %pull in the necessary preamble matter for pygments output
 
@@ -63,7 +63,12 @@ Software Requirements Specification \\
 \maketitle
 \vspace{3cm}
 \begin{abstract}
-Virtual reality is just starting to enter all kinds of markets. Everyone is trying to figure out the best way to implement their VR applications. Each VR project is going to be looking for different things when it comes to hardware and development environments. For our project we have been given an HTC Vive which handles the hardware but we still need to choose appropriate software to use in development. There are a variety of options and we'll be looking for one that is inexpensive, easy to learn, powerful enough to develop a realistic VR application, and easily configurable with SteamVR. In this document we break down the different aspects of our project and compare possible technology against specific requirements related to each piece.
+Virtual reality is just starting to enter all kinds of markets.
+Everyone is trying to figure out the best way to implement their VR applications.
+Each VR project is going to be looking for different things when it comes to hardware and development environments.
+For our project we have been given an HTC Vive which handles the hardware but we still need to choose appropriate software for use in development.
+There are a variety of options and we'll be looking for one that is inexpensive, easy to learn, powerful enough to develop a realistic VR application, and easily configurable with SteamVR.
+In this document we break down the different aspects of our project and compare possible technology against specific requirements related to each piece.
 \end{abstract}
 
 \end{titlepage}
@@ -71,15 +76,29 @@ Virtual reality is just starting to enter all kinds of markets. Everyone is tryi
 \tableofcontents
 \clearpage
 
-
 \section{Introduction}
-The development experience in Virtual Reality is still in its infancy. However, gaming engines have been around for a while and fortunately some of them development SteamVR integration. There are currently multiple powerful and free VR gaming engines on the market to choose from. For our project we need to develop a realistic application that users are able to navigate and interact with a variety of objects and natural elements. When making a decision, the first thing we will be looking at is whether or not the engine is powerful enough to create a VR application. Next will be its integration with SteamVR and how easy it is to learn. We only have six months for our project so we need to make sure we can pick up the tools quickly. The three main aspects of our project are construct the environment, integrating Columbia products, and create a fishing experience.
+The development experience in Virtual Reality is still in its infancy.
+However, gaming engines have been around for a while and fortunately some of them support SteamVR integration.
+There are currently multiple powerful and free VR gaming engines on the market to choose from.
+For our project we need to develop a realistic application that users are able to navigate and interact with a variety of objects and natural elements.
+When making a decision, the first thing we will be looking at is whether or not the engine is powerful enough to create a VR application.
+Next will be its integration with SteamVR and how easy it is to learn.
+We only have six months for our project so we need to make sure we can pick up the tools quickly.
+The three main aspects of our project are constructing the environment, integrating Columbia products, and create a fishing experience.
+
+Authorship of Sections
+\begin{itemize}
+	\item 2.1.1, 2.1.2, and 2.1.3: Sean Marty
+	\item 2.1.4, 2.2.3, and 2.2.4: Jake Jeffreys
+	\item 2.2.1, 2.2.2, and 2.3.4: McKenna Jones
+	\item 2.3.1, 2.3.2, and 2.3.3: Spike Madden
+\end{itemize}
 
 \section{Project Sections}
 \subsection{Environment}
 \subsubsection{Create Static Environment}
-
-To begin any virtual reality development, one must first create a basic static environment to work in. This generally involves a couple major steps, and every legitimate game development platform can do these basic things.
+To begin any virtual reality development, one must first create a basic static environment to work in.
+This generally involves a couple major steps, and every legitimate game development platform can do these basic things.
 That means that in order to research which platform is best, we need to look not just at whether basic environment creation is possible, but how easy and smooth it is.
 There are many game engines out there, and many facets involved in creating a static environment, but we had to narrow down our research to just three engines and a handful of the most important features.
 In the simplest sense, there are three steps to creating a static environment in most game engines.
@@ -95,7 +114,8 @@ Once a level has been created, the next step is to populate the environment with
 Lumberyard breaks objects into a couple categories.  These can include, among other things, brushes and entities.
 Brushes are objects that the user cannot interact with, while entities have the ability to be interacted with dynamically. \cite{lumberyard_object_system}
 Lumberyard handles camera creation, views, and movement like the developer is shooting a cinematic scene (which sometimes they are).
-A camera is an object itself, and can be selected and moved about in the Track View editor.  To move a camera, simply unlock it and use the mouse and keyboard to move it as it records. \cite{lumberyard_object_system}
+A camera is an object itself, and can be selected and moved about in the Track View editor.
+To move a camera, simply unlock it and use the mouse and keyboard to move it as it records. \cite{lumberyard_object_system}
 
 If one instead wants to go about creating an environment in the Unity game engine, simply create a new project and a basic empty scene will be generated.
 Adding objects to the scene can be done through the Object menu, where there is a list of 3D objects to choose from. \cite{unity_getting_started}
@@ -158,7 +178,12 @@ The Unreal Engine handles animation with a combination of skeletal and vertex mo
 Linear and interactive animation events are handled in somewhat the same way, by adding interactions between events to the EventGraph.
 Developers can manage events themselves, their effects on the overall animation blueprint, and interaction between events all in one place. \cite{unreal_animation}
 
-For our project, the animation needs in the general environment are broken into these two categories equally. We will have linear animation used to make the environment around the user come to life. Also, we will utilize interactive animation both to make close objects react to the user's presence, as well as handle item selection and manipulation by the user. After learning about all three game engines and how they handle animation, it seems that the Unity game engine fits our needs the best. The other two engines are focused heavily on complex human animation and interaction, and we do not need all that for our game. The Unity engine breaks every animation down into manageable and reusable clips that we can populate our entire environment with.
+For our project, the animation needs in the general environment are broken into these two categories equally.
+We will have linear animation used to make the environment around the user come to life.
+Also, we will utilize interactive animation both to make close objects react to the user's presence, as well as handle item selection and manipulation by the user.
+After learning about all three game engines and how they handle animation, it seems that the Unity game engine fits our needs the best.
+The other two engines are focused heavily on complex human animation and interaction, and we do not need all that for our game.
+The Unity engine breaks every animation down into manageable and reusable clips that we can populate our entire environment with.
 
 \subsubsection{Add Audio}
 
@@ -175,7 +200,7 @@ We will compare the usual three game engines: Unity, Unreal Engine, and Lumberya
 \vspace{2mm}
 \begin{table}[h!]
 \centering
-  \begin{tabu} to 1.0\textwidth { | X[l] || X[c] | X[c] | X[c] }
+  \begin{tabu} to 1.0\textwidth { | X[l] || X[c] | X[c] | X[c] | }
   \hline
   Engine Name & Sound Cues & 3D Sound & Managing Sound Data\\
   \hline
@@ -280,7 +305,6 @@ Second, since this is a core function of our system we will consider if the gami
   Unity  & C\# & Yes\\ \hline
   Unreal Engine & Blueprint Visual & Yes\\ \hline
   Lumberyard & Lua & No\\ \hline
-  \hline
   \end{tabular}
 \end{table}
 \vspace{2mm}
@@ -388,7 +412,6 @@ While both Unity and Unreal have places to download assets, Unity's Asset Store 
 Unity also has the benefit of having simple workflow for importing assets compared to Lumberyard.
 Unity has native support for importing many different file types, which is beneficial as it is not clear which assets we will be using yet.
 Finally, the process of importing and managing assets is organized and stable, which cannot be said about Lumberyard.
-
 
 \subsubsection{Fishing Rod Interaction and Mechanics}
 Within the outdoor virtual reality experience there will be the opportunity for users to go fly fishing in the virtual river.
@@ -569,23 +592,22 @@ Lumberyard's documentation on animation is limited, which is expected as it's st
 Both Unity and Unreal Engine 4 have animation systems that are capable of handling the task of creating realistic animations that will help to build an immersive virtual reality experience. Both Unity and Unreal Engine 4 have very similar technologies that implement the animation workflow. Since Lumberyard is still in beta, Unity and Unreal Engine 4 seem like suitable choices for this project when it comes to animation.
 
 \subsubsection{Allow User Interaction with Products}
-In order for the user to consume information related to the Columbia Gear it will need to be displayed in some fashion within the VR environment.
+In order for the user to consume information related to the Columbia Sportswear gear it will need to be displayed in some fashion within the VR environment.
 This will likely be done with a mixture of menus and dialogs.
 Different gaming engines go about doing this in different ways.
 The following section will compare support for different menu and dialog systems in Unity, Unreal, and Amazon's Lumberyard Engine.
 
 There are a couple things to consider when creating menus and dialogs in VR.
-In traditional games user interfaces are generally non-digetic, meaning that it does not actually exist in the world.
-Think of a traditional heads up display.
+In traditional games, user interfaces are generally non-digetic, meaning that it does not actually exist in the world.
+Think of a traditional heads-up display.
 Unfortunately this approach does not work well in Virtual Reality.
 It has the possibility of causing nausea and straining the user's eyes.
-A better approach is Spacial UI.
-Two other alternatives are Diegetic UI and Spacial UI.
+Two other alternatives are diegetic UI and spatial UI.
 Diegetic UI elements are attached to something within the environment.
 Spacial UI elements are positioned in the environment.
 Another thing to consider is how the user will interact with the UI elements.
 In our case, using the Vive, it is possible for the user to interact with the UI either with the controllers or the headset.
-Therefore, we will consider which the different types of UI and user interaction each gaming engine supports.
+Therefore, we will consider which different types of UI and user interaction each gaming engine supports.
 
 \vspace{2mm}
 \begin{table}[h!]
@@ -597,7 +619,6 @@ Therefore, we will consider which the different types of UI and user interaction
   Unity & Diegetic, Spatial &  Headset and Controller interaction\\ \hline
   Unreal Engine & Widgets & Controller and Headset interaction\\ \hline
   Lumberyard & No native VR user interfaces & No support\\ \hline
-  \hline
   \end{tabular}
 \end{table}
 \vspace{2mm}
@@ -639,7 +660,12 @@ Finally, Unity supports interaction with both the headset and the controllers.
 These factors make it a clear choice for displaying the information related to the Columbia Sportswear gear.
 
 \section{Conclusion}
-
+After considering the three different gaming engines discussed in this document, the best pick is clearly Unity, for a number of reasons.
+The fact that we are working with the HTC Vive VR system greatly influences this decision.
+Unity is the accepted game engine for SteamVR development and therefore the Vive aswell.
+Unity is also the engine that has built in support for various VR related functions, whereas in Unreal and Lumberyard, VR support is minimal and cumbersome.
+Finally, there is the added benefit of Unity using C\# as its scripting language, a language that our team is experienced in.
+Overall, Unity will allow us to hit the ground running and develop our project as efficiently as possible.
 \bibliographystyle{IEEEtran}
 \bibliography{techreview}
 \end{document}
