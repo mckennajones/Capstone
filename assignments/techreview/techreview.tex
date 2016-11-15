@@ -143,14 +143,14 @@ For each engine listed in the table below, we will compare how the engine handle
 
 When looking to animate objects in Lumberyard, there is the clearest split between linear and interactive animation.
 For linear animation, developers use the Track View to work through animations frame by frame.
-When animating people, Lumberyard developers can utilize Limb IK to set an endpoint for a hand or foot and have the engine calculate limb movement that achieves that end goal. \cite{lumberyard animation}
+When animating people, Lumberyard developers can utilize Limb IK to set an endpoint for a hand or foot and have the engine calculate limb movement that achieves that end goal. \cite{lumberyard_animation}
 For interactive animation, Lumberyard has two categories to handle dynamic animated responses.
 Avatar controls deal with the character that a user is going to control.  This means that movement commands come mostly from outside the game code.
 AI controls deal with non-user controlled characters.  Every movement and decision made by these controls is housed in game code.
-Both of these are part of the bigger picture for interactive animation in Lumberyard that attempts to implement automatic motion synthesis. \cite{lumberyard animation}
+Both of these are part of the bigger picture for interactive animation in Lumberyard that attempts to implement automatic motion synthesis. \cite{lumberyard_animation}
 
 Animation in Unity is based on a collection of clips that can be combined in complex ways, controlled using animation curves, and triggered by animation events.
-For linear animation, Unity provides a flowchart-style window to manage animation clips and their interaction with each other. \cite{unity animation}
+For linear animation, Unity provides a flowchart-style window to manage animation clips and their interaction with each other. \cite{unity_animation}
 Once a set of animations has been combined, Unity developers can use animation curves to connect other game content and parameters with an object in motion. \cite{unity_animation_tutorial}
 When an object needs to respond to user interaction, animation events come into play.  These are simple functions with triggers that set up a specific animated response for an input action. \cite{unity_animation}
 
