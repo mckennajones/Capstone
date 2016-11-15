@@ -73,7 +73,7 @@ Virtual reality is just starting to enter all kinds of markets. Everyone is tryi
 
 
 \section{Introduction}
-The development experience in Virtual Reality is still in its infancy. However, gaming engines have been around for a while and fortunately some of them development SteamVR integration. There are currently multiple powerful and free VR gaming engines on the market to choose from. For our project we need to develop a realistic application that users are able to navigate and interact with a variety of objects and natural elements. When amking a decision, the first thing we will be looking at is whether or not the engine is powerful enough to create a VR application. Next will be its integration with SteamVR and how easy it is to learn. We only have six months for our prject so we need to make sure we can pick up the tools quickly. The three main aspects of our project are construct the environment, integrating Columbia products, and create a fishing experience.
+The development experience in Virtual Reality is still in its infancy. However, gaming engines have been around for a while and fortunately some of them development SteamVR integration. There are currently multiple powerful and free VR gaming engines on the market to choose from. For our project we need to develop a realistic application that users are able to navigate and interact with a variety of objects and natural elements. When making a decision, the first thing we will be looking at is whether or not the engine is powerful enough to create a VR application. Next will be its integration with SteamVR and how easy it is to learn. We only have six months for our project so we need to make sure we can pick up the tools quickly. The three main aspects of our project are construct the environment, integrating Columbia products, and create a fishing experience.
 
 \section{Project Sections}
 \subsection{Environment}
@@ -90,7 +90,7 @@ Third, it is important to look at how easy and intuitive it is to work with the 
 The three game engines we will look at are the Unity game engine, the Unreal Engine, and Amazon Web Services' Lumberyard game engine.
 
 To create a static environment in Lumberyard, one starts with creating a new level.  These levels are the basis for game development in Lumberyard. \cite{lumberyard_levels_environment}
-On creation, a developer is asked to fill out information about heighmaps, terrain texture, and color multipliers.
+On creation, a developer is asked to fill out information about heightmaps, terrain texture, and color multipliers.
 Once a level has been created, the next step is to populate the environment with static objects.
 Lumberyard breaks objects into a couple categories.  These can include, among other things, brushes and entities.
 Brushes are objects that the user cannot interact with, while entities have the ability to be interacted with dynamically. \cite{lumberyard_object_system}
@@ -147,7 +147,7 @@ Location Specific Sound
 Sound Cues
 Managing Sound Data
 
-Another key aspect of creating an immersive virtual reality experience is adding audio effects.
+Another key aspect of creating an immersion virtual reality experience is adding audio effects.
 A static soundtrack works well for 2D video, but for a virtual reality experience the audio has to be much more complex and dynamic.
 As Mona Lalwani mentions in her article \"For VR to be truly immersive, it needs convincing sound to match\", the biggest keys to realistic 3D sound with the technology we currently have are sound cues and three dimentional sound. \cite{engadget_immersive_sound}
 Sound cues are audio events that react to specific triggers.  For example, if I move my foot through water that should elicit some sort of sound response.
@@ -175,7 +175,7 @@ We will compare the usual three game engines: Unity, Unreal Engine, and Lumberya
 
 \subsubsection{Improve Realism and Immersion}
 The goal of our project is create a realistic, virtual, outdoor experience that makes users feel like they’ve been transported to a different location.
-After we’ve created the environment, animated objects, and added audio, the next step is to improve the visual realism.
+After we have created the environment, animated objects, and added audio, the next step is to improve the visual realism.
 The first thing that came to our mind was to increase the detail of the objects in the environment but this may actually make the experience less realistic from the perspective of the user.
 It turns out this is only one aspect of creating a visually successful game.
 The other two are frames per second and resolution.
@@ -228,8 +228,8 @@ They have recognized that these details can actual hinder the immersive experien
 \subsection{Fishing Activity}
 \subsubsection{Process User Wand Movement}
 The first step to creating an immersive fishing experience will be collecting the users's movement from the virtual reality controllers.
-Since this is an essential compement of the project, we will be examining how three different gaming engines go about doing this.
-For this specific project we will be using the HTC Vive so we are concerend with capturing the input from the two HTC Vive Wands.
+Since this is an essential component of the project, we will be examining how three different gaming engines go about doing this.
+For this specific project we will be using the HTC Vive so we are concerned with capturing the input from the two HTC Vive Wands.
 This is a core component of our system that other parts of the product will rely on so it should be simple and reliable at the same time.
 
 We will consider three different gaming engines to accomplish this task, Unity, Unreal Engine, and Amazon's Lumberyard gaming engine.
@@ -269,10 +269,10 @@ Similar to C\#, it is used to define object oriented classes.
 The only difference is that it is done visually instead of with code.
 The process for working with Motion Controllers in Unreal is much different than Unity.
 The developer picks from a list of Motion Controller-specific inputs in the Pallete panel of the Blueprint Editor\cite{unreal_controller}.
-From here you can simply drag and drop to attatch a certain controller action to an action within the game.
+From here you can simply drag and drop to attach a certain controller action to an action within the game.
 This simplifies the process greatly, but also has the drawback of not being as customizable as if we were writing this in code.
 The Unreal Engine has support for SteamVR, and therefore the Vive.
-That being said, the documentation available for VR related topics is not pletiful as with Unity.
+That being said, the documentation available for VR related topics is not plentiful as with Unity.
 
 The final option for this task is Amazon's Lumberyard Engine.
 What makes Lumberyard unique is that you can choose to use the Flow Graph System for visual scripting on the Lua language for code based scripting.
@@ -335,20 +335,20 @@ Second we will consider the Unreal Engine.
 Like Unity, the Unreal engine also has an asset store, called the Unreal Engine 4 Marketplace.
 The Marketplace, however, is much younger than the Asset Store of Unity.
 The Marketplace opened to developers during 2014 \cite{unreal_marketplace_date}.
-This means that number of available assets is significatly smaller than the Unity Asset Store.
+This means that number of available assets is significantly smaller than the Unity Asset Store.
 As far as importing assets, the process in Unreal is straightforward, and guided by a GUI.
 Organizing assets in Unreal is a bit more manual than Unity.
 One must manual manage the folders where assets are stored, and there is not an assets folder by default.
 Unreal supports all major types of Images, 3D models, animations, and Audio files.
-The prefered file format for importing assets FBX files, which is slightly limiting, as not all assets can be found in this format.
+The preferred file format for importing assets FBX files, which is slightly limiting, as not all assets can be found in this format.
 
 Finally we have Amazon's Lumberyard Engine.
-Unlike Unity and Unreal, Lumbeyard does not have a place to download assets from within the engine.
+Unlike Unity and Unreal, Lumberyard does not have a place to download assets from within the engine.
 This means that you must look to other sources for assets, such as Unity's Asset Store, Unreal's Marketplace, or other websites.
 Like other parts of Lumberyard, the Asset Importer is still in preview release \cite{lumberyard_asset_import}.
-Currently it only suports FBX by default.
+Currently it only supports FBX by default.
 If you would like to import other files you need to need to manually implement a new importer that will generate a SceneGraph for that particular file type \cite{lumberyard_asset_import}.
-Importing files requires navigating the instalation location of Lumberyard and manually copying and pasting the files to the correct location.
+Importing files requires navigating the installation location of Lumberyard and manually copying and pasting the files to the correct location.
 
 After considering the three engines, Unity seems like the clear choice for importing and managing the assets needed to create our Virtual Reality environment.
 While both Unity and Unreal have places to download assets, Unity's Asset Store has the most assets by a long shot.
@@ -460,11 +460,76 @@ The flexibility and simplicity when programming user interaction will also give 
 \subsubsection{Animate Clothing on Avatars}
 
 \subsubsection{Allow User Interaction with Products}
+In order for the user to consume information related to the Columbia Gear it will need to be displayed in some fashion within the VR environment.
+This will likely be done with a mixture of menus and dialogs.
+Different gaming engines go about doing this in different ways.
+The following section will compare support for different menu and dialog systems in Unity, Unreal, and Amazon's Lumberyard Engine.
 
+There are a couple things to consider when creating menus and dialogs in VR.
+In traditional games user interfaces are generally non-digetic, meaning that it does not actually exist in the world.
+Think of a traditional heads up display.
+Unfortunately this approach does not work well in Virtual Reality.
+It has the possibility of causing nausea and straining the user's eyes.
+A better approach is Spacial UI.
+Two other alternatives are Diegetic UI and Spacial UI.
+Diegetic UI elements are attached to something within the environment.
+Spacial UI elements are positioned in the environment.
+Another thing to consider is how the user will interact with the UI elements.
+In our case, using the Vive, it is possible for the user to interact with the UI either with the controllers or the headset.
+Therefore, we will consider which the different types of UI and user interaction each gaming engine supports.
 
+\vspace{2mm}
+\begin{table}[h!]
+\centering
+  \begin{tabular}{ | l || c | c | c | c |  }
+  \hline
+  Engine Name & Supported types of UI & Supported types of user interaction \\
+  \hline
+  Unity & Diegetic, Spatial &  Headset and Controller interaction\\ \hline
+  Unreal Engine & Widgets & Controller and Headset interaction\\ \hline
+  Lumberyard & No native VR user interfaces & No support\\ \hline
+  \hline
+  \end{tabular}
+\end{table}
+\vspace{2mm}
+
+The first gaming engine to consider is Unity.
+Unity has very good support for VR related user interfaces.
+The main tool for creating VR user interfaces in Unity is the World Space UI.
+This UI system allows the developer to create UI elements that are either spatial or diegetic.
+The World Space UI allows you to create a virtual canvas where they can then place GUI interfaces \cite{unity_world_space}.
+As far as user interaction with user interfaces, Unity has virtual reality support for this built in and well documented.
+There are three main classes that can be used for interaction: VREyeRaycaster, VRInput, and VRInteractiveItem \cite{unity_interface_interaction}.
+VREyeRaycatster casts a virtual ray in the environment and determines if it hits any colliders.
+This could be used for either the headset or the controllers.
+VRInput is a class that retrieves the button presses from the controllers of the VR system.
+Lastly, you can use VRInteractiveItem with any GameObject that you would like to be able to interact with in the VR environment.
+
+The second gaming engine to consider is Unreal.
+Unreal does not have an default way to create VR user interfaces.
+However, the most commonly accepted way is to use Unreal's Motion Graphics UI Designer.
+This tool can be used to create 3D widgets.
+While these widgets are not necessarily designed to be used as menus or dialogs, it is possible to do so, but it is a bit of a workaround.
+It is possible to interact with these widgets with both the headset and the controllers, however, it is no easy task.
+Unreal does that have any classes or libraries to make this process easier.
+The developer will need to implement the user interaction from the ground up, using the Blueprint Editor.
+
+The last engine to consider for this task is Lumberyard.
+As Lumberyard is still in beta, it is lacking when it comes to both user interfaces and user interaction with said interfaces.
+Lumberyard contains a UI editor which can be used to create most 2D interfaces.
+Interfaces that resemble heads up displays can easily be created in Lumberyard, but as discussed above this is not useful for VR.
+The other problem is that it has no support for 3D interfaces, and no native support for VR specific user interfaces.
+Because of this, Lumberyard also has no support for interaction with user interfaces within the VR environment.
+
+After considering these three engines for the task of interacting with information regarding Columbia Sportswear gear found in the environment, Unity seems like a good pick for the issue. 
+First of all in Unity, it is easy to create both digetic and spatial interfaces using the World Space UI.
+On the other hand, neither Unreal or Lumberyard contain native support for VR specific user interfaces.
+Secondly, Unity has a set of classes which can be used to simplify the process of creating an interactive user interface.
+This process is complex in Unreal, and non existent in Lumberyard.
+Finally, Unity supports interaction with both the headset and the controllers.
+These factors make it a clear choice for displaying the information related to the Columbia Sportswear gear.
 
 \section{Conclusion}
-
 
 \bibliographystyle{IEEEtran}
 \bibliography{techreview}
