@@ -73,42 +73,84 @@ Abstract Goes Here
 
 \section{Overview}
 \subsection{Scope}
+We want to create an outdoor virtual reality experience for customers at a Columbia retail store. The application will consist mainly of visual, audio, and tactile experiences to create an outdoor world in which the user can navigate. The main activity available will involve fly fishing in one of the rivers within the environment. Users will also have the ability to interact with virtual Columbia products while in the experience and gain specific product information.
+
 \subsection{Purpose}
+The main goal of the project is to make customers feel more inclined to purchase Columbia gear through the use of an immersive, outdoor Virtual Reality experience. This document exists both for development of the project and to provide a detailed description of the design plans.
+
 \subsection{Intended Audience}
-\subsection{Conformace}
+The intended audience of this design document are the student developers involved (EmbarkVR), project sponsors, and Capstone teachers. The development team will be using this report as a guide and will provide structure for the development process. The sponsors can use this document to understand the vision of the developers and to will give a platform to discuss design ideas. The teachers can benefit from this document by learning about the project as a whole.
 
 \section{Definitions}
+\begin{itemize}
+  \item Virtual Reality (VR):  Artificial environment that is created with software
+  \item HTC Vive: A virtual reality headset produced by HTC
+  \item Base Stations: These allow the Vive to track the movement and location of the wands and headset.
+  \item Wands: Controllers that are used with the HTC headset.
+  \item Unity Game Engine: The Unity Game Engine, developed by Unity Technologies is used in this project to develop the virtual reality simulation.
+  \item GitHub: Web-based Git repository hosting service
+  \item Git: version control system used for software development
+\end{itemize}
 
-\section{Conceptual model software design descriptions}
-\subsection{Software design in context}
-\subsection{Software design descriptions within the life cycle}
+\section{Project Context}
+\subsection{Hardware}
+\begin{itemize}
+  \item Laptop Computers with the following specifications:
+  \begin{itemize}
+    \item Processor: Intel Core i5-4590 or AMD FX 8350, or better
+    \item Graphics: NVIDIA GeForce GTX 1060 or AMD Radeon RX480, or better
+    \item Memory: 4GB RAM or better
+    \item Operating system: Windows 7 SP1 or better
+  \end{itemize}
+  \item HTC Vive Headset: Used to track head movements and display application to users.
+  \item HTC Wands (x2): Used to track the users hand movements and to give the user the ability to interact with virtual objects within the application.
+  \item HTC Base Stations (x2): Used to track location of headset and wands. This is information is then sent back to the computer in real time.
+\end{itemize}
+\subsection{Software}
+\begin{itemize}
+  \item Unity Gaming Engine: Used to develop the application.
+  \item Unity Asset Store: Used to find objects which can be imported into the application.
+  \item GitHub: Used by developers to collaborate and share files. 
+\end{itemize}
 
-\section{Design description information content}
-\subsection{Introduction}
-subsection{SDD identification}
+
+
+\section{Design Description}
+\subsection{SDD identification}
 \subsection{Design stakeholders}
+\subsubsection{Intel}
+\subsubsection{Columbia(PFG?)}
+
 \subsection{Design views}
+\subsubsection{Intel Sponsor (Mike Premi)}
+\subsubsection{Columbia Sponsor (Tim Devlin)}
+
 \subsection{Design viewpoints}
-\subsection{Design elements}
-\subsection{Design overlays}
-\subsection{Design rationale}
-\subsection{Design languages}
+\subsubsection{*subsubsection name*}
+\begin{itemize}
+  \item Design Concern:
+  \item Analytical Methods
+  \item Rationale
+\end{itemize}
 
-\section{Design viewpoints}
-\subsection{Introduction}
-\subsection{Context viewpoint}
-\subsection{Composition viewpoint}
-\subsection{Logical viewpoint}
-\subsection{Dependency viewpoint}
-\subsection{Information viewpoint}
-\subsection{Patterns use viewpoint}
-\subsection{Interface viewpoint}
-\subsection{Structure viewpoint}
-\subsection{Interaction viewpoint}
-\subsection{State dynamics viewpoint}
-\subsection{Algorithm viewpoint}
-\subsection{Resource viewpoint}
 
-\bibliographystyle{IEEEtran}
-\bibliography{designdoc}
+\section{Approach}
+\subsubsection{Static Environment}
+(terrain, static objects, fishing rod, Columbia gear assets)
+
+\subsubsection{Animated Environment}
+(light, sound, water animation, etc)
+
+\subsubsection{Tactile User Interaction}
+(user interaction with gear, Columbia gear info)
+
+\subsubsection{Rod mechanics}
+(user interaction with rod, physics involved)
+
+
+
+
+
+% \bibliographystyle{IEEEtran}
+% \bibliography{designdoc}
 \end{document}
