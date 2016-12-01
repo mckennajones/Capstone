@@ -213,7 +213,39 @@ experience.
 
 \section{Approach}
 \subsection{Static Environment}
-(terrain, static objects, Columbia gear assets)
+The basis of our virtual reality experience is the underlying static
+environment. Before we can start any animation, lighting, audio or physics
+work we need to build up a static terrain and collection of 3D objects.
+Most components of the environment will not just be static, but they will all
+start out that way when they are brought into our project. The basic project
+building block in Unity is a scene, which can be thought of as a level in a
+video game. [microsoft_mag] For our experience, the initial design will
+only have one scene because there isn't built in user movement. This means that
+every object, texture, and script in our environment will exist within the
+scope of this single scene.
+
+When building our static environment, we will start with the basic Unity
+terrain engine. A terrain object in Unity starts out as a flat plane, and then
+can be painted on with various effects. [unity_man_terrain] These effects
+include heightmap effects and textures. In our environment, this will mean
+bringing out a riverbed, shore, and surrounding features such as hills with the
+heightmapping tool. Next up is adding base textures. Just adding a 2D texture
+for, say, grass will not provide nearly the level of authenticity we want the
+user to feel, so we will not use these textures for more than a base or
+background to 3D objects. 
+
+In the next section we will cover animation and realism through effects, but
+a certain amount of realism can be achieved just by careful choice of our
+static environment arragement. We will do research on real world locations for
+fly fishing and draw from that as much as possible. For example, it is tempting
+to just place trees in our environment in a semi-random, evenly spaced pattern
+or something similar. However, it will increase our authenticity if we base our
+placement choices on what actually occurs in nature. This is one example, but
+it demonstrates a larger theme, which is that because we are only producing a
+single scene and we want it to be as real as possible, attention to every
+reasonable detail is key.
+
+Now that we have ...
 
 \subsection{Improve Realism and Animate Environment}
 One of the main goals of our project is to make it as realistic as possible
