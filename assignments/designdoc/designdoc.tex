@@ -248,14 +248,14 @@ work we need to build up a static terrain and collection of 3D objects.
 Most components of the environment will not just be static, but they will all
 start out that way when they are brought into our project. The basic project
 building block in Unity is a scene, which can be thought of as a level in a
-video game. [microsoft\_mag] For our experience, the initial design will
+video game. \cite{microsoft_mag} For our experience, the initial design will
 only have one scene because there isn't built in user movement. This means that
 every object, texture, and script in our environment will exist within the
 scope of this single scene.
 
 When building our static environment, we will start with the basic Unity
 terrain engine. A terrain object in Unity starts out as a flat plane, and then
-can be painted on with various effects. [unity\_man\_terrain] These effects
+can be painted on with various effects. \cite{unity_man_terrain} These effects
 include heightmap effects and textures. In our environment, this will mean
 bringing out a riverbed, shore, and surrounding features such as hills with the
 heightmapping tool. Next up is adding base textures. Just adding a 2D texture
@@ -274,7 +274,29 @@ it demonstrates a larger theme, which is that because we are only producing a
 single scene and we want it to be as real as possible, attention to every
 reasonable detail is key.
 
-Now that we have ...
+Now that we have a terrain set up, the next step is to add static objects to
+the environment. At the most basic, Unity uses the GameObject type for all
+objects, and those objects have subobjects and components associated with them.
+\cite{ray} Without going into much detail about the actual workings of objects
+in Unity, there are two main aspects of game objects that we will use in our
+development to make our lives easier. \cite{} Both of these features help solve
+problems that come with an environment that will contain lots of similar
+objects such as trees, stones, or grass. First, we will use prefabs to easily
+edit similar settings on a whole group of objects and make replication much
+easier. \cite{ray} Second, objects can be grouped into layers, which will
+provide us with the ability to toggle whole sections of our environment by
+theme while in development. \cite{layers_video} It will be helpful to be able
+to one-click toggle layers such as trees or small animals to clear up and
+expose underlying features.
+
+It is perfectly good to be able to populate our environment with static objects
+but now we will need to actually create those visual 3D objects. In Unity,
+all project assests go into one central folder, which is brought into the
+editor for use. \cite{unity_importing_assets} There are all kinds of asset
+sources that we will explore, including specific Columbia asset files that will
+be provided by Columbia through Tim Devlin. Importing a quality set of assets
+will be the last step in creating a vibrant, realistic static environment to
+work with in our experience. 
 
 \subsection{Improve Realism and Animate Environment}
 One of the main goals of our project is to make it as realistic as possible
