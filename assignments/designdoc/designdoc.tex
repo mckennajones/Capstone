@@ -91,6 +91,7 @@ The intended audience of this design document are the student developers involve
   \item Git: version control system used for software development
 \end{itemize}
 
+
 \section{Project Context}
 \subsection{Hardware}
 \begin{itemize}
@@ -115,7 +116,9 @@ The intended audience of this design document are the student developers involve
 
 \section{Design Description}
 \subsection{SDD identification}
+
 \subsection{Design stakeholders}
+
 \subsubsection{Intel}
 Intel is working with Columbia Sportwear to help them meet their needs when it comes to this Outdoor Simulation Project.
 Intel has graciously provided all necessary hardware to our team to allow us to create a successful application.
@@ -149,13 +152,12 @@ This view will gude the design process of a higher level compared to the Intel S
 
 \subsection{Design viewpoints}
 \subsubsection{Context viewpoint}
-*[Context viewpoint depicts services provided by a design subject with reference to an explicit context. That context is defined by reference to actors that include users and other stakeholders, which interact with the design subject in its environment. The Context viewpoint provides a “black box” perspective on the design subject.]*
+This context is related to user interaction with the application in its environment. It provides a "black box" view of the project which can be useful from the perspective of developers.
 \begin{itemize}
-  \item Design Concern:
-  \item Analytical Methods
-  \item Rationale
+  \item Design Concern: The main concern will come from users of the VR application. Users will only be able to see the outside of the application and their ability to interact seemlessly is essential. Users do not want to experience performance lag or errors in functionality.
+  \item Analytical Methods: The design will be evaluated during user testing on the basis on immersion, enjoyment, and possibly influence over customers decisions. After users test the application we will ask for feedback related their experience.
+  \item Rationale: We included this viewpoint due to the importance of user immersion. The user experience in Virtual Reality applications is very sensitive and there are a lot of factors that can influence it.
 \end{itemize}
-
 \subsubsection{Composition viewpoint}
 *[Composition viewpoint describes the way the design subject is (recursively) structured into constituent parts and establishes the roles of those parts.]*
 \begin{itemize}
@@ -163,7 +165,6 @@ This view will gude the design process of a higher level compared to the Intel S
   \item Analytical Methods
   \item Rationale
 \end{itemize}
-
 \subsubsection{Dependency viewpoint}
 *[The Dependency viewpoint specifies the relationships of interconnection and access among entities. These relationships include shared information, order of execution, or parameterization of interfaces.]*
 \begin{itemize}
@@ -171,7 +172,6 @@ This view will gude the design process of a higher level compared to the Intel S
   \item Analytical Methods
   \item Rationale
 \end{itemize}
-
 \subsubsection{Interface viewpoint}
 *[Interface viewpoint provides information designers, programmers, and testers the means to know how to correctly use the services provided by a design subject. This description includes the details of external and internal interfaces not provided in the SRS.]*
 \begin{itemize}
@@ -185,8 +185,10 @@ This view will gude the design process of a higher level compared to the Intel S
 \subsection{Static Environment}
 (terrain, static objects, Columbia gear assets)
 
-\subsection{Animated Environment}
-One of the main aspects of our project is to make it as realistic as possible without compromising performance. Realism can come from a number of different techniques. The first we will be focusing on is environment animation. A majority of our application will take place in a river so we will need to make this river as animated as possible. We will need to add an animation of the water moving passed the users as well as associated audio. Audio is crucial when it comes to immersion so not only will we need to add water noises but also noises related to wind and a wide range of animals. The last technique we will be focusing to improve realism is lighting and shadowing.
+\subsection{Improve Realism and Animate Environment}
+One of the main goals of our project is to make it as realistic as possible without compromising performance. Realism can come from a number of different techniques. The first we will be focusing on is environment animation. A majority of our application will take place in a river so we will need to make this river as animated as possible. We will need to add an animation of the water moving passed the users. This can be done using one of the open-source animated water shadings. A similar technique can be used to create movement of clouds in the sky.
+
+The next step to improving realism is adding audio. Audio is crucial when it comes to immersion so not only will we need to add water noises but also noises related to wind and a wide range of animals. In Unity, sounds originate from Audio Source attached to objects. Those sounds and audio clips can be found in any open-source audio library and easily imported into Unity. The last technique we will be focusing to improve realism is lighting and shadowing. This can be achieved using the built-in directional lighting tools within Unity.
 
 \subsection{Tactile User Interaction}
 (user interaction with gear, Columbia gear info)
