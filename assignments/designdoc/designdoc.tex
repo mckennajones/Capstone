@@ -156,20 +156,14 @@ This view will gude the design process of a higher level compared to the Intel S
 \subsubsection{Context viewpoint}
 This context is related to user interaction with the application in its
 environment. It provides a "black box" view of the project which can be useful
-from the perspective of developers.
-\begin{itemize}
-  \item Design Concern: The main concern will come from users of the VR
-  application. Users will only be able to see the outside of the application
-  and their ability to interact seemlessly is essential. Users do not want to
-  experience performance lag or errors in functionality.
-  \item Analytical Methods: The design will be evaluated during user testing on
-  the basis on immersion, enjoyment, and possibly influence over customers
-  decisions. After users test the application we will ask for feedback related
-  their experience.
-  \item Rationale: We included this viewpoint due to the importance of user
-  immersion. The user experience in Virtual Reality applications is very
-  sensitive and there are a lot of factors that can influence it.
-\end{itemize}
+from the perspective of developers. From the perspective of the user, everything shoud be intuitive and they should rarely notice any issues with frame rate.\\
+
+\hangindent=0.5cm \textbf{Design Concern}: The main concern will come from users of the VR application. Users will only be able to see the outside of the application and their ability to interact seemlessly is essential. Users do not want to experience performance lag or errors in functionality. They also souldn't need to ever leave the application to ask questions about how to perform tasks or interact with objects. It must be an intuitive application that is easy to understand in less than 30 seconds given a minor introduction beforehand. \\
+
+\hangindent=0.5cm \textbf{Analytical Methods}: Once we have a fully functioning prototype we will put our application through user testing. During the testing phase the application will be evaluated on the basis on immersion, enjoyment, and possibly influence over customer purchase decisions. After users test the application we will ask for feedback related their experience in the form of oral questions or an anonymous written survey depending on what the user prefers. \\
+
+\hangindent=0.5cm \textbf{Rationale}: We included this viewpoint due to the importance of user immersion. The user experience in Virtual Reality applications is very sensitive and there are a lot of factors that can have influence over it. According to a study done by Intel and Thug\cite{michalak_lind_round1}, immersion needs graphical fidelity, not realism. They found that what was important was that graphics were crisp and clean at all times. They found that a smooth experience, one without glitches and lost frames, was the most important aspect of immersion. They even went a step further to argue that photo-realism is often times worse because it makes inaccuracies more obvious. \\
+
 \subsubsection{Composition viewpoint}
 Project composition is the organization of, and relationships between, each of
 the sections of our project. Each portion of the project will be explored in
@@ -200,6 +194,7 @@ experience.
   periods of redesigning and modification that need to stay within the planned
   composition in order not to break other portions of the project.
 \end{itemize}
+
 \subsubsection{Dependency viewpoint}
 *[The Dependency viewpoint specifies the relationships of interconnection and access among entities. These relationships include shared information, order of execution, or parameterization of interfaces.]*
 \begin{itemize}
@@ -268,8 +263,8 @@ The use limits determine the minimum and maximum angle to which a hinge joint ma
 In the case of the fishing line, the hinge joints have no limits because a fishing line can bend in any way.
 A fishing rod however, can only bend to a certain point.
 One can also controller the bounciness of joints, which determines how much the object bounces when it hits the use limit.
-This will also be tweaked to control the flex of the rod. 
+This will also be tweaked to control the flex of the rod.
 
-% \bibliographystyle{IEEEtran}
-% \bibliography{designdoc}
+\bibliographystyle{IEEEtran}
+\bibliography{designdoc}
 \end{document}
