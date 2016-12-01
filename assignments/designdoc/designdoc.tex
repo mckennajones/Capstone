@@ -87,6 +87,7 @@ The intended audience of this design document are the student developers involve
   \item Base Stations: These allow the Vive to track the movement and location of the wands and headset.
   \item Wands: Controllers that are used with the HTC headset.
   \item Unity Game Engine: The Unity Game Engine, developed by Unity Technologies is used in this project to develop the virtual reality simulation.
+  \item GameObject: The base class for all entities in Unity scences.
   \item GitHub: Web-based Git repository hosting service
   \item Git: version control system used for software development
 \end{itemize}
@@ -225,6 +226,26 @@ The user will then be able to pick up the fishing rod using these virtual hands.
 To make this interaction as natural as possible the VR hands need to feel like an actual extension of the user's body.
 Once the user has picked up the fishing rod, it needs to behave as an actual rod would.
 This means that we will be using Unity's 3D physics engine extensively to create realistic movements with the fishing rod, line, and bait.
+
+The hands models can easily be downloaded from the Unity Asset store, where there are both free and paid options.
+Once these have been downloaded the next step is top map these to the Vive controllers.
+This is done by deleting the controller model in the controller GameObject and replacing it with the appropriate asset.
+The next step is to allow interaction between the controller and the fishing rod.
+To pick up objects in the environment the user will use the trigger on the controller.
+This will be implimented by first monitoring for the trigger when the controller is near a GameObject.
+When we detect and instance of this, the objects position can then be set to the same position as the Vive controller.
+
+Creating ropes and cables in Unity is non-trivial.
+The prefered method is to use physics joints.
+Physics joints, and specifically many hinge joints can be used to create the fishing line.
+The hinge joint game object is highly configurable, so the settings will need to be tweaked to create a realistic looking fishing line.
+For the fishing rod, hinge joints can also be used.
+Creating the physics to mimic the flex of a fishing rod is a matter of tweaking primarily the use limits of the hinge joints.
+The use limits determine the minimum and maximum angle to which a hinge joint may bend.
+In the case of the fishing line, the hinge joints have no limits because a fishing line can bend in any way.
+A fishing rod however, can only bend to a certain point.
+One can also controller the bounciness of joints, which determines how much the object bounces when it hits the use limit.
+This will also be tweaked to control the flex of the rod. 
 
 % \bibliographystyle{IEEEtran}
 % \bibliography{designdoc}
