@@ -156,20 +156,14 @@ This view will gude the design process of a higher level compared to the Intel S
 \subsubsection{Context viewpoint}
 This context is related to user interaction with the application in its
 environment. It provides a "black box" view of the project which can be useful
-from the perspective of developers.
-\begin{itemize}
-  \item Design Concern: The main concern will come from users of the VR
-  application. Users will only be able to see the outside of the application
-  and their ability to interact seemlessly is essential. Users do not want to
-  experience performance lag or errors in functionality.
-  \item Analytical Methods: The design will be evaluated during user testing on
-  the basis on immersion, enjoyment, and possibly influence over customers
-  decisions. After users test the application we will ask for feedback related
-  their experience.
-  \item Rationale: We included this viewpoint due to the importance of user
-  immersion. The user experience in Virtual Reality applications is very
-  sensitive and there are a lot of factors that can influence it.
-\end{itemize}
+from the perspective of developers. From the perspective of the user, everything shoud be intuitive and they should rarely notice any issues with frame rate.\\
+
+\hangindent=0.5cm \textbf{Design Concern}: The main concern will come from users of the VR application. Users will only be able to see the outside of the application and their ability to interact seemlessly is essential. Users do not want to experience performance lag or errors in functionality. They also souldn't need to ever leave the application to ask questions about how to perform tasks or interact with objects. It must be an intuitive application that is easy to understand in less than 30 seconds given a minor introduction beforehand. \\
+
+\hangindent=0.5cm \textbf{Analytical Methods}: Once we have a fully functioning prototype we will put our application through user testing. During the testing phase the application will be evaluated on the basis on immersion, enjoyment, and possibly influence over customer purchase decisions. After users test the application we will ask for feedback related their experience in the form of oral questions or an anonymous written survey depending on what the user prefers. \\
+
+\hangindent=0.5cm \textbf{Rationale}: We included this viewpoint due to the importance of user immersion. The user experience in Virtual Reality applications is very sensitive and there are a lot of factors that can have influence over it. According to a study done by Intel and Thug\cite{michalak_lind_round1}, immersion needs graphical fidelity, not realism. They found that what was important was that graphics were crisp and clean at all times. They found that a smooth experience, one without glitches and lost frames, was the most important aspect of immersion. They even went a step further to argue that photo-realism is often times worse because it makes inaccuracies more obvious. \\
+
 \subsubsection{Composition viewpoint}
 Project composition is the organization of, and relationships between, each of
 the sections of our project. Each portion of the project will be explored in
@@ -200,6 +194,7 @@ experience.
   periods of redesigning and modification that need to stay within the planned
   composition in order not to break other portions of the project.
 \end{itemize}
+
 \subsubsection{Dependency viewpoint}
 *[The Dependency viewpoint specifies the relationships of interconnection and access among entities. These relationships include shared information, order of execution, or parameterization of interfaces.]*
 \begin{itemize}
@@ -243,7 +238,7 @@ The central idea behind this project is to promote Columbia gear in a realistic 
 
 User interaction with Columbia gear will most likely be through various avatars placed in the virtual reality environment. Since the Vive doesn't allow for body tracking with just the wands, our sponsor steered us away from having Columbia apparel on the user's avatar. Users will be able to inspect and interact with the avatars that are showcasing the Columbia gear.
 
-To achieve this, Columbia apparel assets and animations will be imported into the project. The avatars and Columbia apparel pieces will be animated using Unity's animation system, Mecanism. Mecanism uses Animation Clips which store information on how objects should adjust their position and other properties over time. These clips can come from third party digital content creation packages, motion capture studios or can be created within Unity. Animation Clips can be considered the building blocks for all animation sequences in Unity. These building blocks are organized into Mecanim's Animator Controller to chain various animations together. The Controller keeps track of the Animation Clips in a flowchart system and behaves like a state machine that keeps track of current Animation Clips and when they should change. The Controller is also capable of blending multiple clips to provide smooth transitions between animations. The Animation Clips and Animator Controller are aggregated into a GameObject through the Animator Component.
+To achieve this, Columbia apparel assets and animations will be imported into the project. The avatars and Columbia apparel pieces will be animated using Unity's animation system, Mecanism. Mecanism uses Animation Clips which store information on how objects should adjust their position and other properties over time. These clips can come from third party digital content creation packages, motion capture studios or can be created within Unity. Animation Clips can be considered the building blocks for all animation sequences in Unity. These building blocks are organized into Mecanim's Animator Controller to chain various animations together. The Controller keeps track of the Animation Clips in a flowchart system and behaves like a state machine that keeps track of current Animation Clips and when they should change. The Controller is also capable of blending multiple clips to provide smooth transitions between animations. The Animation Clips and Animator Controller are aggregated into a GameObject through the Animator Component.\cite{unity_animation}
 
 In addition to allowing users to interact with Columbia gear within the experience, Columbia product details need to be displayed to the user. This menu system needs to be onobtrusive in order to preserve the immersion of the experience. This will be done through the use of Unity's in build UI element - the panel. The panels will include an image of the product, its specifications and an "Add to Cart" option.
 
@@ -276,6 +271,6 @@ A fishing rod however, can only bend to a certain point.
 One can also controller the bounciness of joints, which determines how much the object bounces when it hits the use limit.
 This will also be tweaked to control the flex of the rod.
 
-% \bibliographystyle{IEEEtran}
-% \bibliography{designdoc}
+\bibliographystyle{IEEEtran}
+\bibliography{designdoc}
 \end{document}
