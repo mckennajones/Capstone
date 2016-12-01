@@ -217,13 +217,23 @@ experience.
   \item Analytical Methods
   \item Rationale
 \end{itemize}
+
 \subsubsection{Interface viewpoint}
-*[Interface viewpoint provides information designers, programmers, and testers the means to know how to correctly use the services provided by a design subject. This description includes the details of external and internal interfaces not provided in the SRS.]*
-\begin{itemize}
-  \item Design Concern:
-  \item Analytical Methods
-  \item Rationale
-\end{itemize}
+Within this project there are a number of interfaces, external and internal, that both the users and developers will be working with.
+The purpose of this viewpoint is to make it extremely clear how all of the interfaces work together to create a final product. \\
+
+\hangindent=0.5cm \textbf{Design Concern}: This viewpoint is primarily addressed at the technical side of the project.
+Therefore, the view with most intrest in this viewpoint is the Intel Sponsor, Mike Premi.
+The main external interfaces are the HTC Vive system, which includes the headset, controllers, and base stations, the computer where the software is running, and finally any external monitors that are being used.
+As for internal interfaces, the project will involve the Unity Game Engine, SteamVR, and Visual Studio for C\# development.
+In the short term, developers are most concerend with the interfaces, but long term, users will also see the impacts of the interface viewpoint.
+The orchestration of all interfaces is essential to creating a comoplete final project. \\
+\hangindent=0.5cm \textbf{Analytical Methods}: The creation of a product that works without any major issues depends on this viewpoint.
+All interfaces must play nicely with each of their dependencies for this to happen.
+During the design and development of the project, this viewpoint will guide the developers by providing an understanding of which interfaces of the project are important for each component.
+An sign of good interface design will be if there are no interfaces which inhibit the functionality of other interfaces.\\
+\hangindent=0.5cm \textbf{Rationale}: This viewpoint was included because of the range of technologies that are used within the project.
+The way interfaces interact will affect users indirectly, and those with technical interests in the project directly. \\
 
 
 \subsection{Design Rationale}
@@ -251,7 +261,7 @@ bringing out a riverbed, shore, and surrounding features such as hills with the
 heightmapping tool. Next up is adding base textures. Just adding a 2D texture
 for, say, grass will not provide nearly the level of authenticity we want the
 user to feel, so we will not use these textures for more than a base or
-background to 3D objects. 
+background to 3D objects.
 
 In the next section we will cover animation and realism through effects, but
 a certain amount of realism can be achieved just by careful choice of our
