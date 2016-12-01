@@ -117,18 +117,35 @@ The intended audience of this design document are the student developers involve
 \subsection{SDD identification}
 \subsection{Design stakeholders}
 \subsubsection{Intel}
-Intel is working with Columbia to help them meet their needs when it comes to this Outdoor Simulation Project. Intel has graciously provided all necessary hardware to our team to allow us to create a successful application.
+Intel is working with Columbia Sportwear to help them meet their needs when it comes to this Outdoor Simulation Project.
+Intel has graciously provided all necessary hardware to our team to allow us to create a successful application.
 
-\subsubsection{Columbia(PFG?)}
-One aspect of Columbia is their fishing apparel. They hope to use the application we are developing in a retail store to showcase this fishing apparel in a new medium. The goal is inspire customers to try new outdoor activities with Columbia gear.
+\subsubsection{Columbia Sportswear}
+One aspect of Columbia Sportwear is their fishing apparel.
+Specifically, the Performace Fishing Gear (PFG) line of apparel.
+Columbia hopes to use the application we are developing in a retail store to showcase the PFG line in a new medium.
+The goal is inspire customers to try new outdoor activities with Columbia gear.
 
 \subsection{Design views}
 \subsubsection{Users}
-Immersive and overall engagement aspect of the using the end product..
+Users of the product expect this virtual reality experience to be as realistic and immersive as possible.
+There are two main perspectives that users will have when using this product.
+Firstly, users will be hoping to gain an outdoor experience that they might not otherwise have the opportunity to try.
+Therefore, realism is key in this view.
+Secondly, users will expect interaction with Columbia gear in a meaningful way.
+The user should leave the experience with a feeling of how the Columbia gear would perform in a certain environment.
+
 \subsubsection{Intel Sponsor (Mike Premi)}
-Customer engagement with columbia products aspect of the project..
+The Intel sponsor of the project, Mike Premi, is concerned more with the technical side of the project.
+Things like which techonologies are used, the techical performace, and overall technical design considerations are important under this view.
+This view will guide the design process on a technical level.
+
 \subsubsection{Columbia Sponsor (Tim Devlin)}
-TEchnical side of the project..
+The Columbia Sportwear sponsor of the project, Tim Devlin, is concerened primarily with the how the user will interact with Columbia products in the Virtual Reality experience.
+This includes, how products are displayed, what information related to the products is shown, and the user interaction with said products.
+Ultimately, the goal of the product under this view is to create more sales for Columbia Sportswear.
+Therefore, that is what is most important under this view.
+This view will gude the design process of a higher level compared to the Intel Sponsor view.
 
 \subsection{Design viewpoints}
 \subsubsection{Context viewpoint}
@@ -166,20 +183,22 @@ TEchnical side of the project..
 
 \section{Approach}
 \subsection{Static Environment}
-(terrain, static objects, fishing rod, Columbia gear assets)
+(terrain, static objects, Columbia gear assets)
 
 \subsection{Animated Environment}
-One of the main aspect of our project is to make it as realistic as possible without compromising performance. Realism can come from a number of different techniques. The first we will be focusing on is environment animation. A majority of our application will take place in a river so we will need to make this river as animated as possible. We will need to add an animation of the water moving passed the users as well as associated audio. Audio is crucial when it comes to immersion so not only will we need to add water noises but also noises related to wind and a wide range of animals. The last technique we will be focusing to improve realism is lighting and shadowing.
+One of the main aspects of our project is to make it as realistic as possible without compromising performance. Realism can come from a number of different techniques. The first we will be focusing on is environment animation. A majority of our application will take place in a river so we will need to make this river as animated as possible. We will need to add an animation of the water moving passed the users as well as associated audio. Audio is crucial when it comes to immersion so not only will we need to add water noises but also noises related to wind and a wide range of animals. The last technique we will be focusing to improve realism is lighting and shadowing.
 
 \subsection{Tactile User Interaction}
 (user interaction with gear, Columbia gear info)
 
 \subsection{Rod mechanics}
-(user interaction with rod, physics involved)
-
-
-
-
+In order to create a realistic fishing experience, the user will need to be able to interact with a virtual fishing rod.
+The user's interaction with the rod will be primarily based around the use of the HTC Vive controllers.
+Like other virtual reality simulations, in the game you will not see the Vive controllers, but instead virtual hands.
+The user will then be able to pick up the fishing rod using these virtual hands.
+To make this interaction as natural as possible the VR hands need to feel like an actual extension of the user's body.
+Once the user has picked up the fishing rod, it needs to behave as an actual rod would.
+This means that we will be using Unity's 3D physics engine extensively to create realistic movements with the fishing rod, line, and bait.
 
 % \bibliographystyle{IEEEtran}
 % \bibliography{designdoc}
