@@ -211,11 +211,11 @@ experience.
 \end{itemize}
 
 \subsubsection{Dependency viewpoint}
-*[The Dependency viewpoint specifies the relationships of interconnection and access among entities. These relationships include shared information, order of execution, or parameterization of interfaces.]*
+The Dependency viewpoint specifies the relationships of interconnection and access among entities. These relationships include shared information, order of execution, or parameterization of interfaces. Establishing these relationships will be key in organizing the project's workflow.
 \begin{itemize}
-  \item Design Concern:
-  \item Analytical Methods
-  \item Rationale
+  \item Design Concern: Users will appreciate fluid and thoughtful interaction between assets within the virtual reality system. Both Intel sponsor Mike Premi and Columbia sponsor Tim Devlin will want clear dependecies to be outlined before any development beings to prevent any redundincies. This will save both time and resources during development and will result in a clear, aligned final product.
+  \item Analytical Methods: We will be able to find any dependency issues during development as certain components won't be functional without others. Development will halt any time a depenendcy issue arises that needs to be resovled. Ultimately, user testing with the final product will determine if the dependencies we outlined were implemented correctly.
+  \item Rationale: We included the dependency viewpoint because of the importance of planning ahead in a large software engineering project such as this. Design of the four major components, static assets, animation of the environment, rod mechanics, and columbia gear integration are going to heavily rely on each other and need to be accounted for. The static environment will most likely be developed first, followed by the animation. Rod mechanics and Columbia gear integration will depend on both the created environment and available assets and animation. Succesfully consolidating these elements will result in a polished final product.
 \end{itemize}
 \subsubsection{Interface viewpoint}
 *[Interface viewpoint provides information designers, programmers, and testers the means to know how to correctly use the services provided by a design subject. This description includes the details of external and internal interfaces not provided in the SRS.]*
@@ -251,7 +251,7 @@ bringing out a riverbed, shore, and surrounding features such as hills with the
 heightmapping tool. Next up is adding base textures. Just adding a 2D texture
 for, say, grass will not provide nearly the level of authenticity we want the
 user to feel, so we will not use these textures for more than a base or
-background to 3D objects. 
+background to 3D objects.
 
 In the next section we will cover animation and realism through effects, but
 a certain amount of realism can be achieved just by careful choice of our
