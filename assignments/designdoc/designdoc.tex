@@ -156,11 +156,26 @@ This view will gude the design process of a higher level compared to the Intel S
 \subsubsection{Context viewpoint}
 This context is related to user interaction with the application in its
 environment. It provides a "black box" view of the project which can be useful
-from the perspective of developers. From the perspective of the user, everything shoud be intuitive and they should rarely notice any issues with frame rate.\\
+from the perspective of developers. From the perspective of the user,
+everything shoud be intuitive and they should rarely notice any issues with
+frame rate.\\
 
-\hangindent=0.5cm \textbf{Design Concern}: The main concern will come from users of the VR application. Users will only be able to see the outside of the application and their ability to interact seemlessly is essential. Users do not want to experience performance lag or errors in functionality. They also souldn't need to ever leave the application to ask questions about how to perform tasks or interact with objects. It must be an intuitive application that is easy to understand in less than 30 seconds given a minor introduction beforehand. \\
+\hangindent=0.5cm \textbf{Design Concern}: The main concern will come from
+users of the VR application. Users will only be able to see the outside of the
+application and their ability to interact seemlessly is essential. Users do not
+want to experience performance lag or errors in functionality. They also
+souldn't need to ever leave the application to ask questions about how to
+perform tasks or interact with objects. It must be an intuitive application
+that is easy to understand in less than 30 seconds given a minor introduction
+beforehand. \\
 
-\hangindent=0.5cm \textbf{Analytical Methods}: Once we have a fully functioning prototype we will put our application through user testing. During the testing phase the application will be evaluated on the basis on immersion, enjoyment, and possibly influence over customer purchase decisions. After users test the application we will ask for feedback related their experience in the form of oral questions or an anonymous written survey depending on what the user prefers. \\
+\hangindent=0.5cm \textbf{Analytical Methods}: Once we have a fully functioning
+prototype we will put our application through user testing. During the testing
+phase the application will be evaluated on the basis on immersion, enjoyment,
+and possibly influence over customer purchase decisions. After users test the
+application we will ask for feedback related their experience in the form of
+oral questions or an anonymous written survey depending on what the user
+prefers. \\
 
 \hangindent=0.5cm \textbf{Rationale}: We included this viewpoint due to the importance of user immersion. The user experience in Virtual Reality applications is very sensitive and there are a lot of factors that can have influence over it. According to a study done by Intel and Thug\cite{michalak_lind_round1}, immersion needs graphical fidelity, not realism. They found that what was important was that graphics were crisp and clean at all times. They found that a smooth experience, one without glitches and lost frames, was the most important aspect of immersion. They even went a step further to argue that photo-realism is often times worse because it makes inaccuracies more obvious. \\
 
@@ -202,13 +217,27 @@ experience.
   \item Analytical Methods
   \item Rationale
 \end{itemize}
+
 \subsubsection{Interface viewpoint}
-*[Interface viewpoint provides information designers, programmers, and testers the means to know how to correctly use the services provided by a design subject. This description includes the details of external and internal interfaces not provided in the SRS.]*
-\begin{itemize}
-  \item Design Concern:
-  \item Analytical Methods
-  \item Rationale
-\end{itemize}
+Within this project there are a number of interfaces, external and internal, that both the users and developers will be working with.
+The purpose of this viewpoint is to make it extremely clear how all of the interfaces work together to create a final product. \\
+
+\hangindent=0.5cm \textbf{Design Concern}: This viewpoint is primarily addressed at the technical side of the project.
+Therefore, the view with most intrest in this viewpoint is the Intel Sponsor, Mike Premi.
+The main external interfaces are the HTC Vive system, which includes the headset, controllers, and base stations, the computer where the software is running, and finally any external monitors that are being used.
+As for internal interfaces, the project will involve the Unity Game Engine, SteamVR, and Visual Studio for C\# development.
+In the short term, developers are most concerend with the interfaces, but long term, users will also see the impacts of the interface viewpoint.
+The orchestration of all interfaces is essential to creating a comoplete final project. \\
+\hangindent=0.5cm \textbf{Analytical Methods}: The creation of a product that works without any major issues depends on this viewpoint.
+All interfaces must play nicely with each of their dependencies for this to happen.
+During the design and development of the project, this viewpoint will guide the developers by providing an understanding of which interfaces of the project are important for each component.
+An sign of good interface design will be if there are no interfaces which inhibit the functionality of other interfaces.\\
+\hangindent=0.5cm \textbf{Rationale}: This viewpoint was included because of the range of technologies that are used within the project.
+The way interfaces interact will affect users indirectly, and those with technical interests in the project directly. \\
+
+
+\subsection{Design Rationale}
+
 
 
 \section{Approach}
@@ -232,7 +261,7 @@ bringing out a riverbed, shore, and surrounding features such as hills with the
 heightmapping tool. Next up is adding base textures. Just adding a 2D texture
 for, say, grass will not provide nearly the level of authenticity we want the
 user to feel, so we will not use these textures for more than a base or
-background to 3D objects. 
+background to 3D objects.
 
 In the next section we will cover animation and realism through effects, but
 a certain amount of realism can be achieved just by careful choice of our
@@ -274,7 +303,7 @@ One of the main goals of our project is to make it as realistic as possible
 without compromising performance. Realism can come from a number of different
 techniques. The first we will be focusing on is environment animation. A
 majority of our application will take place in a river so we will need to make
-this river as animated as possible. THis will involve an animation of the
+this river as animated as possible. This will involve an animation of the
 water moving passed the users and can be done using one of the open-source
 animated water shadings. A similar technique can be used to create movement of
 clouds in the sky.
