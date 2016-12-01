@@ -217,13 +217,23 @@ The Dependency viewpoint specifies the relationships of interconnection and acce
   \item Analytical Methods: We will be able to find any dependency issues during development as certain components won't be functional without others. Development will halt any time a depenendcy issue arises that needs to be resovled. Ultimately, user testing with the final product will determine if the dependencies we outlined were implemented correctly.
   \item Rationale: We included the dependency viewpoint because of the importance of planning ahead in a large software engineering project such as this. Design of the four major components, static assets, animation of the environment, rod mechanics, and columbia gear integration are going to heavily rely on each other and need to be accounted for. The static environment will most likely be developed first, followed by the animation. Rod mechanics and Columbia gear integration will depend on both the created environment and available assets and animation. Succesfully consolidating these elements will result in a polished final product.
 \end{itemize}
+
 \subsubsection{Interface viewpoint}
-*[Interface viewpoint provides information designers, programmers, and testers the means to know how to correctly use the services provided by a design subject. This description includes the details of external and internal interfaces not provided in the SRS.]*
-\begin{itemize}
-  \item Design Concern:
-  \item Analytical Methods
-  \item Rationale
-\end{itemize}
+Within this project there are a number of interfaces, external and internal, that both the users and developers will be working with.
+The purpose of this viewpoint is to make it extremely clear how all of the interfaces work together to create a final product. \\
+
+\hangindent=0.5cm \textbf{Design Concern}: This viewpoint is primarily addressed at the technical side of the project.
+Therefore, the view with most intrest in this viewpoint is the Intel Sponsor, Mike Premi.
+The main external interfaces are the HTC Vive system, which includes the headset, controllers, and base stations, the computer where the software is running, and finally any external monitors that are being used.
+As for internal interfaces, the project will involve the Unity Game Engine, SteamVR, and Visual Studio for C\# development.
+In the short term, developers are most concerend with the interfaces, but long term, users will also see the impacts of the interface viewpoint.
+The orchestration of all interfaces is essential to creating a comoplete final project. \\
+\hangindent=0.5cm \textbf{Analytical Methods}: The creation of a product that works without any major issues depends on this viewpoint.
+All interfaces must play nicely with each of their dependencies for this to happen.
+During the design and development of the project, this viewpoint will guide the developers by providing an understanding of which interfaces of the project are important for each component.
+An sign of good interface design will be if there are no interfaces which inhibit the functionality of other interfaces.\\
+\hangindent=0.5cm \textbf{Rationale}: This viewpoint was included because of the range of technologies that are used within the project.
+The way interfaces interact will affect users indirectly, and those with technical interests in the project directly. \\
 
 
 \subsection{Design Rationale}
@@ -238,14 +248,14 @@ work we need to build up a static terrain and collection of 3D objects.
 Most components of the environment will not just be static, but they will all
 start out that way when they are brought into our project. The basic project
 building block in Unity is a scene, which can be thought of as a level in a
-video game. [microsoft\_mag] For our experience, the initial design will
+video game. \cite{microsoft_mag} For our experience, the initial design will
 only have one scene because there isn't built in user movement. This means that
 every object, texture, and script in our environment will exist within the
 scope of this single scene.
 
 When building our static environment, we will start with the basic Unity
 terrain engine. A terrain object in Unity starts out as a flat plane, and then
-can be painted on with various effects. [unity\_man\_terrain] These effects
+can be painted on with various effects. \cite{unity_man_terrain} These effects
 include heightmap effects and textures. In our environment, this will mean
 bringing out a riverbed, shore, and surrounding features such as hills with the
 heightmapping tool. Next up is adding base textures. Just adding a 2D texture
@@ -264,7 +274,29 @@ it demonstrates a larger theme, which is that because we are only producing a
 single scene and we want it to be as real as possible, attention to every
 reasonable detail is key.
 
-Now that we have ...
+Now that we have a terrain set up, the next step is to add static objects to
+the environment. At the most basic, Unity uses the GameObject type for all
+objects, and those objects have subobjects and components associated with them.
+\cite{ray} Without going into much detail about the actual workings of objects
+in Unity, there are two main aspects of game objects that we will use in our
+development to make our lives easier. \cite{} Both of these features help solve
+problems that come with an environment that will contain lots of similar
+objects such as trees, stones, or grass. First, we will use prefabs to easily
+edit similar settings on a whole group of objects and make replication much
+easier. \cite{ray} Second, objects can be grouped into layers, which will
+provide us with the ability to toggle whole sections of our environment by
+theme while in development. \cite{layers_video} It will be helpful to be able
+to one-click toggle layers such as trees or small animals to clear up and
+expose underlying features.
+
+It is perfectly good to be able to populate our environment with static objects
+but now we will need to actually create those visual 3D objects. In Unity,
+all project assests go into one central folder, which is brought into the
+editor for use. \cite{unity_importing_assets} There are all kinds of asset
+sources that we will explore, including specific Columbia asset files that will
+be provided by Columbia through Tim Devlin. Importing a quality set of assets
+will be the last step in creating a vibrant, realistic static environment to
+work with in our experience. 
 
 \subsection{Improve Realism and Animate Environment}
 One of the main goals of our project is to make it as realistic as possible
@@ -303,23 +335,25 @@ Once the user has picked up the fishing rod, it needs to behave as an actual rod
 This means that we will be using Unity's 3D physics engine extensively to create realistic movements with the fishing rod, line, and bait.
 
 The hands models can easily be downloaded from the Unity Asset store, where there are both free and paid options.
-Once these have been downloaded the next step is top map these to the Vive controllers.
+Once these have been downloaded the next step is to map these to the Vive controllers.
 This is done by deleting the controller model in the controller GameObject and replacing it with the appropriate asset.
 The next step is to allow interaction between the controller and the fishing rod.
 To pick up objects in the environment the user will use the trigger on the controller.
 This will be implimented by first monitoring for the trigger when the controller is near a GameObject.
-When we detect and instance of this, the objects position can then be set to the same position as the Vive controller.
+Unity provides the VRInteractiveItem component which can be attached to any GameObject, such as the rod.\cite{unity_controller_interaction}
+This component allows the user to interact easily with the object.
+When we detect an instance of this, the objects position can then be set to the same position as the Vive controller.
 
 Creating ropes and cables in Unity is non-trivial.
 The prefered method is to use physics joints.
 Physics joints, and specifically many hinge joints can be used to create the fishing line.
-The hinge joint game object is highly configurable, so the settings will need to be tweaked to create a realistic looking fishing line.
+The hinge joint GameObject is highly configurable, so the settings will need to be tweaked to create a realistic looking fishing line.
 For the fishing rod, hinge joints can also be used.
 Creating the physics to mimic the flex of a fishing rod is a matter of tweaking primarily the use limits of the hinge joints.
-The use limits determine the minimum and maximum angle to which a hinge joint may bend.
+The use limits determine the minimum and maximum angle to which a hinge joint may bend.\cite{unity_physics_joints}
 In the case of the fishing line, the hinge joints have no limits because a fishing line can bend in any way.
 A fishing rod however, can only bend to a certain point.
-One can also controller the bounciness of joints, which determines how much the object bounces when it hits the use limit.
+One can also control the bounciness of joints, which determines how much the object bounces when it hits the use limit.
 This will also be tweaked to control the flex of the rod.
 
 \bibliographystyle{IEEEtran}
