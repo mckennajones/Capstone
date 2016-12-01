@@ -296,7 +296,7 @@ editor for use. \cite{unity_importing_assets} There are all kinds of asset
 sources that we will explore, including specific Columbia asset files that will
 be provided by Columbia through Tim Devlin. Importing a quality set of assets
 will be the last step in creating a vibrant, realistic static environment to
-work with in our experience. 
+work with in our experience.
 
 \subsection{Improve Realism and Animate Environment}
 One of the main goals of our project is to make it as realistic as possible
@@ -317,13 +317,21 @@ technique we will be focusing to improve realism is lighting and shadowing.
 This can be achieved using the built-in directional lighting tools within Unity.
 
 \subsection{Tactile User Interaction}
-The central idea behind this project is to promote Columbia gear in a realistic fly fishing experience. This requires the virtual reality project to allow for the user to interact with various pieces of Columbia gear. Along with direct interaction with apparel within the virtual reality world, the project should provide a menu to display detailed information on specific Columbia Sportswear products.
+The central idea behind this project is to promote Columbia gear in a realistic fly fishing experience. This requires the virtual reality project to allow for the user to interact with various pieces of Columbia gear. Along with direct interaction with apparel within the virtual reality world, the project should provide an overlay to display detailed information on specific Columbia Sportswear products.
+
+\subsubsection{Interaction with Columbia Gear}
 
 User interaction with Columbia gear will most likely be through various avatars placed in the virtual reality environment. Since the Vive doesn't allow for body tracking with just the wands, our sponsor steered us away from having Columbia apparel on the user's avatar. Users will be able to inspect and interact with the avatars that are showcasing the Columbia gear.
 
 To achieve this, Columbia apparel assets and animations will be imported into the project. The avatars and Columbia apparel pieces will be animated using Unity's animation system, Mecanism. Mecanism uses Animation Clips which store information on how objects should adjust their position and other properties over time. These clips can come from third party digital content creation packages, motion capture studios or can be created within Unity. Animation Clips can be considered the building blocks for all animation sequences in Unity. These building blocks are organized into Mecanim's Animator Controller to chain various animations together. The Controller keeps track of the Animation Clips in a flowchart system and behaves like a state machine that keeps track of current Animation Clips and when they should change. The Controller is also capable of blending multiple clips to provide smooth transitions between animations. The Animation Clips and Animator Controller are aggregated into a GameObject through the Animator Component.\cite{unity_animation}
 
+\subsubsection{Product Information Overlay}
+
 In addition to allowing users to interact with Columbia gear within the experience, Columbia product details need to be displayed to the user. This menu system needs to be onobtrusive in order to preserve the immersion of the experience. This will be done through the use of Unity's in build UI element - the panel. The panels will include an image of the product, its specifications and an "Add to Cart" option.
+
+\subsubsection{Concerns}
+
+\subsubsection{Aspects}
 
 \subsection{Rod mechanics}
 In order to create a realistic fishing experience, the user will need to be able to interact with a virtual fishing rod.
