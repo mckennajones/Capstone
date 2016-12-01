@@ -232,7 +232,39 @@ experience.
 
 \section{Approach}
 \subsection{Static Environment}
-(terrain, static objects, Columbia gear assets)
+The basis of our virtual reality experience is the underlying static
+environment. Before we can start any animation, lighting, audio or physics
+work we need to build up a static terrain and collection of 3D objects.
+Most components of the environment will not just be static, but they will all
+start out that way when they are brought into our project. The basic project
+building block in Unity is a scene, which can be thought of as a level in a
+video game. [microsoft\_mag] For our experience, the initial design will
+only have one scene because there isn't built in user movement. This means that
+every object, texture, and script in our environment will exist within the
+scope of this single scene.
+
+When building our static environment, we will start with the basic Unity
+terrain engine. A terrain object in Unity starts out as a flat plane, and then
+can be painted on with various effects. [unity\_man\_terrain] These effects
+include heightmap effects and textures. In our environment, this will mean
+bringing out a riverbed, shore, and surrounding features such as hills with the
+heightmapping tool. Next up is adding base textures. Just adding a 2D texture
+for, say, grass will not provide nearly the level of authenticity we want the
+user to feel, so we will not use these textures for more than a base or
+background to 3D objects. 
+
+In the next section we will cover animation and realism through effects, but
+a certain amount of realism can be achieved just by careful choice of our
+static environment arragement. We will do research on real world locations for
+fly fishing and draw from that as much as possible. For example, it is tempting
+to just place trees in our environment in a semi-random, evenly spaced pattern
+or something similar. However, it will increase our authenticity if we base our
+placement choices on what actually occurs in nature. This is one example, but
+it demonstrates a larger theme, which is that because we are only producing a
+single scene and we want it to be as real as possible, attention to every
+reasonable detail is key.
+
+Now that we have ...
 
 \subsection{Improve Realism and Animate Environment}
 One of the main goals of our project is to make it as realistic as possible
@@ -253,7 +285,13 @@ technique we will be focusing to improve realism is lighting and shadowing.
 This can be achieved using the built-in directional lighting tools within Unity.
 
 \subsection{Tactile User Interaction}
-(user interaction with gear, Columbia gear info)
+The central idea behind this project is to promote Columbia gear in a realistic fly fishing experience. This requires the virtual reality project to allow for the user to interact with various pieces of Columbia gear. Along with direct interaction with apparel within the virtual reality world, the project should provide a menu to display detailed information on specific Columbia Sportswear products.
+
+User interaction with Columbia gear will most likely be through various avatars placed in the virtual reality environment. Since the Vive doesn't allow for body tracking with just the wands, our sponsor steered us away from having Columbia apparel on the user's avatar. Users will be able to inspect and interact with the avatars that are showcasing the Columbia gear.
+
+To achieve this, Columbia apparel assets and animations will be imported into the project. The avatars and Columbia apparel pieces will be animated using Unity's animation system, Mecanism. Mecanism uses Animation Clips which store information on how objects should adjust their position and other properties over time. These clips can come from third party digital content creation packages, motion capture studios or can be created within Unity. Animation Clips can be considered the building blocks for all animation sequences in Unity. These building blocks are organized into Mecanim's Animator Controller to chain various animations together. The Controller keeps track of the Animation Clips in a flowchart system and behaves like a state machine that keeps track of current Animation Clips and when they should change. The Controller is also capable of blending multiple clips to provide smooth transitions between animations. The Animation Clips and Animator Controller are aggregated into a GameObject through the Animator Component.\cite{unity_animation}
+
+In addition to allowing users to interact with Columbia gear within the experience, Columbia product details need to be displayed to the user. This menu system needs to be onobtrusive in order to preserve the immersion of the experience. This will be done through the use of Unity's in build UI element - the panel. The panels will include an image of the product, its specifications and an "Add to Cart" option.
 
 \subsection{Rod mechanics}
 In order to create a realistic fishing experience, the user will need to be able to interact with a virtual fishing rod.
