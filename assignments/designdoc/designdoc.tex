@@ -6,6 +6,7 @@
 \usepackage{amssymb}
 \usepackage{amsmath}
 \usepackage{amsthm}
+\usepackage{caption}
 
 \usepackage{alltt}
 \usepackage{float}
@@ -40,7 +41,7 @@
 EmbarkVR: Outdoor Virtual Reality Experience \\
 CS Senior Capstone \\
 Design Document\\
-\vspace{3cm}
+\vspace{1mm}
 }
 \author{Jake Jeffreys, McKenna Jones, Spike Madden, Sean Marty}
 \date{November 17th, 2016}
@@ -61,12 +62,24 @@ Design Document\\
 
 \begin{document}
 \begin{titlepage}
-\vspace{3cm}
 \maketitle
-\vspace{3cm}
+\vspace{1mm}
 \begin{abstract}
 This document describes the design components of Intel and Columbia's virtual reality project. It is structured as follows. A brief overview section will outline the purpose, intended audience, definitions and project context. This is followed by the body of the document which further details the design of the project. The design description defines the stakeholders, views and viewpoints defined in the IEEE 1016 format. The project was broken up into four components: static environment, animation, Columbia gear integration and fishing rod mechanics. Each of these sections are discussed in depth in terms of design description.
 \end{abstract}
+\vspace{1cm}
+
+\noindent\begin{tabular}{ll}
+\makebox[2.5in]{\hrulefill} & \makebox[2.5in]{\hrulefill}\\
+Intel Sponsor & Date\\[5ex]% adds space between the two sets of signatures
+\makebox[2.5in]{\hrulefill} & \makebox[2.5in]{\hrulefill}\\
+Columbia Sponsor & Date\\[5ex]% adds space between the two sets of signatures
+\makebox[2.5in]{\hrulefill} & \makebox[2.5in]{\hrulefill}\\[2ex]
+\makebox[2.5in]{\hrulefill} & \makebox[2.5in]{\hrulefill}\\[2ex]
+\makebox[2.5in]{\hrulefill} & \makebox[2.5in]{\hrulefill}\\[2ex]
+\makebox[2.5in]{\hrulefill} & \makebox[2.5in]{\hrulefill}\\
+Student Team Members & Date\\
+\end{tabular}
 
 \end{titlepage}
 \tableofcontents
@@ -181,7 +194,7 @@ prefers. \\
 \begin{figure}[h]
 \centering
 \caption{Context Viewpoint Diagram}
-\includegraphics[width=0.5\textwidth]{projectContext.eps}
+\includegraphics[width=0.8\textwidth]{projectContext.eps}
 \end{figure}
 
 \subsubsection{Composition viewpoint}
@@ -215,9 +228,11 @@ composition in order to not break other portions of the project.
 
 \begin{figure}[h]
 \centering
+\captionsetup{justification=centering}
 \caption{Composition Viewpoint Diagram}
-\includegraphics[width=0.5\textwidth]{projectComposition.eps}
+\includegraphics[width=0.8\textwidth]{projectComposition.eps}
 \end{figure}
+
 
 \subsubsection{Dependency viewpoint}
 The Dependency viewpoint specifies the relationships of interconnection and access among entities. These relationships include shared information, order of execution, or parameterization of interfaces. Establishing these relationships will be key in organizing the project's workflow.\\
@@ -341,7 +356,7 @@ This section will examine how viewpoints affect the two components of tactile us
 Under the dependency viewpoint, presence of Columbia gear in the fly fishing experience will ultimately depend on the static environment and the animations. However, for development purposes, avatars with Columbia gear assets can be created independently. The product information panels, in a similar sense, will ultimately depend on the static environment. Once again, the overlay system can be developed independently as long as the product information is available. Integrating the panel would only be a matter of positioning and defining the correct context.
 
 \subsubsection{Aspects}
-The two aspects in this component are the the interaction with Columbia gear and the product information overlay.
+The two aspects in this component are the the interaction with Columbia gear and the product information overlay. \\
 
 \hangindent=0.5cm \textbf{Interaction with Columbia Gear}: User interaction with Columbia gear will most likely be through various avatars placed in the virtual reality environment. Since the Vive doesn't allow for body tracking with just the wands, our sponsor steered us away from having Columbia apparel on the user's avatar. Users will be able to inspect and interact with the avatars that are showcasing the Columbia gear.
 To achieve this, Columbia apparel assets and animations will be imported into the project. The avatars and Columbia apparel pieces will be animated using Unity's animation system, Mecanim. Mecanim uses Animation Clips which store information on how objects should adjust their position and other properties over time. These clips can come from third party digital content creation packages, motion capture studios or can be created within Unity. Animation Clips can be considered the building blocks for all animation sequences in Unity. These building blocks are organized into Mecanim's Animator Controller to chain various animations together. The Controller keeps track of the Animation Clips in a flowchart system and behaves like a state machine that keeps track of current Animation Clips and when they should change. The Controller is also capable of blending multiple clips to provide smooth transitions between animations. The Animation Clips and Animator Controller are aggregated into a GameObject through the Animator Component.\cite{unity_animation} \\
@@ -391,6 +406,7 @@ A fishing rod however, can only bend to a certain point.
 One can also control the bounciness of joints, which determines how much the object bounces when it hits the use limit.
 This will also be tweaked to control the flex of the rod.
 
+\clearpage
 \bibliographystyle{IEEEtran}
 \bibliography{designdoc}
 \end{document}
