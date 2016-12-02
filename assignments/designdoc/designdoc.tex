@@ -251,7 +251,7 @@ bringing out a riverbed, shore, and surrounding features such as hills with the
 heightmapping tool. Next up is adding base textures. Just adding a 2D texture
 for, say, grass will not provide nearly the level of authenticity we want the
 user to feel, so we will not use these textures for more than a base or
-background to 3D objects. 
+background to 3D objects.
 
 In the next section we will cover animation and realism through effects, but
 a certain amount of realism can be achieved just by careful choice of our
@@ -269,20 +269,18 @@ Now that we have ...
 \subsection{Improve Realism and Animate Environment}
 One of the main goals of our project is to make it as realistic as possible
 without compromising performance. Realism can come from a number of different
-techniques. The first we will be focusing on is environment animation. A
-majority of our application will take place in a river so we will need to make
-this river as animated as possible. This will involve an animation of the
-water moving passed the users and can be done using one of the open-source
-animated water shadings. A similar technique can be used to create movement of
-clouds in the sky.
+techniques.
+\subsubsection{Concerns}
+From a dependency viewpoint it is important to have a static environment already created. However, in order to build a static environment we need to be aware of how dynamic textures work as to effectly combine these two concepts. 
 
-The next step to improving realism is adding audio. Audio is crucial when it
-comes to immersion so not only will we need to add water noises but also noises
-related to wind and a wide range of animals. In Unity, sounds originate from
-Audio Source attached to objects. Those sounds and audio clips can be found in
-any open-source audio library and easily imported into Unity. The last
-technique we will be focusing to improve realism is lighting and shadowing.
-This can be achieved using the built-in directional lighting tools within Unity.
+\subsubsection{Aspects}
+The three techniques we will be focusing on when it comes to improving realism are animation, audio, and lighting. \\
+
+\hangindent=0.5cm \textbf{Animation}: The first we will be focusing on is environment animation. A majority of our application will take place in a river so we will need to make this river as animated as possible. This will involve an animation of the water moving passed the users and can be done using one of the open-source animated water shadings. A similar technique can be used to create movement of clouds in the sky.\\
+
+\hangindent=0.5cm \textbf{Audio}: The next step to improving realism is adding audio. Audio is crucial when it comes to immersion so not only will we need to add water noises but also noises related to wind and a wide range of animals. In Unity, sounds originate from Audio Source attached to objects. Those sounds and audio clips can be found in any open-source audio library and easily imported into Unity. \\
+
+\hangindent=0.5cm \textbf{Lighting and Shadowing}: The last technique we will be focusing to improve realism is lighting and shadowing. This can be achieved using the built-in directional lighting tools within Unity. \\
 
 \subsection{Tactile User Interaction}
 The central idea behind this project is to promote Columbia gear in a realistic fly fishing experience. This requires the virtual reality project to allow for the user to interact with various pieces of Columbia gear. Along with direct interaction with apparel within the virtual reality world, the project should provide a menu to display detailed information on specific Columbia Sportswear products.
