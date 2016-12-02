@@ -238,6 +238,15 @@ The way interfaces interact will affect users indirectly, and those with technic
 
 
 \subsection{Design Rationale}
+We chose to use the Unity gaming Engine to build our project. Here are some of the reasons for our decision:
+\begin{itemize}
+  \item Has a large community base.
+  \item It is compatible with Mac and Windows operating systems.
+  \item Has a relatively small learning curve, good for projects with a small time frame.
+  \item Built-in support for various VR related functions.
+  \item Includes a large, free assett store.
+  \item Uses C\# as its scripting language, a language that our team has experience with.
+\end{itemize}
 
 \section{Approach}
 \subsection{Static Environment}
@@ -298,7 +307,7 @@ One of the main goals of our project is to make it as realistic as possible
 without compromising performance. Realism can come from a number of different
 techniques.
 \subsubsection{Concerns}
-From a dependency viewpoint it is important to have a static environment already created. However, in order to build a static environment we need to be aware of how dynamic textures work as to effectly combine these two concepts. 
+From a dependency viewpoint it is important to have a static environment already created. However, in order to build a static environment we need to be aware of how dynamic textures work as to effectly combine these two concepts.
 
 \subsubsection{Aspects}
 The three techniques we will be focusing on when it comes to improving realism are animation, audio, and lighting. \\
