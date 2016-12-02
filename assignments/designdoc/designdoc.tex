@@ -185,38 +185,33 @@ the sections of our project. Each portion of the project will be explored in
 more detail in the Approach section below, but our virtual reality experience
 will be the sum of visual and audio assets, scripts, game objects, and HTC Vive
 hardware. All of this will be integrated to create a single, powerful retail
-experience.
-\begin{itemize}
-  \item Design Concern: The composition of the project affects ease of
-  implementation, performance, and how well an outside developer can come in
-  and familiarize themselves with the project. Intel Sponsor Mike Premi will
-  find this viewpoint important because of his role in guiding our technical
-  development. Also, Columbia Sponsor Tim Devlin will find this viewpoint
-  valuable because once the product is handed over to be applied in a retail
-  setting, a well-composed project will ease this transistion and replication.
-  \item Analytical Methods: It will be hard to objectively analyze the success
-  of this viewpoint, but the effects of a well or poorly composed project will
-  undoubtable be seen throughout development and implementation. A good test of
-  quality composition will occur whenever parts of the project need to be
-  passed from one team member to another, or from the team to an outside
-  developer. Project composition will be one of the factors in how well these
-  transfers go.
-  \item Rationale: We included the composition viewpoint because there are
-  going to be a massive number of assets, scripts, and objects involved in the
-  production of this virtual reality experience. It is vital to have our design
-  keep an eye on composition so that nothing gets lost in the complexity of the
-  undertaking. Also, as our team learns and improves our product, there will be
-  periods of redesigning and modification that need to stay within the planned
-  composition in order not to break other portions of the project.
-\end{itemize}
+experience.\\
+
+\hangindent=0.5cm \textbf{Design Concern}: The composition of the project affects ease of implementation, performance, and how well an outside developer can come in
+and familiarize themselves with the project. Intel Sponsor Mike Premi will
+find this viewpoint important because of his role in guiding our technical
+development. Also, Columbia Sponsor Tim Devlin will find this viewpoint
+valuable because once the product is handed over to be applied in a retail
+setting, a well-composed project will ease this transistion and replication.\\
+\hangindent=0.5cm \textbf{Analytical Methods}: It will be hard to objectively analyze the success of this viewpoint, but the effects of a well or poorly composed project will
+undoubtable be seen throughout development and implementation. A good test of
+quality composition will occur whenever parts of the project need to be
+passed from one team member to another, or from the team to an outside
+developer. Project composition will be one of the factors in how well these
+transfers go.\\
+\hangindent=0.5cm \textbf{Rationale}: We included the composition viewpoint because there are going to be a massive number of assets, scripts, and objects involved in the
+production of this virtual reality experience. It is vital to have our design
+keep an eye on composition so that nothing gets lost in the complexity of the
+undertaking. Also, as our team learns and improves our product, there will be
+periods of redesigning and modification that need to stay within the planned
+composition in order not to break other portions of the project. \\
 
 \subsubsection{Dependency viewpoint}
-The Dependency viewpoint specifies the relationships of interconnection and access among entities. These relationships include shared information, order of execution, or parameterization of interfaces. Establishing these relationships will be key in organizing the project's workflow.
-\begin{itemize}
-  \item Design Concern: Users will appreciate fluid and thoughtful interaction between assets within the virtual reality system. Both Intel sponsor Mike Premi and Columbia sponsor Tim Devlin will want clear dependecies to be outlined before any development beings to prevent any redundincies. This will save both time and resources during development and will result in a clear, aligned final product.
-  \item Analytical Methods: We will be able to find any dependency issues during development as certain components won't be functional without others. Development will halt any time a depenendcy issue arises that needs to be resovled. Ultimately, user testing with the final product will determine if the dependencies we outlined were implemented correctly.
-  \item Rationale: We included the dependency viewpoint because of the importance of planning ahead in a large software engineering project such as this. Design of the four major components, static assets, animation of the environment, rod mechanics, and columbia gear integration are going to heavily rely on each other and need to be accounted for. The static environment will most likely be developed first, followed by the animation. Rod mechanics and Columbia gear integration will depend on both the created environment and available assets and animation. Succesfully consolidating these elements will result in a polished final product.
-\end{itemize}
+The Dependency viewpoint specifies the relationships of interconnection and access among entities. These relationships include shared information, order of execution, or parameterization of interfaces. Establishing these relationships will be key in organizing the project's workflow.\\
+
+\hangindent=0.5cm \textbf{Design Concern}: Users will appreciate fluid and thoughtful interaction between assets within the virtual reality system. Both Intel sponsor Mike Premi and Columbia sponsor Tim Devlin will want clear dependecies to be outlined before any development beings to prevent any redundincies. This will save both time and resources during development and will result in a clear, aligned final product.\\
+\hangindent=0.5cm \textbf{Analytical Methods}: We will be able to find any dependency issues during development as certain components won't be functional without others. Development will halt any time a depenendcy issue arises that needs to be resovled. Ultimately, user testing with the final product will determine if the dependencies we outlined were implemented correctly.\\
+\hangindent=0.5cm \textbf{Rationale}: We included the dependency viewpoint because of the importance of planning ahead in a large software engineering project such as this. Design of the four major components, static assets, animation of the environment, rod mechanics, and columbia gear integration are going to heavily rely on each other and need to be accounted for. The static environment will most likely be developed first, followed by the animation. Rod mechanics and Columbia gear integration will depend on both the created environment and available assets and animation. Succesfully consolidating these elements will result in a polished final product.\\
 
 \subsubsection{Interface viewpoint}
 Within this project there are a number of interfaces, external and internal, that both the users and developers will be working with.
@@ -237,8 +232,6 @@ The way interfaces interact will affect users indirectly, and those with technic
 
 
 \subsection{Design Rationale}
-
-
 
 \section{Approach}
 \subsection{Static Environment}
@@ -349,16 +342,30 @@ To make this interaction as natural as possible the VR hands need to feel like a
 Once the user has picked up the fishing rod, it needs to behave as an actual rod would.
 This means that we will be using Unity's 3D physics engine extensively to create realistic movements with the fishing rod, line, and bait.
 
-The hands models can easily be downloaded from the Unity Asset store, where there are both free and paid options.
+\subsubsection{Concerns}
+This component of the project has intrests in two different viewpoints.
+First, the dependency viewpoint will slightly determine when this component of the project can actually be started and completed.
+Mainly, it depends on on the environment.
+It is possible to work on the basics of this component before the environment is completed; for example importing the required assets and the basic physics.
+However, the bulk of the work to create a realistic fishing interaction will need to be completed after the environment is in a finished state.
+Secondly, this component depends on the interface viewpoint.
+The Vive external interfaces, primarily the headset and controllers, and required for this componenet.
+Therefore, whichever interfaces those are related to also come into play.
+
+\subsubsection{Aspects}
+The three aspects of this component are the HTC Vive controller models, the controller interaction with the Rod, and the physics of the fishing rod and line.\\
+
+\hangindent=0.5cm \textbf{HTC Vive Controller Models}\\
+The hands assets can easily be downloaded from the Unity Asset store, where there are both free and paid options.
 Once these have been downloaded the next step is to map these to the Vive controllers.
-This is done by deleting the controller model in the controller GameObject and replacing it with the appropriate asset.
-The next step is to allow interaction between the controller and the fishing rod.
+This is done by deleting the controller model in the controller GameObject and replacing it with the appropriate asset.\\
+\hangindent=0.5cm \textbf{Controller Interaction With Rod}\\
 To pick up objects in the environment the user will use the trigger on the controller.
-This will be implimented by first monitoring for the trigger when the controller is near a GameObject.
+This will be implemented by first monitoring for the trigger when the controller is near a GameObject.
 Unity provides the VRInteractiveItem component which can be attached to any GameObject, such as the rod.\cite{unity_controller_interaction}
 This component allows the user to interact easily with the object.
-When we detect an instance of this, the objects position can then be set to the same position as the Vive controller.
-
+When we detect an instance of this, the objects position can then be set to the same position as the Vive controller.\\
+\hangindent=0.5cm \textbf{Fishing Rod and Line Physics}\\
 Creating ropes and cables in Unity is non-trivial.
 The prefered method is to use physics joints.
 Physics joints, and specifically many hinge joints can be used to create the fishing line.
