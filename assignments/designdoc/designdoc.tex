@@ -74,13 +74,13 @@ Abstract Goes Here
 
 \section{Overview}
 \subsection{Scope}
-We want to create an outdoor virtual reality experience for customers at a Columbia retail store. The application will consist mainly of visual, audio, and tactile experiences to create an outdoor world in which the user can navigate. The main activity available will involve fly fishing in one of the rivers within the environment. Users will also have the ability to interact with virtual Columbia products while in the experience and gain specific product information.
+We want to create an outdoor virtual reality experience for customers at a Columbia retail store. The application will consist mainly of visual, audio, and tactile experiences to create an outdoor world in which the user can navigate. The main activities available will involve fly fishing in one of the rivers and interacting with virtual Columbia products while in the experience to gain specific product information.
 
 \subsection{Purpose}
 The main goal of the project is to make customers feel more inclined to purchase Columbia gear through the use of an immersive, outdoor Virtual Reality experience. This document exists both for development of the project and to provide a detailed description of the design plans.
 
 \subsection{Intended Audience}
-The intended audience of this design document are the student developers involved (EmbarkVR), project sponsors, and Capstone teachers. The development team will be using this report as a guide and will provide structure for the development process. The sponsors can use this document to understand the vision of the developers and to will give a platform to discuss design ideas. The teachers can benefit from this document by learning about the project as a whole.
+The intended audience of this design document are the student developers involved (EmbarkVR), project sponsors, and Capstone teachers. The development team will be using this report as a guide and will provide structure for the development process. The sponsors can use this document to understand the vision of the developers and it will give a platform to discuss design ideas. The teachers can benefit from this document by learning about the project as a whole.
 
 \section{Definitions}
 \begin{itemize}
@@ -98,7 +98,7 @@ The intended audience of this design document are the student developers involve
 \section{Project Context}
 \subsection{Hardware}
 \begin{itemize}
-  \item Laptop Computers with the following specifications:
+  \item Computer with the following specifications:
   \begin{itemize}
     \item Processor: Intel Core i5-4590 or AMD FX 8350, or better
     \item Graphics: NVIDIA GeForce GTX 1060 or AMD Radeon RX480, or better
@@ -107,7 +107,7 @@ The intended audience of this design document are the student developers involve
   \end{itemize}
   \item HTC Vive Headset: Used to track head movements and display application to users.
   \item HTC Wands (x2): Used to track the users hand movements and to give the user the ability to interact with virtual objects within the application.
-  \item HTC Base Stations (x2): Used to track location of headset and wands. This is information is then sent back to the computer in real time.
+  \item HTC Base Stations (x2): Used to track location of headset and wands. This information is then sent back to the computer in real time.
 \end{itemize}
 \subsection{Software}
 \begin{itemize}
@@ -121,18 +121,17 @@ The intended audience of this design document are the student developers involve
 
 \subsection{Design stakeholders}
 \subsubsection{Intel}
-Intel is working with Columbia Sportwear to help them meet their needs when it comes to this Outdoor Simulation Project.
+In this project, Intel is working with Columbia Sportwear to help them meet their needs.
 Intel has graciously provided all necessary hardware to our team to allow us to create a successful application.
 
 \subsubsection{Columbia Sportswear}
 One aspect of Columbia Sportwear is their fishing apparel.
-Specifically, the Performace Fishing Gear (PFG) line of apparel.
-Columbia hopes to use the application we are developing in a retail store to showcase the PFG line in a new medium.
-The goal is inspire customers to try new outdoor activities with Columbia gear.
+Columbia hopes to use the application in a retail store to showcase their apparel in a new medium.
+The goal is to inspire customers to try new outdoor activities with Columbia gear.
 
 \subsection{Design views}
 \subsubsection{Users}
-Users of the product expect this virtual reality experience to be as realistic and immersive as possible. We will be making the assumption that users will be experiencing this application with out any previous virtual reality or fly fishing experience. We are making the assumption to account for everyone who may be interested in participating. From their perspective, they will care most about their ability to quickly understand how to move around and interact with objects. This means that we need to create intuitive tools and controls. Users can also expect to find visual queues and instructions within the experience.
+Users of the product expect this virtual reality experience to be as realistic and immersive as possible. We will be making the assumption that users will be experiencing this application with out any previous virtual reality or fly fishing experience. We are making this assumption to account for everyone who may be interested in participating. From their perspective, they will care most about their ability to quickly understand how to move around and interact with objects. This means that we need to create intuitive tools and controls. Users can also expect to find visual queues and instructions within the experience.
 
 There are two main perspectives that users will have when using this product.
 Firstly, users will be hoping to gain an outdoor experience that they might not otherwise have the opportunity to try. Therefore, realism is key in this view.
@@ -142,7 +141,7 @@ The user should leave the experience with a feeling of how the Columbia gear wou
 
 \subsubsection{Intel Sponsor (Mike Premi)}
 The Intel sponsor of the project, Mike Premi, is concerned more with the technical side of the project.
-Things like which technologies are used, the techical performance, and overall technical design considerations are important under this view.
+Things like which technologies are used, the technical performance, and overall technical design considerations are all important under this view.
 This view will guide the design process on a technical level.
 
 One of the main goals of the project is to make the experience as immersive and real as possible. To achieve this we will first need to use a high performance computer. Second, we will need to constantly be aware of performance restrictions during the development process, mainly while improving realism. The realism techniques we discuss later in this document will all take a toll on performance speeds and application responsivess.
@@ -152,34 +151,34 @@ The Columbia Sportwear sponsor of the project, Tim Devlin, is concerened primari
 This includes, how products are displayed, what information related to the products is shown, and the user interaction with said products.
 Ultimately, the goal of the product under this view is to create more sales for Columbia Sportswear.
 Therefore, that is what is most important under this view.
-This view will gude the design process of a higher level compared to the Intel Sponsor view.
+This view will guide the design process at a higher level compared to the view of the Intel Sponsor.
 
 \subsection{Design viewpoints}
 \subsubsection{Context viewpoint}
-This context is related to user interaction with the application in its
+This context is related to user interaction within the application in the
 environment. It provides a "black box" view of the project which can be useful
-from the perspective of developers. From the perspective of the user,
-everything shoud be intuitive and they should rarely notice any issues with
+from the perspective of users. From the perspective of the user,
+everything should be intuitive and they should rarely notice any issues with
 frame rate.\\
 
 \hangindent=0.5cm \textbf{Design Concern}: The main concern will come from
 users of the VR application. Users will only be able to see the outside of the
 application and their ability to interact seemlessly is essential. Users do not
 want to experience performance lag or errors in functionality. They also
-souldn't need to ever leave the application to ask questions about how to
+shouldn't need to ever leave the application to ask questions about how to
 perform tasks or interact with objects. It must be an intuitive application
 that is easy to understand in less than 30 seconds given a minor introduction
 beforehand. \\
 
 \hangindent=0.5cm \textbf{Analytical Methods}: Once we have a fully functioning
 prototype we will put our application through user testing. During the testing
-phase the application will be evaluated on the basis on immersion, enjoyment,
+phase the application will be evaluated on the basis of immersion, enjoyment,
 and possibly influence over customer purchase decisions. After users test the
-application we will ask for feedback related their experience in the form of
+application we will ask for feedback related to their experience in the form of
 oral questions or an anonymous written survey depending on what the user
 prefers. \\
 
-\hangindent=0.5cm \textbf{Rationale}: We included this viewpoint due to the importance of user immersion. The user experience in Virtual Reality applications is very sensitive and there are a lot of factors that can have influence over it. According to a study done by Intel and Thug\cite{michalak_lind_round1}, immersion needs graphical fidelity, not realism. They found that what was important was that graphics were crisp and clean at all times. They found that a smooth experience, one without glitches and lost frames, was the most important aspect of immersion. They even went a step further to argue that photo-realism is often times worse because it makes inaccuracies more obvious.
+\hangindent=0.5cm \textbf{Rationale}: We included this viewpoint due to the importance of user immersion. The user experience in Virtual Reality applications is very sensitive and there are a lot of factors that can have an influence over it. According to a study done by Intel and Thug\cite{michalak_lind_round1}, immersion needs graphical fidelity, not realism. They found that what was important was that graphics were crisp and clean at all times. They found that a smooth experience, one without glitches and lost frames, was the most important aspect of immersion. They even went a step further to argue that photo-realism is often times worse because it makes inaccuracies more obvious.
 
 \begin{figure}[h]
 \centering
@@ -199,7 +198,7 @@ and familiarize themselves with the project. Intel Sponsor Mike Premi will
 find this viewpoint important because of his role in guiding our technical
 development. Also, Columbia Sponsor Tim Devlin will find this viewpoint
 valuable because once the product is handed over to be applied in a retail
-setting, a well-composed project will ease this transistion and replication.\\
+setting, a well-composed project will ease this transition and replication.\\
 
 \hangindent=0.5cm \textbf{Analytical Methods}: It will be hard to objectively analyze the success of this viewpoint, but the effects of a well or poorly composed project will
 undoubtable be seen throughout development and implementation. A good test of
@@ -223,9 +222,9 @@ composition in order not to break other portions of the project.
 \subsubsection{Dependency viewpoint}
 The Dependency viewpoint specifies the relationships of interconnection and access among entities. These relationships include shared information, order of execution, or parameterization of interfaces. Establishing these relationships will be key in organizing the project's workflow.\\
 
-\hangindent=0.5cm \textbf{Design Concern}: Users will appreciate fluid and thoughtful interaction between assets within the virtual reality system. Both Intel sponsor Mike Premi and Columbia sponsor Tim Devlin will want clear dependecies to be outlined before any development beings to prevent any redundincies. This will save both time and resources during development and will result in a clear, aligned final product.\\
+\hangindent=0.5cm \textbf{Design Concern}: Users will appreciate fluid and thoughtful interaction between assets within the virtual reality system. Both Intel sponsor Mike Premi and Columbia sponsor Tim Devlin will want clear dependecies to be outlined before any development beings to prevent any redundancies. This will save both time and resources during development and will result in a clear, aligned final product.\\
 
-\hangindent=0.5cm \textbf{Analytical Methods}: We will be able to find any dependency issues during development as certain components won't be functional without others. Development will halt any time a depenendcy issue arises that needs to be resovled. Ultimately, user testing with the final product will determine if the dependencies we outlined were implemented correctly.\\
+\hangindent=0.5cm \textbf{Analytical Methods}: We will be able to find any dependency issues during development as certain components won't be functional without others. Development will halt any time a depenendcy issue arises that needs to be resolved. Ultimately, user testing with the final product will determine if the dependencies we outlined were implemented correctly.\\
 
 \hangindent=0.5cm \textbf{Rationale}: We included the dependency viewpoint because of the importance of planning ahead in a large software engineering project such as this. Design of the four major components, static assets, animation of the environment, rod mechanics, and columbia gear integration are going to heavily rely on each other and need to be accounted for. The static environment will most likely be developed first, followed by the animation. Rod mechanics and Columbia gear integration will depend on both the created environment and available assets and animation. Succesfully consolidating these elements will result in a polished final product.\\
 
@@ -235,15 +234,15 @@ The purpose of this viewpoint is to make it extremely clear how all of the inter
 
 \hangindent=0.5cm \textbf{Design Concern}: This viewpoint is primarily addressed at the technical side of the project.
 Therefore, the view with most intrest in this viewpoint is the Intel Sponsor, Mike Premi.
-The main external interfaces are the HTC Vive system, which includes the headset, controllers, and base stations, the computer where the software is running, and finally any external monitors that are being used.
+The main external interfaces are the HTC Vive system, which includes the headset, controllers, and base stations, the computer where the software is running, and any external monitors that are being used.
 As for internal interfaces, the project will involve the Unity Game Engine, SteamVR, and Visual Studio for C\# development.
 In the short term, developers are most concerend with the interfaces, but long term, users will also see the impacts of the interface viewpoint.
-The orchestration of all interfaces is essential to creating a comoplete final project. \\
+The orchestration of all interfaces is essential to creating a complete final project. \\
 
 \hangindent=0.5cm \textbf{Analytical Methods}: The creation of a product that works without any major issues depends on this viewpoint.
 All interfaces must play nicely with each of their dependencies for this to happen.
 During the design and development of the project, this viewpoint will guide the developers by providing an understanding of which interfaces of the project are important for each component.
-An sign of good interface design will be if there are no interfaces which inhibit the functionality of other interfaces.\\
+A sign of a good interface design will be if there are no interfaces which inhibit the functionality of other interfaces.\\
 
 \hangindent=0.5cm \textbf{Rationale}: This viewpoint was included because of the range of technologies that are used within the project.
 The way interfaces interact will affect users indirectly, and those with technical interests in the project directly. \\
@@ -252,12 +251,12 @@ The way interfaces interact will affect users indirectly, and those with technic
 \subsection{Design Rationale}
 We chose to use the Unity gaming Engine to build our project. Here are some of the reasons for our decision:
 \begin{itemize}
-  \item Has a large community base.
-  \item It is compatible with Mac and Windows operating systems.
-  \item Has a relatively small learning curve, good for projects with a small time frame.
-  \item Built-in support for various VR related functions.
-  \item Includes a large, free assett store.
-  \item Uses C\# as its scripting language, a language that our team has experience with.
+  \item A large community base
+  \item Compatible with Mac and Windows operating systems
+  \item A relatively small learning curve, good for projects with a small time frame
+  \item Built-in support for various VR related functions
+  \item Includes a large, free assett store
+  \item Uses C\# as its scripting language, a language that our team has experience with
 \end{itemize}
 
 \section{Approach}
@@ -269,12 +268,12 @@ Most components of the environment will not just be static, but they will all
 start out that way when they are brought into our project. The basic project
 building block in Unity is a scene, which can be thought of as a level in a
 video game. \cite{microsoft_mag} For our experience, the initial design will
-only have one scene because there isn't built in user movement. This means that
+only have one scene because there isn't built-in user movement. This means that
 every object, texture, and script in our environment will exist within the
 scope of this single scene.
 
 \subsubsection{Approach}
-The main sections fo the approach for this component are the static terrain, the realism of said terrain, static objects incooporated into the terrain, and finally assets used for the static environment.\\
+The main sections of the approach for this component are the static terrain, the realism of said terrain, static objects incooporated into the terrain, and finally assets used for the static environment.\\
 
 \hangindent=0.5cm \textbf{Static Terrain}: When building our static environment, we
 will start with the basic Unity terrain engine. A terrain object in Unity starts out
@@ -324,9 +323,9 @@ From a dependency viewpoint it is important to have a static environment already
 \subsubsection{Aspects}
 The three techniques we will be focusing on when it comes to improving realism are animation, audio, and lighting. \\
 
-\hangindent=0.5cm \textbf{Animation}: The first we will be focusing on is environment animation. A majority of our application will take place in a river so we will need to make this river as animated as possible. This will involve an animation of the water moving passed the users and can be done using one of the open-source animated water shadings. A similar technique can be used to create movement of clouds in the sky.\\
+\hangindent=0.5cm \textbf{Animation}: The first we will be focusing on is environment animation. A majority of our application will take place in a river so we will need to make this river as animated as possible. This will involve an animation of the water moving passed the users and can be done using an open-source animated water shadings. A similar technique can be used to create movement of clouds in the sky.\\
 
-\hangindent=0.5cm \textbf{Audio}: The next step to improving realism is adding audio. Audio is crucial when it comes to immersion so not only will we need to add water noises but also noises related to wind and a wide range of animals. In Unity, sounds originate from Audio Source attached to objects. Those sounds and audio clips can be found in any open-source audio library and easily imported into Unity. \\
+\hangindent=0.5cm \textbf{Audio}: The next step to improving realism is adding audio. Audio is crucial when it comes to immersion so not only will we need to add water noises but also noises related to wind and a wide range of animals. In Unity, sounds originate from Audio Sources attached to objects. Those sounds and audio clips can be found in any open-source audio library and easily imported into Unity. \\
 
 \hangindent=0.5cm \textbf{Lighting and Shadowing}: The last technique we will be focusing to improve realism is lighting and shadowing. This can be achieved using the built-in directional lighting tools within Unity. \\
 
@@ -334,24 +333,21 @@ The three techniques we will be focusing on when it comes to improving realism a
 The central idea behind this project is to promote Columbia gear in a realistic fly fishing experience. This requires the virtual reality project to allow for the user to interact with various pieces of Columbia gear. Along with direct interaction with apparel within the virtual reality world, the project should provide an overlay to display detailed information on specific Columbia Sportswear products.
 
 \subsubsection{Concerns}
+This section will examine how viewpoints affect the two components of tactile user interaction with Columbia gear: prescence within the virtual reality environment and the product description overlay system.
 
-This section will examine how viewpoints affect the two components of tactile user interaction with Columbia gear: prescence within the virutal reality environment and the product description overlay system.
-
-Under the dependency viewpoint, prescence of Columbia gear in the fly fishing experience will ultimately depend on the static environment and the animations. However, for development purposes, avatars with Columbia gear assets can be created independently. The product information panels, in a similar sense, will ultimately depend on the static environment. Once again, the overlay system can be developed indepdently as well as long as the product information is available. Integrating the panel would only be a matter of positioning and defining the correct context.
+Under the dependency viewpoint, prescence of Columbia gear in the fly fishing experience will ultimately depend on the static environment and the animations. However, for development purposes, avatars with Columbia gear assets can be created independently. The product information panels, in a similar sense, will ultimately depend on the static environment. Once again, the overlay system can be developed indepdently as long as the product information is available. Integrating the panel would only be a matter of positioning and defining the correct context.
 
 \subsubsection{Aspects}
-
 The two aspects in this component are the the interaction with Columbia gear and the product information overlay.
 
 \hangindent=0.5cm \textbf{Interaction with Columbia Gear} \\
-
 User interaction with Columbia gear will most likely be through various avatars placed in the virtual reality environment. Since the Vive doesn't allow for body tracking with just the wands, our sponsor steered us away from having Columbia apparel on the user's avatar. Users will be able to inspect and interact with the avatars that are showcasing the Columbia gear.
 
-To achieve this, Columbia apparel assets and animations will be imported into the project. The avatars and Columbia apparel pieces will be animated using Unity's animation system, Mecanism. Mecanism uses Animation Clips which store information on how objects should adjust their position and other properties over time. These clips can come from third party digital content creation packages, motion capture studios or can be created within Unity. Animation Clips can be considered the building blocks for all animation sequences in Unity. These building blocks are organized into Mecanim's Animator Controller to chain various animations together. The Controller keeps track of the Animation Clips in a flowchart system and behaves like a state machine that keeps track of current Animation Clips and when they should change. The Controller is also capable of blending multiple clips to provide smooth transitions between animations. The Animation Clips and Animator Controller are aggregated into a GameObject through the Animator Component.\cite{unity_animation} \\
+To achieve this, Columbia apparel assets and animations will be imported into the project. The avatars and Columbia apparel pieces will be animated using Unity's animation system, Mecanim. Mecanim uses Animation Clips which store information on how objects should adjust their position and other properties over time. These clips can come from third party digital content creation packages, motion capture studios or can be created within Unity. Animation Clips can be considered the building blocks for all animation sequences in Unity. These building blocks are organized into Mecanim's Animator Controller to chain various animations together. The Controller keeps track of the Animation Clips in a flowchart system and behaves like a state machine that keeps track of current Animation Clips and when they should change. The Controller is also capable of blending multiple clips to provide smooth transitions between animations. The Animation Clips and Animator Controller are aggregated into a GameObject through the Animator Component.\cite{unity_animation} \\
 
 \hangindent=0.5cm \textbf{Product Information Overlay} \\
 
-In addition to allowing users to interact with Columbia gear within the experience, Columbia product details need to be displayed to the user. This menu system needs to be onobtrusive in order to preserve the immersion of the experience. This will be done through the use of Unity's in build UI element - the panel. The panels will include an image of the product, its specifications and an "Add to Cart" option. \\
+In addition to allowing users to interact with Columbia gear within the experience, Columbia product details need to be displayed to the user. This menu system needs to be unobtrusive in order to preserve the immersion of the experience. This will be done through the use of Unity's built-in UI element - the panel. The panels will include an image of the product, its specifications and an "Add to Cart" option. \\
 
 
 \subsection{Rod mechanics}
@@ -366,7 +362,7 @@ This means that we will be using Unity's 3D physics engine extensively to create
 \subsubsection{Concerns}
 This component of the project has intrests in two different viewpoints.
 First, the dependency viewpoint will slightly determine when this component of the project can actually be started and completed.
-Mainly, it depends on on the environment.
+Mainly, it depends on the environment.
 It is possible to work on the basics of this component before the environment is completed; for example importing the required assets and the basic physics.
 However, the bulk of the work to create a realistic fishing interaction will need to be completed after the environment is in a finished state.
 Secondly, this component depends on the interface viewpoint.
@@ -388,7 +384,6 @@ When we detect an instance of this, the objects position can then be set to the 
 
 \hangindent=0.5cm \textbf{Fishing Rod and Line Physics}: Creating ropes and cables in Unity is non-trivial.
 The prefered method is to use physics joints.
-Physics joints, and specifically many hinge joints can be used to create the fishing line.
 The hinge joint GameObject is highly configurable, so the settings will need to be tweaked to create a realistic looking fishing line.
 For the fishing rod, hinge joints can also be used.
 Creating the physics to mimic the flex of a fishing rod is a matter of tweaking primarily the use limits of the hinge joints.
