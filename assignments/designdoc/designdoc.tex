@@ -296,37 +296,42 @@ expose underlying features.\\
 \subsection{Improve Realism and Animate Environment}
 One of the main goals of our project is to make it as realistic as possible
 without compromising performance. Realism can come from a number of different
-techniques. The first we will be focusing on is environment animation. A
-majority of our application will take place in a river so we will need to make
-this river as animated as possible. This will involve an animation of the
-water moving passed the users and can be done using one of the open-source
-animated water shadings. A similar technique can be used to create movement of
-clouds in the sky.
+techniques.
+\subsubsection{Concerns}
+From a dependency viewpoint it is important to have a static environment already created. However, in order to build a static environment we need to be aware of how dynamic textures work as to effectly combine these two concepts. 
 
-The next step to improving realism is adding audio. Audio is crucial when it
-comes to immersion so not only will we need to add water noises but also noises
-related to wind and a wide range of animals. In Unity, sounds originate from
-Audio Source attached to objects. Those sounds and audio clips can be found in
-any open-source audio library and easily imported into Unity. The last
-technique we will be focusing to improve realism is lighting and shadowing.
-This can be achieved using the built-in directional lighting tools within Unity.
+\subsubsection{Aspects}
+The three techniques we will be focusing on when it comes to improving realism are animation, audio, and lighting. \\
+
+\hangindent=0.5cm \textbf{Animation}: The first we will be focusing on is environment animation. A majority of our application will take place in a river so we will need to make this river as animated as possible. This will involve an animation of the water moving passed the users and can be done using one of the open-source animated water shadings. A similar technique can be used to create movement of clouds in the sky.\\
+
+\hangindent=0.5cm \textbf{Audio}: The next step to improving realism is adding audio. Audio is crucial when it comes to immersion so not only will we need to add water noises but also noises related to wind and a wide range of animals. In Unity, sounds originate from Audio Source attached to objects. Those sounds and audio clips can be found in any open-source audio library and easily imported into Unity. \\
+
+\hangindent=0.5cm \textbf{Lighting and Shadowing}: The last technique we will be focusing to improve realism is lighting and shadowing. This can be achieved using the built-in directional lighting tools within Unity. \\
 
 \subsection{Tactile User Interaction}
 The central idea behind this project is to promote Columbia gear in a realistic fly fishing experience. This requires the virtual reality project to allow for the user to interact with various pieces of Columbia gear. Along with direct interaction with apparel within the virtual reality world, the project should provide an overlay to display detailed information on specific Columbia Sportswear products.
 
-\subsubsection{Interaction with Columbia Gear}
+\subsubsection{Concerns}
+
+This section will examine how viewpoints affect the two components of tactile user interaction with Columbia gear: prescence within the virutal reality environment and the product description overlay system.
+
+Under the dependency viewpoint, prescence of Columbia gear in the fly fishing experience will ultimately depend on the static environment and the animations. However, for development purposes, avatars with Columbia gear assets can be created independently. The product information panels, in a similar sense, will ultimately depend on the static environment. Once again, the overlay system can be developed indepdently as well as long as the product information is available. Integrating the panel would only be a matter of positioning and defining the correct context.
+
+\subsubsection{Aspects}
+
+The two aspects in this component are the the interaction with Columbia gear and the product information overlay.
+
+\hangindent=0.5cm \textbf{Interaction with Columbia Gear} \\
 
 User interaction with Columbia gear will most likely be through various avatars placed in the virtual reality environment. Since the Vive doesn't allow for body tracking with just the wands, our sponsor steered us away from having Columbia apparel on the user's avatar. Users will be able to inspect and interact with the avatars that are showcasing the Columbia gear.
 
-To achieve this, Columbia apparel assets and animations will be imported into the project. The avatars and Columbia apparel pieces will be animated using Unity's animation system, Mecanism. Mecanism uses Animation Clips which store information on how objects should adjust their position and other properties over time. These clips can come from third party digital content creation packages, motion capture studios or can be created within Unity. Animation Clips can be considered the building blocks for all animation sequences in Unity. These building blocks are organized into Mecanim's Animator Controller to chain various animations together. The Controller keeps track of the Animation Clips in a flowchart system and behaves like a state machine that keeps track of current Animation Clips and when they should change. The Controller is also capable of blending multiple clips to provide smooth transitions between animations. The Animation Clips and Animator Controller are aggregated into a GameObject through the Animator Component.\cite{unity_animation}
+To achieve this, Columbia apparel assets and animations will be imported into the project. The avatars and Columbia apparel pieces will be animated using Unity's animation system, Mecanism. Mecanism uses Animation Clips which store information on how objects should adjust their position and other properties over time. These clips can come from third party digital content creation packages, motion capture studios or can be created within Unity. Animation Clips can be considered the building blocks for all animation sequences in Unity. These building blocks are organized into Mecanim's Animator Controller to chain various animations together. The Controller keeps track of the Animation Clips in a flowchart system and behaves like a state machine that keeps track of current Animation Clips and when they should change. The Controller is also capable of blending multiple clips to provide smooth transitions between animations. The Animation Clips and Animator Controller are aggregated into a GameObject through the Animator Component.\cite{unity_animation} \\
 
-\subsubsection{Product Information Overlay}
+\hangindent=0.5cm \textbf{Product Information Overlay} \\
 
-In addition to allowing users to interact with Columbia gear within the experience, Columbia product details need to be displayed to the user. This menu system needs to be onobtrusive in order to preserve the immersion of the experience. This will be done through the use of Unity's in build UI element - the panel. The panels will include an image of the product, its specifications and an "Add to Cart" option.
+In addition to allowing users to interact with Columbia gear within the experience, Columbia product details need to be displayed to the user. This menu system needs to be onobtrusive in order to preserve the immersion of the experience. This will be done through the use of Unity's in build UI element - the panel. The panels will include an image of the product, its specifications and an "Add to Cart" option. \\
 
-\subsubsection{Concerns}
-
-\subsubsection{Aspects}
 
 \subsection{Rod mechanics}
 In order to create a realistic fishing experience, the user will need to be able to interact with a virtual fishing rod.
