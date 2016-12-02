@@ -28,6 +28,8 @@
 \newcommand{\cred}[1]{{\color{red}#1}}
 \newcommand{\cblue}[1]{{\color{blue}#1}}
 
+\graphicspath{ {diagrams/} }
+
 \usepackage{hyperref}
 \usepackage{geometry}
 \usepackage{array}
@@ -177,8 +179,13 @@ application we will ask for feedback related their experience in the form of
 oral questions or an anonymous written survey depending on what the user
 prefers. \\
 
-\hangindent=0.5cm \textbf{Rationale}: We included this viewpoint due to the importance of user immersion. The user experience in Virtual Reality applications is very sensitive and there are a lot of factors that can have influence over it. According to a study done by Intel and Thug\cite{michalak_lind_round1}, immersion needs graphical fidelity, not realism. They found that what was important was that graphics were crisp and clean at all times. They found that a smooth experience, one without glitches and lost frames, was the most important aspect of immersion. They even went a step further to argue that photo-realism is often times worse because it makes inaccuracies more obvious. \\
+\hangindent=0.5cm \textbf{Rationale}: We included this viewpoint due to the importance of user immersion. The user experience in Virtual Reality applications is very sensitive and there are a lot of factors that can have influence over it. According to a study done by Intel and Thug\cite{michalak_lind_round1}, immersion needs graphical fidelity, not realism. They found that what was important was that graphics were crisp and clean at all times. They found that a smooth experience, one without glitches and lost frames, was the most important aspect of immersion. They even went a step further to argue that photo-realism is often times worse because it makes inaccuracies more obvious.
 
+\begin{figure}[h]
+\centering
+\caption{Context Viewpoint Diagram}
+\includegraphics[width=0.5\textwidth]{projectContext.eps}
+\end{figure}
 \subsubsection{Composition viewpoint}
 Project composition is the organization of, and relationships between, each of
 the sections of our project. Each portion of the project will be explored in
@@ -206,8 +213,13 @@ production of this virtual reality experience. It is vital to have our design
 keep an eye on composition so that nothing gets lost in the complexity of the
 undertaking. Also, as our team learns and improves our product, there will be
 periods of redesigning and modification that need to stay within the planned
-composition in order not to break other portions of the project. \\
+composition in order not to break other portions of the project.
 
+\begin{figure}[h]
+\centering
+\caption{Composition Viewpoint Diagram}
+\includegraphics[width=0.5\textwidth]{projectComposition.eps}
+\end{figure}
 \subsubsection{Dependency viewpoint}
 The Dependency viewpoint specifies the relationships of interconnection and access among entities. These relationships include shared information, order of execution, or parameterization of interfaces. Establishing these relationships will be key in organizing the project's workflow.\\
 
@@ -298,7 +310,7 @@ One of the main goals of our project is to make it as realistic as possible
 without compromising performance. Realism can come from a number of different
 techniques.
 \subsubsection{Concerns}
-From a dependency viewpoint it is important to have a static environment already created. However, in order to build a static environment we need to be aware of how dynamic textures work as to effectly combine these two concepts. 
+From a dependency viewpoint it is important to have a static environment already created. However, in order to build a static environment we need to be aware of how dynamic textures work as to effectly combine these two concepts.
 
 \subsubsection{Aspects}
 The three techniques we will be focusing on when it comes to improving realism are animation, audio, and lighting. \\
