@@ -70,41 +70,73 @@ This document describes the progress our group has made over the last term and w
 \tableofcontents
 \clearpage
 
-\section{Project Overview (Mckenna Jones)}
-This project aims to create a functional and immersive virtual reality outdoor experience that promotes Columbia gear to outdoor enthusiasts and newcomers.
-Many outdoor activities initially require a large mental and economic
-investment to get started.
+
+\section{Project Overview}
+The current typical retail experience is neither interactive nor immersive.
+This project aims to create a functional and immersive virtual reality outdoor experience that promotes Columbia Sportswear gear to outdoor enthusiasts and newcomers alike.
+Many outdoor activities initially require a large economic investment to get started.
 This makes people less likely to try new outdoor activities.
-The goal of the project is to develop an interactive product demonstration to combat this issue.
+The goal of the project is to develop an interactive product demonstration to combat this issue by providing customers with an experience of the outdoor activity before they purchase any gear related to it.
 This will be accomplished through the use of the HTC Vive and the Unity Game Engine.
 
-\section{Current Status (Mckenna Jones)}
+The final vision is to have this virtual reality experience placed in a Columbia Sportswear retail store.
+Customers will be able to try on apparel in real life, and then perform movements, in the virtual reality experience, while wearing the gear.
+This will give customers an idea of how the gear will feel on them when they are performing the same activity in real life.
+The primary focus of this project is creating a fishing experience to promote the Performance Fishing Gear line at Columbia Sportswear.
+
+\section{Current Status}
+The following section gives insight into where there project currently stands, and the progress we have made since the previous progress report.
+
+\subsection{Previous Work}
 During winter break we spent a considerable amount of time becoming familiar with the Unity Game Engine and developing a basic prototype.
 This prototype consisted of a basic terrain that would be suitable for our outdoor fishing experience.
 This term our work has been a continuation of the progress we made on that prototype.
 
+\subsection{Terrain}
 The first area we have worked on is improving the terrain that we created in the prototype.
-Originally we simply created a environment that looked like someone might fish at.
+Originally we simply created an environment that closely resembled a location someone might fish at.
 This term we have done a bit more research and roughly based our environment on a few popular fishing destinations around the Pacific NW.
+Smith Rock State park in Central Oregon is one of these locations.
 Our familiarity with the Unity terrain tools allowed us to do this.
 It is fairly easy to use various terrain brushes to sculpt both mountainous and flatter areas.
+One can also use the terrain tool to create bushes, trees, grass and other terrain related objects.
 
+\subsection{User Interaction}
 The other big area we have been working on is the user interaction aspect of our project, which will be our primary focus from here on out.
 The Unity Package, NewtonVR has been the basis of user interaction thus far.
 It makes it the process of creating realistic user interaction in a VR environment relatively painless.
-You can essentially just add an \textit{InteractableItem} script to any GameObject, and without many adjustments, the user can interact with them item using the HTC Vive wands.
+You can essentially just add an \textit{InteractableItem} script to any GameObject, and without many adjustments, the user can interact with the item using the HTC Vive wands.
+Instead of using the default SteamVR camera within Unity, we are now using the NVRCameraRig, to support this user interaction.
+The NewtonVR package also makes it painless to replace the controllers with other objects in the experience.
+For example, when the user picks up the fishing rod, the controller model will be replaced with the rod.
+The final benefit of NewtonVR is that it makes that objects unable to pass through other objects.
+This adds to the realism of the interaction.
 Currently we have been working with nailing down the interaction with the fishing rod.
 The hardest part of this interaction is making it feel realistic.
 Currently we have a rigid fishing rod, and rigid fishing line, which clearly does not look as realistic as we would hope.
 Unfortunately, none of us have much experience in this type of work.
-We would ideally like there to be a realistic flex to the rod.
+We would ideally like there to be a realistic flex to both the rod and the fishing line.
 One solution would be to use some type of 3d modeling program like Blender, but this might be out of the scope of this project.
+Hopefully we will be able to find an asset on the Unity asset store to solve this issue.
 
+\subsection{Project Focus}
 Towards the beginning of this term we came up with the idea to have our VR experience be centered around a campsite.
 We figured that this would be the perfect area of showcase some of the Columbia gear.
-After talking with out client from Columbia he informed us that it might make more sense to have the experience be focused on user movement.
+After talking with out client from Columbia he informed us that they already had a similar experience.
+Therefore, we decided it might make more sense to have the experience be focused on user movement.
 This way the user can be wearing Columbia gear in real life, while performing actions in VR, like fishing.
 This changed our direction slightly, but not dramatically.
+We will still keep the campsite, but it will no longer be the main attraction in our environment.
+
+\subsection{Client Interaction}
+At this point in the project we have been working with out client to get some essential assets for our project.
+Firstly we need Columbia related assets.
+This will include different types of apparel from the Performance Fishing Gear line at Columbia.
+Ideally these apparel related assets will be ready to be placed on avatars, which our client has suggested is likely.
+If this is the case, we hope to have a number of avatars, wearing Columbia gear, that will be walking around the campsite and river to showcase some of the Columbia gear.
+We have also been discussing the need for a small budget to purchase some higher quality assets from the Unity Asset Store.
+Up until now we have been relying on free assets, which are sufficient, but limit the realism of our experience.
+We could focus some of our time on creating our own assets, but this time could be better spent elsewhere, like improving user interaction.
 
 \section{Looking forward}
 %what's left to do
