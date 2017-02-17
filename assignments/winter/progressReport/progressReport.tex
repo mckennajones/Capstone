@@ -205,7 +205,59 @@ This adds to immersion and creates a buffer between starting the experience and 
 
 
 \section{Interesting Development Techniques}
-%Maybe talk about some of the tools we are using in Unity??
+As with any project, a major portion of the time spent so far has been learning how best to use our tools and what methods give the best results all across the project.
+Specifically, our team has been getting better at smoothly moving through the environment in the Unity IDE, integrating our work from different sections into one central project, and adding realism to our landscape.  <-- maybe edit/smooth out this sentence?
+This section will break down each of those development technique areas and show how we have implemented them to improve our project.
+
+\subsection{Collaboration}
+One of the earliest adaptions we had to make as a team was learning how to get work done when we weren't all on the same development machine.
+A good portion of the time we all meet up and work with the laptop provided by Mike Premi and Intel.
+However, the wide range of tasks involved means that it is often better to be able to develop on our individual laptops and then merge into one project.
+Many teams use Git for their code collaboration, and we have a Github repository for our group.
+The problem with using git and Github for managing our project is that the sheer size of the project files makes committing, pushing, and pulling from a remote repository unrealistic.
+Also, changes to the project often result in edits to hundreds of asset and configuration files, which can become hard to manage in git.
+Our solution is to use the Unity Collaborate Service.
+The service is not as widely used or fully featured as Git and Github, but because it is developed for Unity projects specifically, it aligns extremely well with our needs.
+The Collaborate tool uses the same basic premise as Github.
+The project is stored on the cloud, and users pull and push changes from that location to their local machines.
+Commits are tagged with commit messages as in Git, and each time you go to pull new changes down a list of commit messages accompanies the pull.
+The beauty of using a Unity service is that the Collaborate tool is already built right into the Unity IDE, and is very simple to download and run.
+We have found a lot of success with this tool, and it has allowed for more efficient and varied work.
+
+\subsection{Real Life Environment Basis}
+Throughout the entire planning, design, and development of the project we have talked a lot about making the experience realistic.
+An environment that is close to a real landscape and better user interaction will make the overall experience feel more immersive.
+One of the key ways that we have found to increase realism is through basing our environment on a real place in the world.
+The temptation is to just build a landscape that looks good in our minds, but then there is a random collection of plants and trees, rock formations, and other unique parts of the environment.
+We chose to match our landscape to pictures of Smith Rock State Park, and so far this has been a great way to make design decisions on many parts of the environment we are building.
+There are dozens of ways that we are using this real life location to influence virtual reality choices.
+For example, we had built up a basic range of hills around our river valley, but the hills were sort of amorphous and far too symmetrical to be realistic.
+After looking through pictures of Smith Rock State Park we were able to redesign the hills to fit the style of rock outcrops we saw, and make the entire landscape's backdrop more meaningful and detailed.
+In another part of the project, we changed and updated the vegetation we had placed near the river so that it better matched vegetation near water at Smith Rock.
+Both these are examples of bringing a continuity and level of detail to our environment that is extremely important.
+For instance, although most users would not specifically comment on a bright green Evergreen tree growing in our dry, dusty environment, the discrepancy would subtly take away from user immersion.
+Going forward in development we plan to use real life references for everything that we can, from the fishing activity to how users interact with random objects in the virtual world around them.
+
+\subsection{Unity Tools and Techniques}
+Another important part of smooth and efficient development is the ability to move around in and mold our experience in a logical way.
+The Unity IDE has some terrific tools for this, and we have learned a lot about how to use them to their full potential.
+
+\subsubsection{Environment Navigation}
+The simplest tricks that help with almost all of our development involve navigating through our landscape in the Unity IDE.
+There are a bunch of ways to move around the environment, each with a different set of best uses.
+The Transform Tools allow panning, rotation, and other basic view modifications.
+With the addition of modifier keys, these five buttons provide a long list of ways to interact with the scene.
+Mastering how to use these tools has greatly sped up development of the landscape.
+
+\subsubsection{Terrain Tools}
+While creating our complex landscape, we made heavy use of Unity's terrain tools.
+A terrain object starts as just a flat plane, and then landforms are raised and lowered out of the plane.
+We used a couple tricks to make terrain design easier and less repetitive, as well as create better features.
+First, we were able to fill every part of our terrain below a certain height with water.
+That way, we could carve a riverbed through the middle of our environment, and then fill the river in a way that looked realistic and natural.
+Second, the paint height tool allows for some interesting modification to the heightmap of our terrain object.
+The paint height tool allows us to sample the height of one area of our terrain and then apply that height to other areas.
+This came in handy for aspects such as making a road into the landscape be even and relatively flat, and drawing up flat topped rock formations around the edges of the valley.
 
 \section{Images}
 Below are some images that show the current state of our virtual reality experience.
