@@ -292,20 +292,21 @@ For this specific project we will be using the HTC Vive so we are concerned with
 This is a core component of our system that other parts of the product will rely on so it should be simple and reliable at the same time.
 
 We will consider three different gaming engines to accomplish this task, Unity, Unreal Engine, and Amazon's Lumberyard gaming engine.
-Two different aspects of each engine will be compared in order to reach a final verdict on which is the most useful for the task.
+Three different aspects of each engine will be compared in order to reach a final verdict on which is the most useful for the task.
 First there is the consideration of which language, and tools are used to complete the task.
 Second, since this is a core function of our system we will consider if the gaming engine has native virtual reality support or not.
+Finally, we will consider if the engine has a physics based VR interaction package available.
 
 \vspace{2mm}
 \begin{table}[h!]
 \centering
-  \begin{tabular}{ | l || c | c |  }
+  \begin{tabular}{ | l || c | c | c |  }
   \hline
-  Engine Name & Language & Native VR Support\\
+  Engine Name & Language & Native VR Support & Physics based VR interaction\\
   \hline
-  Unity  & C\# & Yes\\ \hline
-  Unreal Engine & Blueprint Visual & Yes\\ \hline
-  Lumberyard & Lua & No\\ \hline
+  Unity  & C\# & Yes & NewtonVR\\ \hline
+  Unreal Engine & Blueprint Visual & Yes & Nothing official\\ \hline
+  Lumberyard & Lua & No & No\\ \hline
   \end{tabular}
 \end{table}
 \vspace{2mm}
@@ -319,6 +320,9 @@ This abstracts the process of retrieving controller input greatly, which is a go
 The generally accepted approach to capture the controller input in Unity is to create a controller class that makes use of these calls.
 Unity is officially supported for development for the Vive.
 Therefore much documentation exists on the subject of capturing controller movement.
+Finally, using Unity there is a package called NewtonVR.
+This makes physics based interaction with GameObjects painless.
+One can simply place an \textit{InteractableItem} script on an object and it will be intractable with the controller.
 
 The next engine to consider for this task is the Unreal Engine.
 Unlike Unity, Unreal does not make use of a traditional programming language.
@@ -328,9 +332,11 @@ The only difference is that it is done visually instead of with code.
 The process for working with Motion Controllers in Unreal is much different than Unity.
 The developer picks from a list of Motion Controller-specific inputs in the Pallete panel of the Blueprint Editor\cite{unreal_controller}.
 From here you can simply drag and drop to attach a certain controller action to an action within the game.
-This simplifies the process greatly, but also has the drawback of not being as customizable as if we were writing this in code.
+This simplifies the process greatly, but also has the drawback of not being as customization as if we were writing this in code.
 The Unreal Engine has support for SteamVR, and therefore the Vive.
 That being said, the documentation available for VR related topics is not plentiful as with Unity.
+There is no official physics based interaction package in Unreal.
+It is possible to interact with objects using the controllers, but most of the methods are solutions that various people have hacked together.
 
 The final option for this task is Amazon's Lumberyard Engine.
 What makes Lumberyard unique is that you can choose to use the Flow Graph System for visual scripting on the Lua language for code based scripting.
@@ -339,6 +345,7 @@ Using the Flow Graph one can create a VR:ControllerTracking node which provides 
 Alternatively, one can use Lua to access the TrackingState struct which contains the linear velocity, acceleration, and all other tracking info of each controller \cite{lumberyard_controller_lua}.
 Lumberyard has this benefit of being flexible in the implementation.
 However, Lumberyard's VR support is currently still in beta and the documentation is lacking.
+Lumberyard has no support for physics based interactions in VR.
 
 After considering the above options, Unity stands out as the best option to capture the controller movement.
 First of all, the language, C\#, that Unity uses for scripting is ideal.
