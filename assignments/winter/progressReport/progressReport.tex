@@ -84,7 +84,7 @@ Customers will be able to try on apparel in real life, and then perform movement
 This will give customers an idea of how the gear will feel on them when they are performing the same activity in real life.
 The primary focus of this project is creating a fishing experience to promote the Performance Fishing Gear line at Columbia Sportswear.
 
-\section{Current Status}
+\section{Current Status (McKenna Jones)}
 The following section gives insight into where there project currently stands, and the progress we have made since the previous progress report.
 
 \subsection{Previous Work}
@@ -138,8 +138,34 @@ We have also been discussing the need for a small budget to purchase some higher
 Up until now we have been relying on free assets, which are sufficient, but limit the realism of our experience.
 We could focus some of our time on creating our own assets, but this time could be better spent elsewhere, like improving user interaction.
 
-\section{Looking forward}
-%what's left to do
+\section{Looking forward (Spike Madden)}
+The following sections looks at the tasks that still need to be completed for our virtual reality project.
+
+\subsection{Environment}
+We made a lot of progress on the physical environment as most of our developing time has been invested into that. As stated before in the Current Progress section, our VR environment is based off Smith Rock State Park. We're fairly happy with how it's looking right now but have been limited by the use of only free assets.
+
+The layout of the environment is pretty close to what we were envisioning with Smith Rock in mind, but the quality of how realistic the various elements look could be improved. The easiest and best way to handle this would be to use higher quality, most likely paid, assets from Unity's Asset Store. We've compiled a list on our Github wiki that includes the 'Fish School Bundle' by Unlock Software, 'Fishing Gear PACK PBR' by Rokay3D, 'DirectX11 Grass Shader' by Stix Games and 'Camping Site' by Z-Software GmbH. Our Columbia sponsor, Tim Devlin, offered to provide a budget for these assets so we should be getting access to that soon. This is just the first set of assets we determined were necessary and we may look for more improvements over our existing assets in the coming weeks.
+
+Other minor cosmetic changes to textures and shadows can be made to improve realism but it's not our biggest priority right now. We've noticed some frame rate issues but we're unsure whether this is a problem with our development computer's specs or our environment isn't optimized. We'll be looking into this in the coming weeks.
+
+\subsection{Fishing Interaction}
+This is the most important component of our project that needs to be completed by the end of this term. There seemed to be a misunderstanding of the project's main goal. As a group, we thought the purpose of this VR experience was to showcase Columbia gear in a fishing experience. However, our sponsors suggested that we focus more on the interactive fishing portion and put less focus on the inclusion and promotion of Columbia products. We sorted this out earlier in the term and we've been putting a bigger emphasis on fishing interaction development.
+
+We've started very preliminary development on the fishing rod and currently have a fishing rod asset with a GameObject attached to it to allow for user interaction. The rod is currently attached to the user's avatar and casts a line with a bobber when the user is near water. This mechanic is still really rough; the rod's positioning is inconsistent, and the fishing line animation is abrupt and unrealistic.
+
+There're several components that we have to improve to create a more realistic fishing experience. From an aesthetics standpoint, having a non-free fishing rod asset would help with the visual presentation. The rod interaction with the controller has to be more fluid in order to maintain immersion. This will be a hard task to accomplish; we need to track the rod accurately and account for the physics of waving the rod around. When near the water, we have to improve the casting animation. The line has to arch in a predictable path based on the user's momentum and movement of the controller. We also need to add fish to the river and the interaction between the rod and fish when the user is fishing. We'll have to think of some mechanism that, when a fish bites, the user can reel back the fish in a realistic manner. There's a lot of work to be done here so most of our time is going to be put into implementing this fishing experience.
+
+\subsection{Columbia Products}
+As mentioned in the Fishing Interaction section, we're backing away from the idea of having Columbia gear as the central piece of our VR experience. With that said, our sponsor has mentioned that several Columbia assets are available for use. However, it wasn't really clear from our previous call with Tim what kind of assets would be available. Avatars with Columbia gear with animations would be ideal as it seems unfeasible to attempt to animate the Columbia gear assets on our own.
+
+If we decide to showcase Columbia gear, it would be a minor part of our experience. With the current setup of our campsite area and fishing area, we could place various fishing and camping related products and avatars with Columbia gear for the user to interact with. Anything else seems like it'd be outside of the scope of this project.
+
+\subsection{User Interface}
+Creating a basic UI is on our checklist for this project. A launch screen, with 'Enter' and 'Exit' buttons will most likely be the first screen the users encounter. We discussed the idea of an interactive tutorial on the basics of the VR experience but we've left this as a stretch goal for now. The tutorial would introduce the navigation method, campsite and fishing areas, and the fishing mechanics.
+
+We had several requirements for UI relating to Columbia gear, but as our focus has shifted, we're looking into changing them. We had the idea of having product information hover in a panel if a user were to inspect a piece of Columbia apparel or gear. We also had a requirement of a Shopping Cart for Columbia gear but we'll probably leave these features out as the focus of the project changes to be more centered around the fishing experience.
+
+We'll have to create a basic navigation system to let the user move within the experience. To move between the two locations where there's user interaction involved, the campsite area and the fishing area, we'll implement a teleport system that is common in many VR games.
 
 \section{Problems Encountered (Jake Jeffreys)}
 Throughout our project we have run into many different issues that have ranged in levels of severity.
@@ -208,7 +234,7 @@ Now we are going to keep it as a base and instead allow the user to walk around 
 This adds to immersion and creates a buffer between starting the experience and starting the fishing activity.
 
 
-\section{Interesting Development Techniques}
+\section{Interesting Development Techniques (Sean Marty)}
 As with any project, a major portion of the time spent so far has been learning how best to use our tools and what methods give the best results all across the project.
 Specifically, our team has been getting better at smoothly moving through the environment in the Unity IDE, integrating our work from different sections into one central project, and adding realism to our landscape.  <-- maybe edit/smooth out this sentence?
 This section will break down each of those development technique areas and show how we have implemented them to improve our project.
