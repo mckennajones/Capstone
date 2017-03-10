@@ -3,12 +3,12 @@ FILE = progressReport
 all: writeup
 
 writeup:
-	latex $(FILE).tex
+	pdflatex $(FILE).tex
 	#bibtex $(FILE)
-	latex $(FILE).tex
+	pdflatex $(FILE).tex
 	#latex $(FILE).tex
-	dvips -R -Poutline -t letter $(FILE).dvi -o $(FILE).ps
-	ps2pdf $(FILE).ps
+	#dvips -R -Poutline -t letter $(FILE).dvi -o $(FILE).ps
+	#ps2pdf $(FILE).ps
 
 clean:
 	rm -f *.pdf *.ps *.dvi *.out *.log *.aux *.bbl *.blg *.pyg *.toc
