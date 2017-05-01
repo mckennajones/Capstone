@@ -1,6 +1,12 @@
 # Capstone
 CS461 Oregon State University Senior Capstone
 
+## Members
+McKenna Jones   jonesmck@oregonstate.edu
+Spike Madden    maddens@oregonstate.edu
+Jake Jeffreys   jeffreyn@oregonstate.edu
+Sean Marty			martys@oregonstate.edu
+
 ## Requirements
 - SteamVR
 - HTC Vive Hardware (headset, 2 controllers, 2 base stations)
