@@ -23,7 +23,6 @@ Sean Marty			martys@oregonstate.edu
 ## Instructions to Run VR Project
 - Setup HTC Vive hardware and software by following this guide: https://www.vive.com/us/setup/
 - Pull down this repository
-- Access executable file in main folder
 - Import executable into Steam
   - Games -> Add a Non-Steam Game to My Library
   - Browse to saved executable
