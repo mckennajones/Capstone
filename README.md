@@ -12,7 +12,7 @@ Sean Marty			martys@oregonstate.edu
 
 
 ## Requirements
-- SteamVR
+- Steam and SteamVR
 - HTC Vive Hardware (headset, 2 controllers, 2 base stations)
 - Computer that fulfils the following minimum specifications:
   - Processor: Intel Core i5-4590 or AMD FX 8350, or better
@@ -24,6 +24,10 @@ Sean Marty			martys@oregonstate.edu
 - Setup HTC Vive hardware and software by following this guide: https://www.vive.com/us/setup/
 - Pull down this repository
 - Access executable file in main folder
-- Run executable
+- Import executable into Steam
+  - Games -> Add a Non-Steam Game to My Library
+  - Browse to saved executable
+  - Add selected programs
+- Run executable from within Steam Library
 
 
