@@ -27,7 +27,7 @@ Sponsored by Intel and Columbia Sportswear
 * scripts: These are the scripts the we wrote as a team. We also utilized other scripts that were not written by us.
 
 ## Executable
-An executable of our project can be found and downloaded at the folowing [link](http://web.engr.oregonstate.edu/~jonesmck/CapstoneVRbuild/)
+An executable of our project can be found and downloaded at the folowing [link](http://web.engr.oregonstate.edu/~jonesmck/CapstoneVRbuild/).
 You will need to download the exe file, and data folder, as described in more detail below. 
 
 ## Access to Complete Unity Project
