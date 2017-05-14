@@ -1,0 +1,201 @@
+\documentclass[10pt,journal,compsoc,onecolumn, draftclsnofoot]{IEEEtran}
+
+\usepackage{graphicx}
+\usepackage{amssymb}
+\usepackage{amsmath}
+\usepackage{amsthm}
+\usepackage{caption}
+
+\usepackage{alltt}
+\usepackage{float}
+\usepackage{color}
+\usepackage{url}
+
+\usepackage{balance}
+\usepackage[TABBOTCAP, tight]{subfigure}
+\usepackage{enumitem}
+\usepackage{pstricks, pst-node}
+
+\usepackage{geometry}
+\usepackage{pst-gantt}
+\usepackage{tabu}
+
+\geometry{textheight=8.5in, textwidth=6in}
+
+%random comment
+
+\newcommand{\cred}[1]{{\color{red}#1}}
+\newcommand{\cblue}[1]{{\color{blue}#1}}
+
+\graphicspath{ {images/} }
+
+\usepackage{hyperref}
+\usepackage{geometry}
+\usepackage{array}
+\usepackage{titling}
+
+\def\name{Jake Jeffreys, McKenna Jones, Spike Madden, Sean Marty}
+\title{
+EmbarkVR: Outdoor Virtual Reality Experience \\
+CS Senior Capstone \\
+Spring Midterm Progress Report\\
+\vspace{1mm}
+}
+\author{Jake Jeffreys, McKenna Jones, Spike Madden, Sean Marty}
+\date{13 May 2017}
+
+%pull in the necessary preamble matter for pygments output
+
+%% The following metadata will show up in the PDF properties
+\hypersetup{
+  colorlinks = true,
+  linkcolor = black,
+  urlcolor = black,
+  pdfauthor = {\name},
+  pdfkeywords = {cs462 ``senior capstone''},
+  pdftitle = {CS 462 Progress Report},
+  pdfsubject = {CS 462 Progress Report},
+  pdfpagemode = UseNone
+}
+
+\begin{document}
+\begin{titlepage}
+\maketitle
+\vspace{1mm}
+\begin{abstract}
+This document describes the progress our group has made over the last term and where will will be going from here. It starts out with a brief recap of the projects purpose and goals. It then moves in to showing the current status of the project and a breakdown of the major components. Then there is a section discussing how we see the future of this project. Affter that we talk about the major issues we ran into and how we overcame them.
+\end{abstract}
+\vspace{1cm}
+
+\noindent\begin{tabular}{ll}
+\makebox[2.5in]{\hrulefill} & \makebox[2.5in]{\hrulefill}\\
+Intel Sponsor & Date\\[5ex]% adds space between the two sets of signatures
+\makebox[2.5in]{\hrulefill} & \makebox[2.5in]{\hrulefill}\\
+Columbia Sponsor & Date\\[5ex]% adds space between the two sets of signatures
+\makebox[2.5in]{\hrulefill} & \makebox[2.5in]{\hrulefill}\\[2ex]
+\makebox[2.5in]{\hrulefill} & \makebox[2.5in]{\hrulefill}\\[2ex]
+\makebox[2.5in]{\hrulefill} & \makebox[2.5in]{\hrulefill}\\[2ex]
+\makebox[2.5in]{\hrulefill} & \makebox[2.5in]{\hrulefill}\\
+Student Team Members & Date\\
+\end{tabular}
+
+\end{titlepage}
+
+
+\tableofcontents
+\clearpage
+
+
+\section{Project Purpose and Goals}
+The current typical retail experience is neither interactive nor immersive.
+This project aims to create a functional and immersive virtual reality outdoor experience that promotes Columbia Sportswear gear to outdoor enthusiasts and newcomers alike.
+Many outdoor activities initially require a large economic investment to get started.
+This makes people less likely to try new outdoor activities.
+The goal of the project is to develop an interactive product demonstration to combat this issue by providing customers with an experience of the outdoor activity before they purchase any gear related to it.
+This will be accomplished through the use of the HTC Vive and the Unity Game Engine.
+
+The final vision is to have this virtual reality experience placed in a Columbia Sportswear retail store.
+Customers will be able to try on apparel in real life, and then perform movements, in the virtual reality experience, while wearing the gear.
+This will give customers an idea of how the gear will feel on them when they are performing the same activity in real life.
+The primary focus of this project is creating a fishing experience to promote the Performance Fishing Gear line at Columbia Sportswear.
+
+
+\section{Current Status}
+We developed our project using the Unity Gaming Engine and the HTC Vive. The primary components of our virtual reality experience are the terrain and the user interaction. We modeled our environment off of Smith Rock State Park in Central Oregon. More specifically, the iconic sheer cliffs and vegetation were the inspiration behind our design process. We also put an emphasis on heavy user interaction within the experience as we found this was one of the most effective ways of aiding in immersion in virtual reality. We broke down the experience into two sections: a campsite area and a fishing area. Users start in the campsite area where they can pick up and play with various items. When they attempt to pick up the fishing rod, the user is teleported to the river where they can go fishing.
+
+\subsection{Player Movement}
+User movement within the Virtual Reality experience was something our team thought about quite extensively. We know that floor space in retail outlets is quite valuable so any space the VR takes up is space they can’t display clothes and gear. In many new VR games, developers overcome this by giving users the ability to jump between locations by pressing a specific button on the controller and pointing at designated locations. For our purposes we wanted something even more intuitive that would allow users to immediately gain movement abilities between locations without much training at all. If this application is to be used in a retail space, the faster customers can figure out the game, the faster they can begin the experience and the sooner the next customer can try it out. We decided to implement a new movement strategy not used very much in Virtual Reality which is teleportation. We attached scripts that manipulate the users vector location to relevant GameObjects to immediately transport the user upon contact. If the user is standing in the campsite and is interested in going fishing they can touch the fishing pole and will be transported to the fishing location. This intuitive strategy makes movement incredibly simple and easy.
+
+\subsection{Campsite}
+When the user enters the Virtual Reality experience, they start out in a campsite along a river. We created this location to aid in game flow and give the user a home base. Since Virtual Reality is still a very new medium to people, we didn’t want the users to feel overwhelmed when entering the experience. By placing them next to the river immediately, the sounds and sights along with the fishing activity itself can be a little confusing. Instead, we wanted to give the user a chance to get comfortable in the game first. Within the campsite there is a roaring fire, benches, tents, and tables with various tools laid across them. From the campsite the user can look down at the river and across at the large rock faces. Another benefit of the campsite is that it also gave us a great comfortable place to introduce users to Columbia products.
+
+\subsection{Columbia Gear}
+Incorporating Columbia gear into the experience was a bit of a challenge as we were trying to balance activities within the experience so that users don’t feel overwhelmed. As a proof of concept, within the campsite we have placed a mannequin that can wear new Columbia product lines. Upon examination of the clothes users can see product information such as cost, features, fabrics, and availability. Users can add items they like to a virtual cart and this information will be passed on to Columbia employees to fetch that item and even have it waiting for the users upon leaving the Virtual Reality experience. Columbia already has sample projects that involve displaying cloths virtually but they lack a physical component to make the experience interactive and entertaining while being informative. A virtual store on its own doesn’t offer much more than the normal consumer experience but to place the gear on avatars outside where the gear is intended to be used goes a step further. Many outdoor activities these days require a large initial mental and economic investment to get started. This makes people less likely to try new outdoor activities. Allowing users to immerse themselves in an outdoor experience virtually may help give consumers the confidence they need to invest in sports apparel and equipment to unlock new hobbies and experiences.
+
+\subsection{Fishing Experience}
+The fishing experience is the most exciting aspect of our application. We were able to harness the Unity physics engine alongside the Ultimate Rope Editor to develop an interactive fishing rod and line. The rod is a rigid GameObject that we found on the Unity Asset store but could easily be replaced by a Columbia brand rod. The fishing line is a series of thin cylinders attached together with hinge joints. The fishing line is first attached as a coil to the reel on the rod. The line then follows the rod up to the tip at which point it becomes free to swing. This last section of the rod is susceptible to gravity, air resistance, and other rigid objects within the environment. The user can toggle on and off instructions on how to cast the fishing line if needed. To start, users bring the rod back over their shoulder. They then can quickly bring it forward while pressing down on the controller pad to release the line lock. Once the user has cast out the line, they can begin fishing. We were able to take advantage of collision dynamics and velocity manipulation to create catchable fish with realistic movement animations and random swimming behavior. If users are patient, then fish will eventually connect with the hook. Once a fish has taken the bait, the controller will begin to vibrate. At this point the user needs to reel in the line and grab the fish with their other controller. This whole experience gives the user a great level of immersion and can be very entertaining. By first being a fun and interactive experience, it can then be informative and showcase Columbia gear in a positive light.
+
+
+
+\section{Looking forward}
+
+
+
+\section{Problems Encountered}
+
+
+
+\section{Interesting Development Techniques}
+As with any project, a major portion of the time spent so far has been learning how best to use our tools and what methods give the best results all across the project.
+Specifically, our team has been getting better at smoothly moving through the environment in the Unity IDE, integrating our work from different sections into one central project, and adding realism to our landscape.  <-- maybe edit/smooth out this sentence?
+This section will break down each of those development technique areas and show how we have implemented them to improve our project.
+
+\subsection{Collaboration}
+One of the earliest adaptions we had to make as a team was learning how to get work done when we weren't all on the same development machine.
+A good portion of the time we all meet up and work with the laptop provided by Mike Premi and Intel.
+However, the wide range of tasks involved means that it is often better to be able to develop on our individual laptops and then merge into one project.
+Many teams use Git for their code collaboration, and we have a Github repository for our group.
+The problem with using git and Github for managing our project is that the sheer size of the project files makes committing, pushing, and pulling from a remote repository unrealistic.
+Also, changes to the project often result in edits to hundreds of asset and configuration files, which can become hard to manage in git.
+Our solution is to use the Unity Collaborate Service.
+The service is not as widely used or fully featured as Git and Github, but because it is developed for Unity projects specifically, it aligns extremely well with our needs.
+The Collaborate tool uses the same basic premise as Github.
+The project is stored on the cloud, and users pull and push changes from that location to their local machines.
+Commits are tagged with commit messages as in Git, and each time you go to pull new changes down a list of commit messages accompanies the pull.
+The beauty of using a Unity service is that the Collaborate tool is already built right into the Unity IDE, and is very simple to download and run.
+We have found a lot of success with this tool, and it has allowed for more efficient and varied work.
+
+\subsection{Real Life Environment Basis}
+Throughout the entire planning, design, and development of the project we have talked a lot about making the experience realistic.
+An environment that is close to a real landscape and better user interaction will make the overall experience feel more immersive.
+One of the key ways that we have found to increase realism is through basing our environment on a real place in the world.
+The temptation is to just build a landscape that looks good in our minds, but then there is a random collection of plants and trees, rock formations, and other unique parts of the environment.
+We chose to match our landscape to pictures of Smith Rock State Park, and so far this has been a great way to make design decisions on many parts of the environment we are building.
+There are dozens of ways that we are using this real life location to influence virtual reality choices.
+For example, we had built up a basic range of hills around our river valley, but the hills were sort of amorphous and far too symmetrical to be realistic.
+After looking through pictures of Smith Rock State Park we were able to redesign the hills to fit the style of rock outcrops we saw, and make the entire landscape's backdrop more meaningful and detailed.
+In another part of the project, we changed and updated the vegetation we had placed near the river so that it better matched vegetation near water at Smith Rock.
+Both these are examples of bringing a continuity and level of detail to our environment that is extremely important.
+For instance, although most users would not specifically comment on a bright green Evergreen tree growing in our dry, dusty environment, the discrepancy would subtly take away from user immersion.
+Going forward in development we plan to use real life references for everything that we can, from the fishing activity to how users interact with random objects in the virtual world around them.
+
+\subsection{Unity Tools and Techniques}
+Another important part of smooth and efficient development is the ability to move around in and mold our experience in a logical way.
+The Unity IDE has some terrific tools for this, and we have learned a lot about how to use them to their full potential.
+
+\subsubsection{Environment Navigation}
+The simplest tricks that help with almost all of our development involve navigating through our landscape in the Unity IDE.
+There are a bunch of ways to move around the environment, each with a different set of best uses.
+The Transform Tools allow panning, rotation, and other basic view modifications.
+With the addition of modifier keys, these five buttons provide a long list of ways to interact with the scene.
+Mastering how to use these tools has greatly sped up development of the landscape.
+
+\subsubsection{Terrain Tools}
+While creating our complex landscape, we made heavy use of Unity's terrain tools.
+A terrain object starts as just a flat plane, and then landforms are raised and lowered out of the plane.
+We used a couple tricks to make terrain design easier and less repetitive, as well as create better features.
+First, we were able to fill every part of our terrain below a certain height with water.
+That way, we could carve a riverbed through the middle of our environment, and then fill the river in a way that looked realistic and natural.
+Second, the paint height tool allows for some interesting modification to the heightmap of our terrain object.
+The paint height tool allows us to sample the height of one area of our terrain and then apply that height to other areas.
+This came in handy for aspects such as making a road into the landscape be even and relatively flat, and drawing up flat topped rock formations around the edges of the valley.
+
+\section{Images}
+Below are some images that show the current state of our virtual reality experience.
+
+\vspace{1cm}
+
+\begin{figure}[h]
+    \centering
+    \includegraphics[width=0.80\textwidth]{landscape.png}
+    \caption{Image of our landscape}
+\end{figure}
+
+\begin{figure}[h]
+    \centering
+    \includegraphics[width=0.5\textwidth]{fishingrod.png}
+    \caption{Fishing rod and line}
+\end{figure}
+
+
+\end{document}
