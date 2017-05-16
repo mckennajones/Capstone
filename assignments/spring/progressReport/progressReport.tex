@@ -19,7 +19,8 @@
 \usepackage{geometry}
 \usepackage{pst-gantt}
 \usepackage{tabu}
-
+\usepackage{listings}
+\lstloadlanguages{C}
 \geometry{textheight=8.5in, textwidth=6in}
 
 %random comment
@@ -63,7 +64,7 @@ Spring Midterm Progress Report\\
 \maketitle
 \vspace{1mm}
 \begin{abstract}
-This document describes the progress our group has made over the last term and where will will be going from here. It starts out with a brief recap of the projects purpose and goals. It then moves in to showing the current status of the project and a breakdown of the major components. Then there is a section discussing how we see the future of this project. Affter that we talk about the major issues we ran into and how we overcame them.
+This document describes the progress our group has made over the last term and where will will be going from here. It starts out with a brief recap of the projects purpose and goals. It then moves in to showing the current status of the project and a breakdown of the major components. Then there is a section discussing how we see the future of this project. After that we talk about the major issues we ran into and how we overcame them.
 \end{abstract}
 \vspace{1cm}
 
@@ -124,7 +125,6 @@ The fishing experience is the most exciting aspect of our application. We were a
 \section{Problems Encountered}
 
 
-
 \section{Interesting Development Techniques}
 As with any project, a major portion of the time spent so far has been learning how best to use our tools and what methods give the best results all across the project.
 Specifically, our team has been getting better at smoothly moving through the environment in the Unity IDE, integrating our work from different sections into one central project, and adding realism to our landscape.  <-- maybe edit/smooth out this sentence?
@@ -159,26 +159,119 @@ Both these are examples of bringing a continuity and level of detail to our envi
 For instance, although most users would not specifically comment on a bright green Evergreen tree growing in our dry, dusty environment, the discrepancy would subtly take away from user immersion.
 Going forward in development we plan to use real life references for everything that we can, from the fishing activity to how users interact with random objects in the virtual world around them.
 
-\subsection{Unity Tools and Techniques}
-Another important part of smooth and efficient development is the ability to move around in and mold our experience in a logical way.
-The Unity IDE has some terrific tools for this, and we have learned a lot about how to use them to their full potential.
+\subsection{C\# Scripting}
+We used a couple C\# scripts in a couple different locations. The main scripts that we authored deal with the fishing interaction. All of our scripts inherit from the Unity script \textit{MonoBehaviour}. In most cases we overwrote the \textit{Update} method, which is called every frame. This ensures that our logic is always up to date.
 
-\subsubsection{Environment Navigation}
-The simplest tricks that help with almost all of our development involve navigating through our landscape in the Unity IDE.
-There are a bunch of ways to move around the environment, each with a different set of best uses.
-The Transform Tools allow panning, rotation, and other basic view modifications.
-With the addition of modifier keys, these five buttons provide a long list of ways to interact with the scene.
-Mastering how to use these tools has greatly sped up development of the landscape.
+\subsubsection{Fish Line Logic}
+The \textit{FishingLineLogic} script handles the casting interaction of the fishing line.
+The first thing we do, is determine the speed at which they are casting the rod. This is done by grabbing the velocity of the rod.
+\begin{lstlisting}[language={[Sharp]C}]
+int mag = (int)Math.Round(FishingRod.velocity.magnitude);
+\end{lstlisting}
+We then assign this magnitude to the \textit{castingSpeed} variable which will be used later.
 
-\subsubsection{Terrain Tools}
-While creating our complex landscape, we made heavy use of Unity's terrain tools.
-A terrain object starts as just a flat plane, and then landforms are raised and lowered out of the plane.
-We used a couple tricks to make terrain design easier and less repetitive, as well as create better features.
-First, we were able to fill every part of our terrain below a certain height with water.
-That way, we could carve a riverbed through the middle of our environment, and then fill the river in a way that looked realistic and natural.
-Second, the paint height tool allows for some interesting modification to the heightmap of our terrain object.
-The paint height tool allows us to sample the height of one area of our terrain and then apply that height to other areas.
-This came in handy for aspects such as making a road into the landscape be even and relatively flat, and drawing up flat topped rock formations around the edges of the valley.
+After this we needed to determine which hand is holding the rod, (the casting hand), and which will be the reeling hand. Luckily the \textit{NewtonVR} package allows you to see which hand is currently interacting with an object, therefore, that which is holding the rod, is the casting hand.
+
+\begin{lstlisting}[language={[Sharp]C}]
+if (NVRPlayer.Instance.LeftHand.IsInteracting)
+{
+	casting = NVRPlayer.Instance.LeftHand.Inputs[NVRButtons.Touchpad].IsPressed;
+	reelHand = true;
+}
+else if (NVRPlayer.Instance.RightHand.IsInteracting)
+{
+	casting = NVRPlayer.Instance.RightHand.Inputs[NVRButtons.Touchpad].IsPressed;
+	reelHand = false;
+}
+\end{lstlisting}
+
+The casting boolean is assigned to true here if the user is pressing down on the touchpad of the casting hand. If we are casting, then we do this by using the built in UltimateRopeEditor \textit{ExtendRope} method, as seen below.
+\begin{lstlisting}[language={[Sharp]C}]
+if (Rope != null)
+{
+	m_fRopeExtension = Mathf.Clamp(m_fRopeExtension, 0.0f, Rope.ExtensibleLength);
+	Rope.ExtendRope(UltimateRope.ERopeExtensionMode.LinearExtensionIncrement, m_fRopeExtension - Rope.m_fCurrentExtension);
+}
+\end{lstlisting}
+
+To reel in the fishing line, the user presses their thumb on the touchpad of the opposite Controller to which is currently holding the rod. We also took into consideration where the users thumb is on the touchpad. If it is towards the top, then it will be faster, towards the bottom will be slower. You can see this in the reelIn method.
+
+\begin{lstlisting}[language={[Sharp]C}]
+public static void reelIn(Vector2 axis)
+{
+	float reelingSpeed;
+	if (axis.y > -1 & axis.y < -0.33)
+	{
+		reelingSpeed = 0.25f;
+	}
+	else if (axis.y > -0.33 && axis.y < 0.33)
+	{
+		reelingSpeed = 0.5f;
+	}
+	else
+	{
+		reelingSpeed = 0.75f;
+	}
+	m_fRopeExtension -= Time.deltaTime * reelingSpeed;
+}
+\end{lstlisting}
+
+\subsubsection{Fish Logic}
+The other essential script to our fishing interaction is the \textit{FishLogic} script. This script is attached to every fish, and it controls their movement, as well as the user's interaction with it. The bulk of the code is centered around three if statements.
+
+\begin{lstlisting}[language={[Sharp]C}]
+if (!caught && userIsFishing && !fishDead && !otherFishCaught)
+{
+	// If hook is 50 units from fish, fish will begin to follow
+	if (Vector3.Distance(hook.transform.position, this.transform.position) < 50)
+	{
+\end{lstlisting}
+
+The first if statement here checks if the fish has not been caught, the user is fishing (hook is in the water), another fish in not currently on the hook, and the fish is not dead. These are all prerequisites for the fish to be caught. The second statement checks if the fish is less than 50 units from the hook. If it is, it will begin to follow the hook.
+
+If the fish gets within five in game units then we consider it to be caught. To simulate the fish being caught we simply created a \textit{CharacterJoint} between the hook, and the fish. To create a realistic interaction here, it was important to change the default location of the joint, from the middle of the fish, to the mouth.
+
+\begin{lstlisting}[language={[Sharp]C}]
+else if (direction.magnitude <= 5 && !otherFishCaught)
+{
+	caught = true;
+	this.gameObject.AddComponent<CharacterJoint>();
+	CharacterJoint joint = this.GetComponent<CharacterJoint>();
+	joint.autoConfigureConnectedAnchor = false;
+	joint.connectedAnchor = new Vector3(0, 0, 3f);
+
+	Rigidbody lineEndRigid = lineEnd.GetComponent<Rigidbody>();
+
+	this.transform.position = lineEnd.transform.position;
+	joint.connectedBody = hook.GetComponent<Rigidbody>();
+
+	Rigidbody fishRigid = this.GetComponent<Rigidbody>();
+	fishRigid.isKinematic = false;
+\end{lstlisting}
+
+While the fish is attached to the hook, we trigger a haptic pulse on the interacting controller. We found that having this haptic feedback really adds to realism.
+
+\begin{lstlisting}[language={[Sharp]C}]
+NVRPlayer.Instance.LeftHand.TriggerHapticPulse(1500, NVRButtons.Touchpad);
+\end{lstlisting}
+
+\subsubsection{NVRInteractableItem}
+The final piece of the fishing interaction that we worked on is the ability to remove the fish from the hook. This is done by overriding the \textit{BeginInteraction} method of the \textit{NVRInteractableItem} class.
+
+\begin{lstlisting}[language={[Sharp]C}]
+Animation fishAnimation = this.GetComponentInChildren<Animation>();
+Rigidbody fishRigid = this.GetComponent<Rigidbody>();
+CharacterJoint fishJoint = this.GetComponent<CharacterJoint>();
+Destroy(fishJoint);
+fishRigid.mass = 5;
+fishRigid.useGravity = true;
+
+fishAnimation.Stop();
+fishLogic.caught = false;
+fishLogic.fishDead = true;
+\end{lstlisting}
+
+Our addition was to destroy the \textit{CharacterJoint} between the hook and the fish, and also disable the fish animation.
 
 \section{Images}
 Below are some images that show the current state of our virtual reality experience.
