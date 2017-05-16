@@ -116,14 +116,67 @@ Incorporating Columbia gear into the experience was a bit of a challenge as we w
 \subsection{Fishing Experience}
 The fishing experience is the most exciting aspect of our application. We were able to harness the Unity physics engine alongside the Ultimate Rope Editor to develop an interactive fishing rod and line. The rod is a rigid GameObject that we found on the Unity Asset store but could easily be replaced by a Columbia brand rod. The fishing line is a series of thin cylinders attached together with hinge joints. The fishing line is first attached as a coil to the reel on the rod. The line then follows the rod up to the tip at which point it becomes free to swing. This last section of the rod is susceptible to gravity, air resistance, and other rigid objects within the environment. The user can toggle on and off instructions on how to cast the fishing line if needed. To start, users bring the rod back over their shoulder. They then can quickly bring it forward while pressing down on the controller pad to release the line lock. Once the user has cast out the line, they can begin fishing. We were able to take advantage of collision dynamics and velocity manipulation to create catchable fish with realistic movement animations and random swimming behavior. If users are patient, then fish will eventually connect with the hook. Once a fish has taken the bait, the controller will begin to vibrate. At this point the user needs to reel in the line and grab the fish with their other controller. This whole experience gives the user a great level of immersion and can be very entertaining. By first being a fun and interactive experience, it can then be informative and showcase Columbia gear in a positive light.
 
+\section{Problems Encountered}
+While we didn't add any huge development pieces to our project this term, we did spend a lot of time cleaning up our mistakes and polishing up some of our existing features.
+We made changes to the environment, campsite and fishing experiences, and the user interface.
 
+We didn't make any drastic changes to the environment, but we did swap out some free assets for some paid ones.
+We had received our budget near the end of Winter quarter from our Columbia sponsor.
+The most notable purchase was the AQUAS Water/River Shader Set from Dogmatic Games.
+AQUAS is a "powerful and full-featured water system that contains a set of 12 flat water shaders for all types of platforms, environments and games.
+It is highly customizable and feature rich to suit all needs and produce industry quality results."
+Most importantly, the AQUAS water asset is VR ready.
+Integrating this asset into our scene went very smoothly.
+We changed some minor details like the flow direction and the color, but the water functioned exactly how we wanted it to.
+This got rid of the issue with our old water asset having troubles with visual tearing within the virtual reality experience.
+
+We also purchased the DirectX11 Grass Shader from Stix Games.
+Previously we were using the basic textures built into the Unity Game Engine. The color and feel of the basic texture didn't match the environment as well as  being a 2D texture.
+The DirectX11 Grass Shader greatly improved with this with the included 3D shader and animations.
+
+We looked over our Requirements Document and noticed that we hadn't implemented any sounds for the environment.
+This obviously takes away from the immersion so we went ahead and added several noises, the most notable one being the water.
+The sound volumes adjust to how close or far you are from the source, which worked out really well.
+
+We made some small adjustments to the campsite area.
+We had a couple of assets that we laid out around the camp area as different campsite related items that users could interact with.
+We hadn't made them interactable, so we made sure to change that.
+We also added in an avatar with information on the apparel that he was wearing. This was more of an experimental feature we added in and will be discussed more in the 'Looking Forward' section.
+
+A lot of changes came in the fishing area in order to smooth out and improve the immersion of the experience.
+It started off with an improved fish asset and a basic line of sight ai.
+We at first implemented the fishing experience to be the user casting, catching a single fish, and reeling it in.
+Since then, we've added multiple fish into the water and added the ability for the user to interact with the fish after it's been caught.
+Casting and reeling have been improved through various scripts that account for the speed that the line should go out at.
+The controllers provide haptic feedback whenever a fish is caught to alert the user to reel in.
+
+The main issue we've had throughout the development phase has been the fishing line.
+The fishing line is composed of many segments with each carrying a rigid body and a collider component.
+The different segments collide with each other and cause the line to display sporadic behavior.
+We made some changes to reduce the amount of collisions to prevent this as much as possible.
+We also made some changes to adjust the cast speed based on the user's motion of the Vive controller.
+A combination of these changes have made the fishing line more manageable.
+
+We realized users might have trouble understanding what to do within the environment, so we improved the user interface by adding informative signs to the environment.
+We added some clean menus that direct the user in the right direction to try out the campsite and fishing areas.
+The fishing mechanic can be a little confusing so we implemented a hideable menu that walks the user through the various steps.
 
 \section{Looking forward}
+We believed this project to be a proof of concept.
+We were tasked with creating an immersive outdoor virtual reality experience and we think we accomplished that.
+The idea of this project is for Columbia customers to try out various pieces of Performance Fishing Gear apparel and experience this VR environment with the appropriate gear.
+There's a lot of ways this project can expand. The virtual reality experience could be altered to cover more outdoor experiences, not just fishing.
+The same concept could be ported to many related activities such as hiking, rock climbing and rafting.
+All of this could occur in a Columbia retail store.
 
-
-
-\section{Problems Encountered}
-
+We think the next, natural progression of this project would be to introduce Columbia gear within the fishing experience that we've created.
+We were heading in this direction with the avatar in the scene.
+It'd be extremely relevant to display the gear that the user picked out from the physical store on an avatar in the virtual reality scene.
+Menus could display information like a short description and cost of each article of clothing.
+There could be options to pick out different outfits for the avatar to see different combinations.
+The end goal would most likely be to have the Columbia apparel, that they picked out through the menus, on the user in the virtual reality experience, but we've heard it's very hard to handle the animations to make it look natural.
+We could attach a shopping cart interface for the items that the customer picked out and link these items to some kind of payment system.
+We believe virtual reality has the ability to encourage and inspire Columbia customers to try new activities and have it be more accessible to everyone, no matter their experience level.
 
 \section{Interesting Development Techniques}
 As with any project, a major portion of the time spent so far has been learning how best to use our tools and what methods give the best results all across the project.
