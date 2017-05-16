@@ -23,8 +23,6 @@
 \lstloadlanguages{C}
 \geometry{textheight=8.5in, textwidth=6in}
 
-%random comment
-
 \newcommand{\cred}[1]{{\color{red}#1}}
 \newcommand{\cblue}[1]{{\color{blue}#1}}
 
@@ -43,7 +41,7 @@ Spring Midterm Progress Report\\
 \vspace{1mm}
 }
 \author{Jake Jeffreys, McKenna Jones, Spike Madden, Sean Marty}
-\date{13 May 2017}
+\date{15 May 2017}
 
 %pull in the necessary preamble matter for pygments output
 
@@ -53,7 +51,7 @@ Spring Midterm Progress Report\\
   linkcolor = black,
   urlcolor = black,
   pdfauthor = {\name},
-  pdfkeywords = {cs462 ``senior capstone''},
+  pdfkeywords = {cs463 ``senior capstone''},
   pdftitle = {CS 462 Progress Report},
   pdfsubject = {CS 462 Progress Report},
   pdfpagemode = UseNone
@@ -64,7 +62,7 @@ Spring Midterm Progress Report\\
 \maketitle
 \vspace{1mm}
 \begin{abstract}
-This document describes the progress our group has made over the last term and where will will be going from here. It starts out with a brief recap of the projects purpose and goals. It then moves in to showing the current status of the project and a breakdown of the major components. Then there is a section discussing how we see the future of this project. After that we talk about the major issues we ran into and how we overcame them.
+This document describes the progress our group has made over the last half term and where we will be going from here. It starts out with a brief recap of the projects purpose and goals. It then moves in to showing the current status of the project and a breakdown of the major components. Then there is a section discussing the major issues we ran into and how we overcame them. After that we talk about how we see the future of this project. Finally the document ends with interesting code snippets and some screenshots of the project.
 \end{abstract}
 \vspace{1cm}
 
@@ -178,44 +176,11 @@ The end goal would most likely be to have the Columbia apparel, that they picked
 We could attach a shopping cart interface for the items that the customer picked out and link these items to some kind of payment system.
 We believe virtual reality has the ability to encourage and inspire Columbia customers to try new activities and have it be more accessible to everyone, no matter their experience level.
 
-\section{Interesting Development Techniques}
-As with any project, a major portion of the time spent so far has been learning how best to use our tools and what methods give the best results all across the project.
-Specifically, our team has been getting better at smoothly moving through the environment in the Unity IDE, integrating our work from different sections into one central project, and adding realism to our landscape.  <-- maybe edit/smooth out this sentence?
-This section will break down each of those development technique areas and show how we have implemented them to improve our project.
 
-\subsection{Collaboration}
-One of the earliest adaptions we had to make as a team was learning how to get work done when we weren't all on the same development machine.
-A good portion of the time we all meet up and work with the laptop provided by Mike Premi and Intel.
-However, the wide range of tasks involved means that it is often better to be able to develop on our individual laptops and then merge into one project.
-Many teams use Git for their code collaboration, and we have a Github repository for our group.
-The problem with using git and Github for managing our project is that the sheer size of the project files makes committing, pushing, and pulling from a remote repository unrealistic.
-Also, changes to the project often result in edits to hundreds of asset and configuration files, which can become hard to manage in git.
-Our solution is to use the Unity Collaborate Service.
-The service is not as widely used or fully featured as Git and Github, but because it is developed for Unity projects specifically, it aligns extremely well with our needs.
-The Collaborate tool uses the same basic premise as Github.
-The project is stored on the cloud, and users pull and push changes from that location to their local machines.
-Commits are tagged with commit messages as in Git, and each time you go to pull new changes down a list of commit messages accompanies the pull.
-The beauty of using a Unity service is that the Collaborate tool is already built right into the Unity IDE, and is very simple to download and run.
-We have found a lot of success with this tool, and it has allowed for more efficient and varied work.
-
-\subsection{Real Life Environment Basis}
-Throughout the entire planning, design, and development of the project we have talked a lot about making the experience realistic.
-An environment that is close to a real landscape and better user interaction will make the overall experience feel more immersive.
-One of the key ways that we have found to increase realism is through basing our environment on a real place in the world.
-The temptation is to just build a landscape that looks good in our minds, but then there is a random collection of plants and trees, rock formations, and other unique parts of the environment.
-We chose to match our landscape to pictures of Smith Rock State Park, and so far this has been a great way to make design decisions on many parts of the environment we are building.
-There are dozens of ways that we are using this real life location to influence virtual reality choices.
-For example, we had built up a basic range of hills around our river valley, but the hills were sort of amorphous and far too symmetrical to be realistic.
-After looking through pictures of Smith Rock State Park we were able to redesign the hills to fit the style of rock outcrops we saw, and make the entire landscape's backdrop more meaningful and detailed.
-In another part of the project, we changed and updated the vegetation we had placed near the river so that it better matched vegetation near water at Smith Rock.
-Both these are examples of bringing a continuity and level of detail to our environment that is extremely important.
-For instance, although most users would not specifically comment on a bright green Evergreen tree growing in our dry, dusty environment, the discrepancy would subtly take away from user immersion.
-Going forward in development we plan to use real life references for everything that we can, from the fishing activity to how users interact with random objects in the virtual world around them.
-
-\subsection{C\# Scripting}
+\section{C\# Scripting}
 We used a couple C\# scripts in a couple different locations. The main scripts that we authored deal with the fishing interaction. All of our scripts inherit from the Unity script \textit{MonoBehaviour}. In most cases we overwrote the \textit{Update} method, which is called every frame. This ensures that our logic is always up to date.
 
-\subsubsection{Fish Line Logic}
+\subsection{Fish Line Logic}
 The \textit{FishingLineLogic} script handles the casting interaction of the fishing line.
 The first thing we do, is determine the speed at which they are casting the rod. This is done by grabbing the velocity of the rod.
 \begin{lstlisting}[language={[Sharp]C}]
@@ -269,7 +234,7 @@ public static void reelIn(Vector2 axis)
 }
 \end{lstlisting}
 
-\subsubsection{Fish Logic}
+\subsection{Fish Logic}
 The other essential script to our fishing interaction is the \textit{FishLogic} script. This script is attached to every fish, and it controls their movement, as well as the user's interaction with it. The bulk of the code is centered around three if statements.
 
 \begin{lstlisting}[language={[Sharp]C}]
@@ -308,7 +273,7 @@ While the fish is attached to the hook, we trigger a haptic pulse on the interac
 NVRPlayer.Instance.LeftHand.TriggerHapticPulse(1500, NVRButtons.Touchpad);
 \end{lstlisting}
 
-\subsubsection{NVRInteractableItem}
+\subsection{NVRInteractableItem}
 The final piece of the fishing interaction that we worked on is the ability to remove the fish from the hook. This is done by overriding the \textit{BeginInteraction} method of the \textit{NVRInteractableItem} class.
 
 \begin{lstlisting}[language={[Sharp]C}]
@@ -333,14 +298,20 @@ Below are some images that show the current state of our virtual reality experie
 
 \begin{figure}[h]
     \centering
-    \includegraphics[width=0.80\textwidth]{landscape.png}
+    \includegraphics[width=0.80\textwidth]{waterLeft.png}
     \caption{Image of our landscape}
 \end{figure}
 
 \begin{figure}[h]
     \centering
-    \includegraphics[width=0.5\textwidth]{fishingrod.png}
-    \caption{Fishing rod and line}
+    \includegraphics[width=0.8\textwidth]{fishOnLine.png}
+    \caption{Fishing rod and line with fish on it}
+\end{figure}
+
+\begin{figure}[h]
+    \centering
+    \includegraphics[width=0.8\textwidth]{gearPrototype.png}
+    \caption{Campsite with placeholder gear information}
 \end{figure}
 
 
