@@ -20,9 +20,7 @@
 \usepackage{pst-gantt}
 \usepackage{tabu}
 
-\usepackage{subfiles}
-
-\usepackage{bibunits}
+\usepackage{pdfpages}
 
 \geometry{textheight=8.5in, textwidth=6in}
 
@@ -77,15 +75,14 @@ Final Report\\
 \clearpage
 
 \section{Original Requirements Document}
-\subfile{originalRequirementsDoc.tex}
-
+\includepdf[pages=-, frame, scale=0.9, pagecommand={}]{originalRequirementsDoc.pdf}
 \section{How Have Requirements Changed?}
 
 \section{Original Design Document}
-\subfile{originalDesignDoc.tex}
+\includepdf[pages=-, frame, scale=0.9, pagecommand={}]{originalDesignDoc.pdf}
 
 \section{Original Tech Review}
-\subfile{originalTechReview.tex}
+\includepdf[pages=-, frame, scale=0.9, pagecommand={}]{originalTechReview.pdf}
 
 \section{Weekly Blog Posts}
 
@@ -100,7 +97,6 @@ Final Report\\
 \section{How We Learned}
 
 \section{What We Learned}
-
 
 % \bibliographystyle{IEEEtran}
 % \bibliography{}
