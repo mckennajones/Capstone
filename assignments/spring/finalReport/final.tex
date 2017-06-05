@@ -5,6 +5,7 @@
 \usepackage{amsmath}
 \usepackage{amsthm}
 \usepackage{caption}
+\usepackage{minted}
 
 \usepackage{alltt}
 \usepackage{float}
@@ -23,13 +24,13 @@
 \usepackage{pdfpages}
 
 \geometry{textheight=8.5in, textwidth=6in}
+\graphicspath{ {./images/} }
 
 %random comment
 
 \newcommand{\cred}[1]{{\color{red}#1}}
 \newcommand{\cblue}[1]{{\color{blue}#1}}
 
-\graphicspath{ {diagrams/} }
 
 \usepackage{hyperref}
 \usepackage{geometry}
@@ -1407,6 +1408,249 @@ As the project progressed we all learned the importance of working as a more coh
 \subsection{Sean}
 
 \subsection{Spike}
+
+\clearpage
+\section{Appendix}
+\subsection{Essential Code Listings}
+\subsubsection{FishingLineLogic.cs}
+This C\# script handles the fishing line, including the reeling in and out motion. It makes use of the UltimateRopeEditor package from the Unity asset store. \\
+
+\begin{minted}[breaklines]{csharp}
+using UnityEngine;
+using System;
+using NewtonVR;
+
+namespace fishingLineLogic
+{
+    public class FishingLineLogic : MonoBehaviour
+    {
+        public UltimateRope Rope;
+        public Rigidbody FishingRod;
+        public float castingSpeed;
+
+        static float m_fRopeExtension;
+
+        void Start()
+        {
+            m_fRopeExtension = Rope != null ? Rope.m_fCurrentExtension : 0.0f;
+        }
+
+        // Called every frame
+        void Update()
+        {
+            bool casting = false;
+            bool reelHand = false; // True is right, false is left
+
+            int mag = (int)Math.Round(FishingRod.velocity.magnitude);
+            if (mag > 1)
+            {
+                castingSpeed = mag * 2;
+            }
+            else
+            {
+                if (castingSpeed > 0)
+                {
+                    castingSpeed -= 0.1f;
+                }
+            }
+
+            if (castingSpeed > 0)
+            {
+                Debug.Log(castingSpeed);
+            }
+
+            // The reel hand is set to the opposite hand of the one that is holding the fishing rod.
+            // The user is casting, when the touchpad of the hand that is holding the rod is being pressed.
+            if (NVRPlayer.Instance.LeftHand.IsInteracting)
+            {
+                casting = NVRPlayer.Instance.LeftHand.Inputs[NVRButtons.Touchpad].IsPressed;
+                reelHand = true;
+            }
+            else if (NVRPlayer.Instance.RightHand.IsInteracting)
+            {
+                casting = NVRPlayer.Instance.RightHand.Inputs[NVRButtons.Touchpad].IsPressed;
+                reelHand = false;
+            }
+
+            // If the user is casting, set the extension speed
+            if (casting)
+            {
+                m_fRopeExtension += Time.deltaTime * castingSpeed;
+            }
+
+            // Find the reel in speed by getting the position of the users thumb on the touchpad.
+            if (NVRPlayer.Instance.LeftHand.Inputs[NVRButtons.Touchpad].IsTouched && reelHand == false)
+            {
+                Vector2 leftAxis = NVRPlayer.Instance.LeftHand.Inputs[NVRButtons.Touchpad].Axis;
+                reelIn(leftAxis);
+            }
+            else if (NVRPlayer.Instance.RightHand.Inputs[NVRButtons.Touchpad].IsTouched && reelHand == true)
+            {
+                Vector2 rightAxis = NVRPlayer.Instance.RightHand.Inputs[NVRButtons.Touchpad].Axis;
+
+                reelIn(rightAxis);
+            }
+
+            // Extend the rope
+            if (Rope != null)
+            {
+                m_fRopeExtension = Mathf.Clamp(m_fRopeExtension, 0.0f, Rope.ExtensibleLength);
+                Rope.ExtendRope(UltimateRope.ERopeExtensionMode.LinearExtensionIncrement, m_fRopeExtension - Rope.m_fCurrentExtension);
+            }
+        }
+
+        // This function sets the speed to reel in the rope, based on the user's position on the touchpad.
+        public static void reelIn(Vector2 axis)
+        {
+            float reelingSpeed;
+            if (axis.y > -1 & axis.y < -0.33)
+            {
+                reelingSpeed = 0.25f;
+            }
+            else if (axis.y > -0.33 && axis.y < 0.33)
+            {
+                reelingSpeed = 0.5f;
+            }
+            else
+            {
+                reelingSpeed = 0.75f;
+            }
+            m_fRopeExtension -= Time.deltaTime * reelingSpeed;
+        }
+    }
+}
+\end{minted}
+
+\subsubsection{FishLogic.cs}
+This script handles the motion of the fish(es), including the catching interaction of the fish.\\
+
+\begin{minted}[breaklines]{csharp}
+using NewtonVR;
+using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+
+public class FishLogic : MonoBehaviour
+{
+
+    public GameObject hook;
+    public GameObject lineEnd;
+    public bool caught = false;
+    public bool userIsFishing = false;
+    public GameObject FishParent;
+    public bool fishDead = false;
+
+    Vector3 initialPosition;
+    FishLogic[] fishList;
+    bool otherFishCaught;
+    // Use this for initialization
+    void Start()
+    {
+        fishList = FishParent.GetComponentsInChildren<FishLogic>();
+        initialPosition = transform.position;
+    }
+
+    // Update is called once per frame
+    void Update()
+    {
+        // Check if another fish is currently on the hook
+        otherFishCaught = false;
+        foreach (FishLogic fish in fishList)
+        {
+            if (fish.caught == true)
+            {
+                otherFishCaught = true;
+            }
+        }
+
+        // Check if fish has not been caught, the user is fishing (hook in water),
+        // another fish in not currently on the hook, and the fish isn't dead
+        if (!caught && userIsFishing && !fishDead && !otherFishCaught)
+        {
+            // If hook is 50 units from fish, fish will begin to follow
+            if (Vector3.Distance(hook.transform.position, this.transform.position) < 50)
+            {
+                Vector3 direction = hook.transform.position - this.transform.position;
+
+                direction.y = 0;
+                this.transform.rotation = Quaternion.Slerp(this.transform.rotation, Quaternion.LookRotation(direction), .2f * Time.deltaTime);
+
+                if (direction.magnitude > 5)
+                {
+                    this.transform.Translate(0, 0, 0.1f);
+                }
+
+                // When hook is close enough, lock onto hook, with a character joint
+                // if another fish is not currently not on the hook.
+                else if (direction.magnitude <= 5 && !otherFishCaught)
+                {
+                    caught = true;
+                    this.gameObject.AddComponent<CharacterJoint>();
+                    CharacterJoint joint = this.GetComponent<CharacterJoint>();
+                    joint.autoConfigureConnectedAnchor = false;
+                    joint.connectedAnchor = new Vector3(0, 0, 3f);
+
+                    Rigidbody lineEndRigid = lineEnd.GetComponent<Rigidbody>();
+
+                    this.transform.position = lineEnd.transform.position;
+                    joint.connectedBody = hook.GetComponent<Rigidbody>();
+
+                    Rigidbody fishRigid = this.GetComponent<Rigidbody>();
+                    fishRigid.isKinematic = false;
+
+                    // Move every other fish back to their initial position
+                    foreach (FishLogic fish in fishList)
+                    {
+                        if (fish.gameObject.name != this.name && !fish.fishDead)
+                        {
+                            fish.gameObject.transform.position = fish.initialPosition;
+                        }
+                    }
+                }
+            }
+
+            // If there is a character joint on the fish, it is currently attatched to the hook.
+            // Vibrate the controller, while it is.
+            if (this.GetComponent<CharacterJoint>())
+            {
+                if (NVRPlayer.Instance.LeftHand.IsInteracting)
+                {
+                    NVRPlayer.Instance.LeftHand.TriggerHapticPulse(1500, NVRButtons.Touchpad);
+                }
+                else if (NVRPlayer.Instance.RightHand.IsInteracting)
+                {
+                    NVRPlayer.Instance.RightHand.TriggerHapticPulse(1500, NVRButtons.Touchpad);
+                }
+                return;
+            }
+        }
+    }
+}
+\end{minted}
+
+\subsection{Images}
+Below are some images that show the current state of our virtual reality experience.
+
+\vspace{1cm}
+
+\begin{figure}[h]
+    \centering
+    \includegraphics[width=0.80\textwidth]{waterLeft.png}
+    \caption{Image of our landscape}
+\end{figure}
+
+\begin{figure}[h]
+    \centering
+    \includegraphics[width=0.8\textwidth]{fishOnLine.png}
+    \caption{Fishing rod and line with fish on it}
+\end{figure}
+
+\begin{figure}[h]
+    \centering
+    \includegraphics[width=0.8\textwidth]{gearPrototype.png}
+    \caption{Campsite with placeholder gear information}
+\end{figure}
+
 % \bibliographystyle{IEEEtran}
 % \bibliography{}
 \end{document}

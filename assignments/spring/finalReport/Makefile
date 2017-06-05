@@ -6,6 +6,6 @@ writeup:
 	pdflatex --shell-escape ${FILE}.tex
 
 clean:
-	rm -f *.ps *.dvi *.out *.log *.aux *.bbl *.blg *.pyg *.toc
+	rm -rf *.ps *.dvi *.out *.log *.aux *.bbl *.blg *.pyg *.toc ./_minted-final
 
 .PHONY: all show clean ps pdf showps
