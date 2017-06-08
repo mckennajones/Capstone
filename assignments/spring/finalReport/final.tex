@@ -18,9 +18,9 @@
 \usepackage{pstricks, pst-node}
 
 \usepackage{geometry}
-\usepackage{pst-gantt}
 \usepackage{tabu}
-
+\usepackage{tikz}
+\usepackage{gantt}
 \usepackage{pdfpages}
 
 \geometry{textheight=8.5in, textwidth=6in}
@@ -86,6 +86,26 @@ This project was sponsored and proposed by Intel and Columbia Sportswear. The tw
 
 % TODO
 \subsection{Requirements Document Changes}
+
+\subsection{Final Gantt Chart}
+\begin{gantt}{8}{7}
+	\begin{ganttitle}
+		\titleelement{Dec}{1}
+		\titleelement{Jan}{1}
+		\titleelement{Feb}{1}
+		\titleelement{Mar}{1}
+		\titleelement{Apr}{1}
+		\titleelement{May}{1}
+		\titleelement{Jun}{1}
+	\end{ganttitle}
+	\ganttbar{Build environment prototype}{0}{1}
+	\ganttbar{Explore options for fishing line}{1}{1}
+	\ganttbar{Improve realism of environment}{1}{2}
+	\ganttbar{Implement Fishing line}{2}{3}
+	\ganttbar{Add fish / interaction}{4}{2}
+	\ganttbar{Add user guidance}{5}{1}
+	\ganttbar{Bug fixing}{5}{1}
+\end{gantt}
 
 \section{Design Document}
 \subsection{Original Design Document}
@@ -1387,6 +1407,7 @@ Our development mainly took place within the Unity Software. All the environment
     \item Add selected programs
   \end{itemize}
   \item Run executable from within Steam Library
+\end{itemize}
 
 \subsection{Hardware Requirements}
 \begin{itemize}
@@ -1408,7 +1429,7 @@ Our development mainly took place within the Unity Software. All the environment
 % TODO (Individually)
 \section{What We Learned}
 \subsection{Jake}
-I have very little knowledge of Virtual Reality development prior to starting this project. The first couple months I worked hard to absorb as much information as I could and to figure out which tools would be best for us to use. We decided that Unity would be the most appropriate development tool because of the relatively small learning curve and the strong community behind it. Throughout the project I learned all about Unity game development and C# scripting. I learned how to use game logic to create realistic interactions and behaviors. The great part of this project and our team was that we all worked incredibly well together so everyone was able contribute to each aspect of the project. This gave us all a wide range of development experiences from environment modeling to user interaction to object scripting.
+I have very little knowledge of Virtual Reality development prior to starting this project. The first couple months I worked hard to absorb as much information as I could and to figure out which tools would be best for us to use. We decided that Unity would be the most appropriate development tool because of the relatively small learning curve and the strong community behind it. Throughout the project I learned all about Unity game development and C\# scripting. I learned how to use game logic to create realistic interactions and behaviors. The great part of this project and our team was that we all worked incredibly well together so everyone was able contribute to each aspect of the project. This gave us all a wide range of development experiences from environment modeling to user interaction to object scripting.
 
 From a non-technical perspective, I learned a huge amount involving how to effectively communicate with clients and how to work efficiently on a team. I had already worked for 6 months at an internship so I had a basic understanding of how a professional workplace runs and how to work on a scrum team. For a Senior Design Project, we definitely didn’t want that much forced structure but we did take ideas from it. We made sure to have weekly meetings where we talked about what we did over the last week, where we are now, what we have left to do, and what new stuff we can start working on. Basically we just made sure to touch in with each other regularly to make sure everyone was on the same page and that we were on track to finishing the project on time. Implementing these practices into our team made us much more effective and helped make sure no one was being left behind.
 
