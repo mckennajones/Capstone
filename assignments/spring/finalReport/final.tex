@@ -84,8 +84,24 @@ This project was sponsored and proposed by Intel and Columbia Sportswear. The tw
 \subsection{Original Requirements Document}
 \includepdf[pages=-, frame, scale=0.9, pagecommand={}]{originalRequirementsDoc.pdf}
 
-% TODO
 \subsection{Requirements Document Changes}
+
+\begin{center}
+  \begin{tabular}{|c|c|c|c|}
+    \hline
+    # & Requirement & What Happened To It & Comments \\ [0.5ex]
+    \hline
+    1 & See Columbia gear & We produced placeholders and examples, & This changed mostly as a function of project \\
+    \hline
+    & in VR environment & but no actual Columbia assets included & time limit and roadblocks with Columbia\\
+    \hline
+    2 & Fly-fishing experience & Changed to normal fishing & For easier physics and simpler activity \\
+    \hline
+    3 & Optional audio guidance & Removed this requirement & Not a high priority in limited time \\
+
+  \end{tabular}
+\end{center}
+
 
 \subsection{Final Gantt Chart}
 \begin{gantt}{8}{7}
@@ -111,8 +127,14 @@ This project was sponsored and proposed by Intel and Columbia Sportswear. The tw
 \subsection{Original Design Document}
 \includepdf[pages=-, frame, scale=0.9, pagecommand={}]{originalDesignDoc.pdf}
 
-% TODO
 \subsection{Design Document Changes}
+Below is a list of the major changes that occurred between the original design document, and the final project we produced. The biggest theme, which will be evident throughout this document, is that we did not know exactly how much time and effort each feature would be, and overestimated what we could accomplish in nine around six months of development.
+
+\begin{itemize}
+  \item A simple, straightforward change that we made was the change from fly-fishing to normal fishing. We decided that the problems involved with movements and physics in fly-fishing would not be worth the small benefits of making a fly fishing experience over a normal fishing experience.
+  \item The biggest feature of our project that we changed was the amount of Columbia gear interaction that was present in the experience. Our project shows some possible ways to include Columbia gear but does not fully flesh out any of those features. We still see there being a lot of product interaction in the complete experience, but we favored other features when developing the project on a limited timeline.
+  \item In the design document we mention user testing, and we ended up not getting that far in the product time line. We felt like we produced an awesome proof of concept to build on, but that our project was not yet to the point where user testing would be reasonable.
+\end{itemize}
 
 \section{Tech Review}
 \subsection{Original Tech Review}
@@ -1423,8 +1445,21 @@ Our development mainly took place within the Unity Software. All the environment
 \end{itemize}
 
 
-% TODO
+
 \section{How We Learned}
+The main technology that we had to learn was Unity. Unity was our IDE and 3D modeling space for the physical environment and the fishing experience. We spent a lot of time in the editor figuring out what different tools were available as well as looking through the Unity documentation to gain a better grasp of the capabilities of the game engine.
+
+Below is a short list of Unity manpages that we found to be useful for our project.
+
+\begin{itemize}
+	\item https://docs.unity3d.com/Manual/index.html
+	\item https://docs.unity3d.com/Manual/VROverview.html
+	\item https://docs.unity3d.com/Manual/terrain-UsingTerrains.html
+	\item https://docs.unity3d.com/Manual/UICanvas.html
+	\item https://docs.unity3d.com/Manual/AnimationOverview.html \\
+\end{itemize}
+
+While we did not end up collaborating heavily, we did meet with another Intel VR group earlier in the Capstone course. We met up a couple times to discuss strategies for ramping on Unity and some VR concepts that carried over between the two projects. The other group had signed an NDA so we could not go into specifics of their project. We were not aware of any students or professors who specialized in Unity so most if not all of our research was done on our own, online.
 
 % TODO (Individually)
 \section{What We Learned}
@@ -1465,7 +1500,20 @@ As the project progressed we all learned the importance of working as a more coh
 
 \subsection{Sean}
 
+I learned a lot during the last nine months of Capstone. I learned aspects of computer science and team development that I enjoy, as well as aspects that I definitely don't enjoy. Overall I feel that I am a better engineer and developer after the senior design experience.
+
+The most basic thing I learned is how to develop a virtual reality experience in the Unity game engine. This started with exploring how to bring a terrain and an environment to life. I learned how to mix the creative side of painting a realistic scene around the user with the technical side of render distance, performance, and
+
 \subsection{Spike}
+
+Capstone as a whole has taught me a lot and this project in particular has helped me develop a new set of skills, both technical and non-technical. I had not worked on a project of this size before but I had a great time with the team and I am happy with the product we developed.
+
+On the technical side of things, I came into this VR project with very little experience. I had never interacted with any VR related technologies and had not had any exposure to the Unity Game Engine. Even the scripting, which was done in C#, was all new to me. With documentation and experimentation within Unity, we were able to ramp up on what we needed to know fairly quickly. We learned how to edit assets through the inspector and we were onto adding scripts to start creating our outdoor experience after a short time.
+
+The nontechnical skills I picked up were as, if not more, relevant than the technical skills I learned during the course of this project. Communication was the most important skill that I worked on. We were always in contact with various people in the Capstone process. Our group was really close and worked really well together because of how easy it was to communicate to each other. We had to manage communication with both of our clients as well as with our professors and TA. We had some struggles with communicating with our sponsors but everything turned out to be all right after clarifying some ideas and adapting our approach to the project. We spent a lot of time writing documentation for this class. While it was repetitive at points, it kept us in line with the work we were putting out and ensured clarity in our development.
+
+Capstone was a unique experience that really emphasized the importance of group cohesion. I really enjoy working  on projects as a group. It lets the group members bounce ideas off each other and work cooperatively towards a single goal. Everyone is going to have different strengths and weaknesses, and group projects allow for individuals to play to their strengths. I do not think I would change anything if I were to do this all over again. Our group worked really well together, we had fun and we met our requirements. The only slight issue we really ran into was a misunderstanding of project requirements with our client. We had to shift the project focus a little to accommodate for the changes but it was manageable.
+
 
 \clearpage
 \section{Appendix}
